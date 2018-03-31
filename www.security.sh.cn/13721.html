@@ -57,14 +57,14 @@
 	<div class="container clearfix">
 		<div class="sub-nav wow fadeInLeft">
 			<h3>经典案例</h3>
-			<ul>
-				<li class=""><a href="13721.html"><span>&gt;</span>科技强企</a></li>
-				<li class=""><a href="13721.html"><span>&gt;</span>世博风采</a></li>
-				<li class=""><a href="13721.html"><span>&gt;</span>城市地标</a></li>
-				<li class=""><a href="13721.html"><span>&gt;</span>专业安保</a></li>
-				<li class=""><a href="13721.html"><span>&gt;</span>贴身护卫</a></li>
-				<li class=""><a href="13721.html"><span>&gt;</span>大型活动</a></li>
-				<li class=""><a href="45.html"><span>&gt;</span>安防工程</a></li>
+			<ul id="cccc">
+				<li class=""><a><span>&gt;</span>科技强企</a></li>
+				<li class=""><a><span>&gt;</span>世博风采</a></li>
+				<li class=""><a><span>&gt;</span>城市地标</a></li>
+				<li class=""><a><span>&gt;</span>专业安保</a></li>
+				<li class=""><a><span>&gt;</span>贴身护卫</a></li>
+				<li class=""><a><span>&gt;</span>大型活动</a></li>
+				<li class=""><a><span>&gt;</span>安防工程</a></li>
 			</ul>
 		</div>
 		<div class="inside-right case wow fadeInRight">
@@ -185,6 +185,7 @@ $(function(){
 			    lazyLoad:true
 			});
 		});
-	</script>
+</script>
+<script> $('#cccc li').click(function () { var f = this; $('#cccc li').each(function () { this.className = this == f ? 'aaa' : 'bbb' }); }); </script>
 </body>
 </html>
