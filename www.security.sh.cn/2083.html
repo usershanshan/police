@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>上海市保安服务总公司</title>
+	<link rel="shortcut icon" href="cn/images/favicon.png">
+
+<link rel="stylesheet" href="cn/iconfont/iconfont.css">
+<link rel="stylesheet" href="cn/css/animate.min.css">
+<link rel="stylesheet" href="cn/js/owl/owl.carousel.min.css">
+<link rel="stylesheet" href="cn/js/owl/owl.theme.default.min.css">
+<link rel="stylesheet" href="cn/css/style.css">
+<link rel="stylesheet" href="cn/css/response.css">
+</head>
+<body>
+<div class="header">
+	<div class="topbar wow fadeInDown">
+		<div class="container">
+			<div class="top-tel"><i class="iconfont icon-dianhua"></i>服务热线：4009208110</div>
+			<div class="top-subnav">
+				<ul>
+					<li><a href="admin.html">VIP登录</a></li>
+					<li><a href="cn">中文版</a></li>
+					<li><a href="en">English</a></li>
+					<li>
+						<input id="keyword" type="text" placeholder="请输入关键字">
+						<a id="search" class="serch-icon" href="javascript:;"><i class="iconfont icon-sousuo"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="navbar navbar-wrapper clearfix">
+		<div class="container">
+			<h1 class="logo"><a href="javascript:;"><img src="cn/images/logo.jpg" alt="上海保安"></a></h1>
+			<a class="nav-btn" href="javascript:void(0);">
+				<span></span><span></span><span></span>
+			</a>
+			<ul class="nav">
+				<li ><a href="index.html">首页</a></li>
+				<li ><a href="news-qyxw-1.html">要闻动态</a></li>
+				<li ><a href="about-gsjj-1.html">关于我们</a></li>
+				<li ><a href="31.html">一站式服务</a></li>
+				<li ><a href="13721.html">经典案例</a></li>
+				<li ><a href="2077.html">诚聘英才</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+ <div class="container clearfix">
+		<div class="inside-right article wow fadeInUp">
+			<div class="title clearfix">
+				<h4>上海市保安服务总公司</h4>
+				<div class="crumbs">
+					<a href="index.html">首页</a>&gt;<span>专题宣传片</span>
+				</div>
+			</div>
+			<div class="content">
+				<div class="article-title">
+					<h3>上海市保安服务总公司</h3>
+					<!-- <span>2017-07-03</span> -->
+				</div>
+				<div class="article-content">
+					<div class="article-video">
+						<div id="mediaplayer"></div>
+					</div>
+				</div>
+				<div style="display: none;"><div class="video-baoan">
+				 <video id="example_video_1" class="video-js vjs-default-skin" poster="cn/file/01.jpg" preload="none" controls="controls" width="300" height="150" data-setup="{}"> 
+				  <source src="cn/file/01.mp4" type="video/mp4"> 
+				  <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"> 
+				  <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"> 
+				 </video>
+				</div></div>
+			</div>
+		</div>
+	</div>
+<div class="footer">
+	<div class="container">
+		<div class="footer-nav clearfix">
+			<div class="footer-list footer-list1 wow fadeInUp time03">
+				<p>总公司服务热线：4009208110</p>
+				<p>服务时间：9:00-17:30</p>
+				<p>Email:info@security.sh.cn</p>
+				<p>传真：+86-21-22042879</p>
+			</div>
+			<div class="footer-list footer-list2 wow fadeInUp time05">
+				<!-- <p><a href="cn/map.html">网站地图</a></p> -->
+				<p><a href="terms.html">使用条款</a></p>
+				<p><a href="security.html">保密及安全</a></p>
+			</div>
+			<div class="footer-list footer-list3 wow fadeInUp time07">
+				<p><a target="_blank" href="http://sh.cyberpolice.cn/">上海网警网络110</a></p>
+				<p><a target="_blank" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=2012010615463471">上海工商</a></p>
+				<p><a target="_blank" href="http://www.zx110.org/">网络社会征信网</a></p>
+			</div>
+			<div class="footer-wechat wow fadeInUp time09">
+				<img src="cn/images/wechat.jpg" alt="">
+				<p>关注我们</p>
+			</div>
+		</div>
+		<div class="footer-copyright clearfix wow fadeInUp time11">
+			<div class="footer-copy">&copy; 版权所有 上海市保安服务总公司1985-2017 沪ICP备14023959号<br/>建议您使用谷歌、火狐、Safari、IE8以上版本浏览器访问本网站</div>
+		</div>
+	</div>
+</div>
+
+<script src="cn/js/jquery.min.js"></script>
+<script src="cn/js/stickUp.min.js"></script>
+<script src="cn/js/owl/owl.carousel.js"></script>
+<script src="cn/js/wow.min.js"></script>
+<script src="cn/js/main.js"></script>
+
+<script>
+$(function(){
+	$("#search").click(function(){
+		var kw = $("#keyword").val()
+		if(kw=='') return;
+		var url = '/cn/s?m=news&k='+encodeURI(kw);
+		window.open(url)
+	});
+});
+</script>   
+<script src="js/jwplayer/jwplayer.js"></script>
+<script src="js/jwplayer/jwpsrv.js"></script>
+<script type="text/javascript">
+$(function(){
+	var file = $("source").attr("src");
+	var image = "cn/attachment/20170803/a43a47f884e74589aa960a44d5e22268.jpg";
+	jwplayer('mediaplayer').setup({
+	    'flashplayer': '/js/jwplayer/jwplayer.flash.swf',
+		'image': image,
+	    'id': 'playerID',
+	    'width': '100%',
+		'aspectratio':'10:5',
+	    'file': file
+	});
+});
+</script>
+</body>
+</html>
+
+
