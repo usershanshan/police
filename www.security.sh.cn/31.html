@@ -55,8 +55,8 @@
 				<div class="title">
 					<h2><i></i><span>一站式服务</span><i></i></h2>
 				</div>
-				<ul class="product-list clearfix">
-					<li class=" wow fadeInUp time03">
+				<ul class="product-list clearfix" id="cccc">
+					<li class="wow fadeInUp time03">
 						<a>
 							<img src="cn/images/service-icon-31.png">
 							<p>人力防范</p>
@@ -198,5 +198,6 @@ $(function(){
 	});
 });
 </script>
+<script> $('#cccc li').click(function () { var f = this; $('#cccc li').each(function () { this.className = this == f ? 'aaa' : 'bbb' }); }); </script>
 </body>
 </html>

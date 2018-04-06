@@ -58,13 +58,13 @@
 	<div class="container clearfix">
 		<div class="sub-nav wow fadeInLeft">
 			<h3>关于我们</h3>
-			<ul>
-                    <li class="now"><a href="about-gsjj-1.html"><span>&gt;</span>公司简介</a></li>
-                    <li class=""><a href="about-gsjj-1.html"><span>&gt;</span>品牌文化</a></li>
-                    <li class=""><a href="about-gsjj-1.html"><span>&gt;</span>荣誉资质</a></li>
-                    <li class=""><a href="about-gsjj-1.html"><span>&gt;</span>发展历程</a></li>
-                    <li class=""><a href="news-hyjl-1.html"><span>&gt;</span>对外交流</a></li>
-                    <li class=""><a href="news-hyjl-1.html"><span>&gt;</span>媒体关注</a></li>
+			<ul id="cccc">
+                    <li ><a><span>&gt;</span>公司简介</a></li>
+                    <li class=""><a><span>&gt;</span>品牌文化</a></li>
+                    <li class=""><a><span>&gt;</span>荣誉资质</a></li>
+                    <li class=""><a><span>&gt;</span>发展历程</a></li>
+                    <li class=""><a><span>&gt;</span>对外交流</a></li>
+                    <li class=""><a><span>&gt;</span>媒体关注</a></li>
                 
 			</ul>
 		</div>
@@ -215,5 +215,6 @@ $(function(){
 	});
 });
 </script>
+<script> $('#cccc li').click(function () { var f = this; $('#cccc li').each(function () { this.className = this == f ? 'aaa' : 'bbb' }); }); </script>
 </body>
 </html>
