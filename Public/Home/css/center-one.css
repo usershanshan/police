@@ -1,0 +1,12 @@
+.mid-right-top {width:700px; height:45px; margin:0 auto;}
+.mid-right-top p {float: left;font-size: 22px; line-height: 45px;color: #202020;}
+.hengxian {width:545px; height:1px; background-color: #202020; float: left; margin-top: 22px; margin-left: 20px;}
+.personal-txt {width:335px; height:240px; background-color: #ffffff;float: left; margin-top: 30px;padding: 25px 40px;}
+.personal-left {margin-left: 30px;}
+.personal-txt-one {font-size: 12px; color: #757575;}
+.personal-txt-two {width: 100%; height:45px;}
+.personal-txt-two p {font-size: 20px; float: left; color: #202020;line-height: 35px;}
+.personal-txt-two img {width:16px; height:14px; float: left;margin-left: 10px; margin-top:10px;}
+.personal-txt-two span {float: left;font-size: 12px;color: #d9b664;margin-top:12px;}
+.personal-txt-price {font-size: 16px; color: #202020;}
+.personal-txt-money {font-size: 24px; color: #d9b664;line-height: 50px;}

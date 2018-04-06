@@ -1,0 +1,15 @@
+.pay_all {width:100%;height:530px;border-top: 2px solid #7abd54;}
+.pay_all_mid {width:96%;height:530px;margin:0 auto;}
+.pay_quick {font-size: 20px;margin-top: 10px;color:#7abd54; }
+.pay_one {font-size: 14px;line-height: 24px; color: #202020;}
+.pay_one span {color: #2495d6;cursor: pointer;}
+.pay_wait {font-size: 14px;line-height: 24px; color: #202020;}
+.pay_wait span {color:#ff000a;font-size: 20px;}
+.erma {width:100%; height:420px;margin-top: 30px;}
+.erma_mid {width:750px;margin:0 auto;height:420px;position: relative;display: table;}
+.erma_left {width:300px;height:420px;margin-top:25px;}
+.erma_left_top {width:300px;height:300px;border:1px solid #cccccc;}
+.erma_left_top img {width:100%;height:100%;}
+.erma_left_bottom {width:300px;height:34px;margin-top: 20px;background-color: #e33c3c;border-radius: 17px;}
+.erma_left_bottom p {color: #fff;font-size: 14px;text-align: center;line-height: 30px;}
+.erma_phone {position: absolute;top:0;right: 0;width:330px;height:420px;}

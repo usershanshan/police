@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Table</title>
+		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
+		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<div class="admin-main">
+			<fieldset class="layui-elem-field">
+				<legend>{$title}</legend>
+				<div class="layui-field-box">
+					 <form class="layui-form" action="">
+						 <input type="hidden" name="id" value="{$id}">
+						 <input type="hidden" name="type_id" value="{$type_id}">
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">标题</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="title"  required
+										autocomplete="off" placeholder="选项标题" class="layui-input" value="{$info['title']}">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">标题(英文)</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="title_en"  required
+										autocomplete="off" placeholder="选项标题" class="layui-input" value="{$info['title_en']}">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">排序</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="orders"  required
+										autocomplete="off" placeholder="数字越小，排行越靠前，默认为0" class="layui-input" value="{$info['orders']}">
+							 </div>
+						 </div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">详情</label>
+							<div class="layui-input-block">
+								<textarea class="layui-textarea layui-hide"  name="content" lay-verify="note" id="LAY_demo_editor1" >{$info['content']}</textarea>
+							</div>
+						</div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">详情(英文)</label>
+							 <div class="layui-input-block">
+								 <textarea class="layui-textarea layui-hide"  name="content_en" lay-verify="note" id="LAY_demo_editor2" >{$info['content_en']}</textarea>
+							 </div>
+						 </div>
+						<div class="layui-form-item">
+							<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="subBanner">立即提交</button>
+								<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</fieldset>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
+		<script>
+		layui.use(['form','upload','layedit','laydate'], function() {
+			var form = layui.form(),
+				layer = layui.layer,
+				$ = layui.jquery,
+				layedit = layui.layedit
+			layui.upload({
+			    url:  "{:U('Index/uploadAllImg')}"
+			    ,elem: '#img' //指定原始元素，默认直接查找class="layui-upload-file"
+			    ,success: function(res){
+		    	   layer.msg(res.msg);
+		    	   LAY_demo_upload.src = res.data.src;
+                    upLogo.value = res.data.src;
+			    }
+			});
+			var editIndex1 = layedit.build('LAY_demo_editor1',{
+				uploadImage:{url:"{:U('Index/uploadAllImg')}"}
+			});
+            var editIndex2 = layedit.build('LAY_demo_editor2',{
+                uploadImage:{url:"{:U('Index/uploadAllImg')}"}
+            });
+			//监听提交
+			form.on('submit(subBanner)', function(data) { 
+				 	data.field.content = layedit.getContent(editIndex1);
+				 	data.field.content_en = layedit.getContent(editIndex2);
+				 	var bannerInfo = data.field;
+				 	if(bannerInfo.id){
+				 	    var url = "{:U('recruit_edit')}";
+					}else{
+                        var url = "{:U('recruit_add')}";
+					}
+
+					$.post(url,bannerInfo,function(data){
+						if(data.status == 'error'){
+							  layer.msg(data.msg,{icon: 5});//失败的表情
+							  return;
+						  }else if(data.status == 'success'){
+							  layer.msg(data.msg, {
+								  icon: 6,//成功的表情
+								  time: 2000 //2秒关闭（如果不配置，默认是3秒）
+								}, function(){
+									self.location=document.referrer;
+								}); 
+						  }
+					})
+				return false;
+			});
+
+
+		});
+
+
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,97 @@
+h1,p,h2,h3 {margin:0;}
+@media screen and (max-width: 425px){
+	.detial-explain {width:100%;}
+	.detial-explain-mid {width: 100%; padding:0 30px;}
+	.explain-mid-one {font-size:24px;text-align: center;margin-top: 25px;}
+	.explain-mid-three {font-size: 20px;margin-top: 15px;}
+	.explain-mid-two {font-size:14px;margin-top:8px;}
+	.explain-mid-fore {font-size: 16px;margin-top:10px;}
+	.contactus-left {width:100%; margin-top: 10px;}
+	.contactus-right {width:100%; margin-top: 10px;}
+	.contactus-left img {width:13px; height:13px; float: left;}
+	.contactus-left p {font-size: 12px; color: #757575;float: left; margin-left:10px;line-height:13px;}
+	.contactus-right img {width:13px; height:13px; float: left;}
+	.contactus-right p {font-size: 12px; color: #757575;float: left; margin-left:10px;line-height:13px;}
+	.showdetial {width:100%; display:table;margin:0 auto; margin-top:25px;}
+	.showdetial-title {font-size: 28px;line-height: 30px;}
+	.showdetial-left {width:240px; height:150px; margin:0 auto; margin-top: 30px;}
+	.showdetial-right {width:240px; margin:0 auto; display: table; margin-top:20px;}
+	.showdetial-right h1 {font-size:16px; color: #202020;text-align: left;}
+	.showdetial-right p {color: #757575; font-size:14px; margin-top:10px;text-align: left;}
+	.kuang {width:240px; height:240px;margin: 0 auto;margin-top:30px; padding: 25px;background-image: url(../image/kuang.png);
+		background-repeat: no-repeat;background-size: 100% 100%;}
+	.kuang h1 {font-size: 16px; color: #202020;text-align:center;margin-top:30px;}
+	.kuang p {color: #757575; font-size:12px; margin-top: 20px;text-align:center;margin-top: 20px;}
+	.kuang-img {width:240px; height:150px;margin: 0 auto;margin-top:30px;}
+
+}
+@media screen and (min-width: 425px){
+	.detial-explain {width:1400px;}
+	.detial-explain-mid {width:990px; margin:0 auto;}
+	.explain-mid-one {font-size: 34px;margin-top: 50px;}
+	.explain-mid-three {font-size: 30px;margin-top: 30px;}
+	.explain-mid-two {font-size: 25px;margin-top: 30px;}
+	.explain-mid-fore {font-size: 28px;margin-top: 20px;}
+	.contactus-left {display: table;}
+	.contactus-left img {width:26px; height:26px; float: left;margin-top: 15px;}
+	.contactus-left p {font-size: 14px; color: #757575;float: left; margin-left: 10px;line-height: 26px;margin-top: 15px;}
+	.contactus-right img {width:26px; height:19px; float: left;margin-top: 15px;margin-left: 10px;}
+	.contactus-right p {font-size: 14px; color: #757575;float: left; margin-left: 10px;line-height:26px;margin-top: 15px;}
+	.showdetial {width:1200px; height:680px;margin:0 auto; margin-top: 50px;}
+	.showdetial-title {font-size: 34px;line-height: 50px;}
+	.showdetial-left {width:770px; height:520px; margin:0 auto; margin-top: 30px;}
+	.showdetial-right {width:330px; margin:0 auto; display: table; margin-top: 90px;}
+	.showdetial-right h1 {font-size: 28px; color: #202020;text-align: left;}
+	.showdetial-right p {color: #757575; font-size:28px; margin-top: 20px;text-align: left;}
+	.kuang {width:100%; height:570px;margin-top:80px; padding: 25px;background-image: url(../image/kuang.png);
+		background-repeat: no-repeat;background-size: 100% 100%;}
+	.kuang h1 {font-size: 28px; color: #202020;text-align:center;margin-top:130px;}
+	.kuang p {color: #757575; font-size:18px; margin-top: 20px;text-align:center;margin-top: 40px;}
+	.kuang-img {width:100%; height:620px; margin-top:50px;}
+	
+}
+.topimg {display:table;margin:0 auto;}
+.detial-explain {display: table; margin:0 auto;position: relative;}
+.detial-explain-mid {display: table;}
+.explain-mid-one {color: #202020;}
+.explain-mid-two {color: #757575;}
+.explain-mid-three {color: #202020;}
+.explain-mid-fore {color: #202020;}
+.contactus {width:100%;display: table;}
+.contactus-left {float: left;}
+.contactus-right {float: left;}
+.detial-explain-reserve {width:200px; height:160px;background-color: #ffffff;position: absolute; left:0; top:-70px;padding:0 15px;}
+.detial-explain-reserve p {font-size: 20px; color: #202020; line-height: 35px;}
+.bold {font-weight: 600;}
+.reserve-room {width:120px; height:40px;margin:0 auto;margin-top: 40px;}
+.reserve-room button{width:120px; height:40px; border: none; outline: none;background-color: #d9b664; color: #ffffff;cursor: pointer;}
+.tele-reserve {width:150px; height:50px; margin:0 auto; background-color:#d9b664;margin-top: 20px;}
+.tele-reserve p {font-size: 16px; line-height:50px; color: #ffffff; text-align: center; }
+.showdetial {text-align: center;}
+.showdetial-title { color: #202020;}
+.showdetial-left img{width:100%; height:100%;}
+.checkin {width:100%; min-height:550px;margin-top:50px;position: relative;display: table;}
+.checkin-top {width: 100%; height:400px; background-color: #f6f7f7;}
+.checkin-top-title {text-align: center;padding: 70px 0; font-size: 34px;color: #202020;}
+.checkin-calendar {position: absolute;top:180px;width:990px; min-height:370px; left:50%; margin-left: -495px;background-color:#ffffff;}
+.checkin-calendar-select {width:510px; height:25px; margin:0 auto; margin-top: 50px;}
+.select-one {width:130px; height:24px; float: left; margin-left: 30px; border:none; outline: none; border-bottom:1px solid #27374d;}
+.calendar {width:750px; height:120px; margin:0 auto; margin-top:27px;position: relative;}
+.rili_left {position: absolute;width: 10px; height:18px;top:51px; left:0;cursor:pointer;}
+.rili_right {position: absolute;width: 10px; height:18px;top:51px; right:0;cursor:pointer;}
+.calendar-mid {width:693px; height:120px; margin:0 auto;position: relative;overflow: hidden;}
+.calendar-all {display: table;height: 120px;position: absolute;top:0; left:0;}
+.calendar-one {width:98px; height:118px;color: #27374d; border: 1px solid #27374d;float: left; margin-left: 1px;background-color:#ffffff;position: relative;cursor: pointer;}
+.disable {cursor: not-allowed;opacity: 0.2;}
+.all-price {width:100%; height:88px;margin-top: 20px; display: none;}
+.all-price p {font-size: 16px; color: #202020; text-align: center;}
+.right-reserve {width:120px; height:50px; background-color:#d9b664;margin:0 auto;margin-top: 20px;}
+.add {cursor: not-allowed;opacity: 0.2;}
+.right-reserve p {font-size: 16px; line-height: 50px; text-align: center;color: #ffffff;}
+.calendar-one p {text-align: center;}
+.week {font-size: 14px; line-height: 20px; margin-top: 10px;}
+.day {font-size:28px;font-weight: 600; line-height: 28px;}
+.mouth {font-size: 12px;line-height:12px; margin-top: 5px;}
+.calendar-one-bottom {width:100%; height:26px;background-color:#27374d;position:absolute; left: 0; bottom: 0; }
+.calendar-one-bottom p {font-size: 16px; color: #ffffff;line-height: 26px;font-weight: 600;}
+.kuang-img img {width:100%; height:100%;}

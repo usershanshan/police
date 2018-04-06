@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>艺术家管理</title>
+		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
+		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<div class="admin-main">
+		
+			<blockquote class="layui-elem-quote">
+				<button  data="0" class="layui-btn layui-btn-small"   onclick="javascript:window.location.href='{:U('ArtistUser/addArtistUser')}'">
+					<i class="layui-icon">&#xe608;</i> 添加艺术家账户
+				</button>
+			</blockquote>
+			<fieldset class="layui-elem-field">
+				<legend>艺术家列表</legend>
+				<div class="layui-field-box">
+					<table class="site-table table-hover">
+					  <thead>
+					    <tr>
+					      <th>#</th>
+					      <th>艺术家头像</th>
+					      <th>艺术家登陆用户名</th>
+					      <th>艺术家姓名</th>
+					      <th>艺术家简易描述</th> 
+					      <th>艺术家权重排序</th> 
+					      <th>账户添加时间</th> 
+					      <th>账户状态</th> 
+					      <th>账户管理</th>
+					    </tr> 
+					  </thead>
+					  <tbody>
+						<volist name="artist_info" id="vo">
+						    <tr>
+						      <td>{$vo.id}</td>
+						      <td id="img_{$vo['id']}"><img src="{$vo.head_img}" onclick="fd_img('#img_{$vo['id']}')" style="width: 60px;height: 24px;cursor: pointer;" /></td>
+						      <td>{$vo.username}</td>
+						      <td>{$vo.name}</td>
+						      <td>{$vo.simple}</td>
+						      <td>{$vo.sort}</td>
+						      <td>{$vo.add_time|fomartAddTimeYMDHIS=###}</td>
+						      <td style="text-align:center;">{$vo['status']|fomartAllStatus=###}</td>
+						      <td>
+								<a class="layui-btn layui-btn-mini layui-btn-normal" href="{:U('ArtistUser/editArtistUser',['id'=>$vo['id']])}" ></i>查看详情</a>
+						      	<a data="{$vo.id}" class="layui-btn layui-btn-mini add">查看关注</a>
+								<a data="{$vo.id}" data-s="{$vo.status}" class="layui-btn layui-btn-danger layui-btn-mini del">禁止/允许登陆</a>
+						      </td>
+						    </tr>
+						</volist>
+					  </tbody>
+				</table>
+				</div>
+			</fieldset>
+			<div class="admin-table-page">
+				<div id="page" class="page">
+				{$page}
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['laypage','layer','form'], function() {
+				var laypage = layui.laypage,
+					$ = layui.jquery
+				$('.del').click(function(){
+					var id = $(this).attr('data');
+					var status = $(this).attr('data-s');
+					var url = "{:U('ArtistUser/delArtistUser')}";
+					layer.confirm('确定（禁用/开启）登陆此艺术家吗?', {
+						  icon: 3,
+						  skin: 'layer-ext-moon',
+						  btn: ['确认','取消'] //按钮
+						}, function(){
+							$.post(url,{id:id,status:status},function(data){
+								if(data.status == 'error'){
+									  layer.msg(data.msg,{icon: 5});//失败的表情
+									  return;
+								  }else{
+									  layer.msg(data.msg, {
+										  icon: 6,//成功的表情
+										  time: 2000 //2秒关闭（如果不配置，默认是3秒）
+										}, function(){
+										   location.reload();
+										}); 
+								  }	
+							})
+					  });
+				})
+			});
+			function fd_img(obj){
+				layer.photos({
+					photos: obj, anim:7,shade:[0.5, '#000000']
+				});
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>艺术家关注列表</title>
+		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
+		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<div class="admin-main">
+			<blockquote class="layui-elem-quote">
+				<form class="layui-form">
+						<div class="layui-form-item">
+							<div class="layui-input-inline">
+								<input type="text" name="ar_name" value="{$_GET['ar_name']}" lay-verify="title" autocomplete="off" placeholder="请输艺术家名称" class="layui-input">
+							</div>
+							<div class="layui-input-inline">
+								<input type="text" name="add_time" value="{$_GET['add_time']}" id="date" lay-verify="date" placeholder="关注日期" autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
+							</div>
+							<div class="layui-input-inline">
+								<input type="text" name="cancel_time" value="{$_GET['cancel_time']}" id="date" lay-verify="date" placeholder="取消关注日期" autocomplete="off" class="layui-input" onclick="layui.laydate({elem: this})">
+							</div>
+							<div class="layui-input-inline">
+								<input type="text" name="browse_count_up"value="{$_GET['browse_count_up']}"  lay-verify="title" autocomplete="off" placeholder="请输入关注次数(下)" class="layui-input">
+							</div> 
+							<div class="layui-input-inline">
+								<input type="text" name="browse_count_on"value="{$_GET['browse_count_on']}"  lay-verify="title" autocomplete="off" placeholder="请输入关注次数(上)" class="layui-input">
+							</div> 
+							<div class="layui-input-inline">
+								<select name="type" lay-filter="aihao">
+									<option value=''  selected="">请选择关注性质</option>
+									<option value="on" <if condition="$_GET['type'] eq 'on'"> selected </if>>关注</option>
+									<option value="off"<if condition="$_GET['type'] eq 'off'"> selected </if>>取消关注</option>
+								</select>
+							</div>
+						<button class="layui-btn layui-btn-normal">搜索</button>
+						</div>
+					</form>
+			</blockquote>
+			<fieldset class="layui-elem-field">
+				<legend>艺术家列表</legend>
+				<div class="layui-field-box">
+					<table class="site-table table-hover">
+					  <thead>
+					    <tr>
+					      <th>#</th>
+					      <th>艺术家姓名</th>
+					      <th>关注用户</th>
+					      <th>关注日期</th>
+					      <th>是否关注</th> 
+					      <th>取消日期</th>
+					      <th>浏览次数</th> 
+					      <!-- <th>管理</th> -->
+					    </tr> 
+					  </thead>
+					  <tbody>
+						<volist name="follow_info" id="vo">
+						    <tr>
+						      <td>{$i}</td>
+						      <td>{$vo.ar_name}</td>
+						      <td>{$vo.u_name}</td>
+						      <td>{$vo.add_time|fomartAddTimeYMD=###}</td>
+						      <td>{$vo.type|fomartAllStatus=###}</td>
+						      <td>{$vo.cancel_time|fomartAddTimeYMD=###}</td>
+						      <td>{$vo.browse_count}</td>
+						     <!--  <td>
+								<a class="layui-btn layui-btn-mini layui-btn-normal" href="{:U('ArtistUser/editArtistUser',['id'=>$vo['id']])}" ></i>查看详情</a>
+						      	<a data="{$vo.id}" class="layui-btn layui-btn-mini add">查看关注</a>
+								<a data="{$vo.id}" data-s="{$vo.status}" class="layui-btn layui-btn-danger layui-btn-mini del">禁止/允许登陆</a>
+						      </td> -->
+						    </tr>
+						</volist>
+					  </tbody>
+				</table>
+				</div>
+			</fieldset>
+			<div class="admin-table-page">
+				<div id="page" class="page">
+				{$page}
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['laypage','layer','form','laydate'], function() {
+				var laypage = layui.laypage,
+					$ = layui.jquery
+			});
+			function fd_img(obj){
+				layer.photos({
+					photos: obj, anim:7,shade:[0.5, '#000000']
+				});
+			}
+		</script>
+	</body>
+
+</html>

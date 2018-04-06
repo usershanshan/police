@@ -1,0 +1,11 @@
+.mid-right-top {width:700px; height:45px; margin:0 auto;}
+.mid-right-top p {float: left;font-size: 22px; line-height: 45px;color: #202020;}
+.hengxian {width:545px; height:1px; background-color: #202020; float: left; margin-top: 22px; margin-left: 20px;}
+.change {width:590px; display: table;margin:30px auto; }
+.change-one {width:100%; height:30px;margin-top: 20px;}
+.change-one span {font-size: 12px; color: #c53336;float: left; margin-left: 10px;line-height: 30px;}
+.change-one-one {font-size: 16px; color: #202020;float: left;line-height: 30px;}
+.change-one-two {width:190px; height:26px;padding: 0 5px; border: 1px solid #e5e5e5;margin-top: 1px; margin-left: 15px;outline: none; background-color: #ffffff;float: left;}
+.change-one-three {font-size: 16px; color: #c53336;  line-height: 30px; float: left;margin-left: 5px;}
+.change-submit {width:90px; height:30px; margin:25px auto;}
+.change-submit input {width:100%; height:100%;border:none;outline: none;color: #ffffff;background-color:#d9b664;}

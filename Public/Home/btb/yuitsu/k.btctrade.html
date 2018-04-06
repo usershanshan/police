@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content="">
+    <link href="/static/assets/bootstrap_black.css" rel="stylesheet">
+    <link href="/static/assets/common/style/base.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/assets/theme.css?" rel="stylesheet">
+    <link href="/static/assets/chart.css?" rel="stylesheet">
+    <link rel="shortcut icon" href="http://www.btctrade.com/favicon.ico">
+</head>
+<body class="fullscreen">
+<div id="trades" style="display:none;">
+<table class="table-hover small_size1 full-width">
+<thead>
+<tr><th class="col-lg-1 lightdark1 left nopadding" style="padding-left: 10px;">成交时间</th><th class="col-lg-1 lightdark1 left middle nopadding">成交价</th><th class="col-lg-1 lightdark1 right nopadding pr11">成交量</th></tr></thead><tbody id="trades_unsorted"></tbody><tbody id="trades_sorted">
+</tbody></table></div>
+<div id="wrap" class="small-padding1">
+    <div class="">
+        <div class="dark">
+            <div id="loading">
+                <div class="inner">
+                    读取数据中...
+                </div>
+            </div>
+            <div id="notify" class="notify">
+                <div class="inner"></div>
+            </div>
+            <div style="display: block; height: 311px;" id="main">
+                <div id="header_outer">
+                    <div id="header">
+                        <div id="">
+                            <div class="">
+                                <ul id="periods" class="horiz" style="clear:left;">
+                                    <li class="period-label">K线时段</li>
+                                    <li class="subsep">|</li>
+                                    <li class="period"><a p="1w">1周</a></li>
+                                    <li class="period"><a p="3d">3日</a></li>
+                                    <li class="period"><a p="1d">1日</a></li>
+                                    <li class="subsep">|</li>
+                                    <li class="period"><a p="12h">12小时</a></li>
+                                    <li class="period"><a p="6h">6小时</a></li>
+                                    <li class="period"><a p="4h">4小时</a></li>
+                                    <li class="period"><a p="2h">2小时</a></li>
+                                    <li class="period"><a p="1h">1小时</a></li>
+                                    <li class="subsep">|</li>
+                                    <li class="period"><a p="30m">30分</a></li>
+                                    <li class="period"><a p="15m">15分</a></li>
+                                    <!--<li class="period"><a p="10m">10分</a></li>-->
+                                    <li class="period"><a p="5m">5分</a></li>
+                                    <li class="period"><a p="3m">3分</a></li>
+                                    <li class="period"><a p="1m">1分</a></li>
+                                    <li class="subsep">|</li>
+                                    <li><a id="btn_settings">指标参数设置</a></li>
+                                    <li class="nopadding" id="kline_settings">
+                                        <div class="dropdown">
+                                            <div class="t m" ><a>页面设置</a><span class="caret"></span></div>
+                                            <div class="dropdown-data m">
+                                                <table class="nowrap simple settings">
+                                                    <tr>
+                                                        <td>均线设置</td>
+                                                        <td>
+                                                            <ul id="setting_main_lines">
+                                                                <li value=emas>EMA</li>
+                                                                <li value=mas>MA</li>
+                                                                <li value=none>关闭均线</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>线图样式</td>
+                                                        <td>
+                                                            <ul id="setting_stick_style">
+                                                                <li value=candle_stick>K线-OHLC</li>
+                                                                <li value=candle_stick_hlc>K线-HLC</li>
+                                                                <li value=ohlc>OHLC</li>
+                                                                <li value=line>单线式</li>
+                                                                <li value=line_o>单线-o</li>
+                                                                <li value=none>关闭线图</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>技术指标</td>
+                                                        <td>
+                                                            <ul id="setting_indicator">
+                                                                <li value=macd>MACD</li>
+                                                                <li value=kdj>KDJ</li>
+                                                                <li value=stoch_rsi>StochRSI</li>
+                                                                <li value=none>关闭指标</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>线图比例</td>
+                                                        <td>
+                                                            <ul id="setting_scale">
+                                                                <li value=normal>普通K线</li>
+                                                                <li value=logarithmic>对数K线</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="subsep nopadding" style="margin-right:0">|</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="wrapper">
+                    <canvas height="311" width="952" id="canvas_main"></canvas>
+                    <canvas height="311" width="952" id="canvas_cross" class="ab"></canvas>
+                    <div id="chart_info"></div>
+                </div>
+            </div>
+            <div id="assist" class="nice-scroll" style="display:none"></div>
+            <span id="change" style="display:none">0</span>
+            <div id="settings">
+                <h2>技术指标参数设定</h2>
+                <table>
+                    <tr id="indicator_price_mas">
+                        <th>EMA / MA<abbr title="4条可设置均线空格处留空可以删去对应的一条均线">?</abbr></th>
+                        <td>
+                            <input name="price_mas"/>
+                            <input name="price_mas"/>
+                            <input name="price_mas"/>
+                            <input name="price_mas"/>
+                        </td>
+                        <td>
+                            <button>默认值</button>
+                        </td>
+                    </tr>
+                    <tr id="indicator_macd">
+                        <th>
+                            MACD
+                            <abbr title="SHORT(短期), LONG(长期), Move">?</abbr>
+                        </th>
+                        <td>
+                            <input name="macd"/>
+                            <input name="macd"/>
+                            <input name="macd"/>
+                        </td>
+                        <td>
+                            <button>默认值</button>
+                        </td>
+                    </tr>
+                    <tr id="indicator_kdj">
+                        <th>
+                            KDJ
+                            <abbr title="三个参数分别代表: rsv, k, d">?</abbr>
+                        </th>
+                        <td>
+                            <input name="kdj"/>
+                            <input name="kdj"/>
+                            <input name="kdj"/>
+                        </td>
+                        <td>
+                            <button>默认值</button>
+                        </td>
+                    </tr>
+                    <tr id="indicator_stoch_rsi">
+                        <th>
+                            Stoch RSI
+                            <abbr title="四个参数分别代表: 随机指标, RSI, %K, %D">?</abbr>
+                        </th>
+                        <td>
+                            <input name="stoch_rsi"/>
+                            <input name="stoch_rsi"/>
+                            <input name="stoch_rsi"/>
+                            <input name="stoch_rsi"/>
+                        </td>
+                        <td>
+                            <button>默认值</button>
+                        </td>
+                    </tr>
+                </table>
+                <div class="btn-close"><a id="close_settings" href="javascript:void(0);">[ 确定 ]</a></div>
+            </div>
+        </div>
+        <script>
+            var conf = {"fixtpl": "{}", "name": "btctrade", "call": "btctrade", "type": "btc", "currency": "1", "url": ""};
+            var current_lang = "cn";
+            var currency = (conf.currency == 1 ? "CNY" : "USD");
+            var currency_sign = (conf.currency == 1 ? "元" : "美元");
+            var market_ids = "btc:btctrade;ltc:btctrade;ybc:btctrade;doge:btctrade;";
+            var market_alias = "btctrade_btc";
+            var market_name = "btctrade_btc";
+            var default_title = "实时K线图";
+            var context_root = 'http://' + window.location.host + '/';
+            var channel = "btctrade";
+            var username = "{if $curr_u['id']>0}{$curr_u['username']}{else}{$client_ip}{/if}";
+            var cuid = "{if $curr_u['id']>0}{$curr_u['id']}{else}0{/if}";
+            var lang = {
+                last_refresh_time: "最后更新于[time_spent]秒前",
+                high: "24小时最高价",
+                low: "24小时最低价",
+                set_alert: "启动提醒",
+                limit_msg1: "请输入上破价或者下破价",
+                limit_msg2: "上破价不可以低于下破价",
+                stop: "关闭提醒",
+                show_chart: "显示图表",
+                hide_chart: "隐藏图表",
+                bid: "买价",
+                ask: "卖价",
+                vol: "委托量",
+                sign_usd: "美元",
+                sign_cny: "元",
+                sign_btc: "฿",
+                sign_ltc: "Ł",
+                date: "时间",
+                o: "开",
+                h: "高",
+                l: "低",
+                c: "收",
+                chg: "涨跌幅",
+                amp: "振幅",
+                v: "量",
+                wk: "周",
+                dt: "日",
+                hr: "小时",
+                mn: "分",
+                now: "现在",
+                _day: "日",
+                _dt: "日",
+                _hr: "小时",
+                _mn: "分",
+                _sc: "秒",
+                ago: "前",
+                ago1: "前",
+                months: "1月 2月 3月 4月 5月 6月 7月 8月 9月 10月 11月 12月",
+                weekdays: "星期日 星期一 星期二 星期三 星期四 星期五 星期六"
+            };
+            var offset = 28800;
+            var hasQQ = false;
+            var hasEmail = false;
+            var hasPhone = false;
+            var alert_methods = [];
+            var sms_remain_cnt = 0;
+
+            (function () {
+                window.$host = 'http://k.btctrade.com/';
+                window.$sid = '';
+                window.$test = false;
+                window.$symbol = "1";
+                window.$market = "btctrade_btc";
+                window.$market_currency = "_cny";
+                window.$depth_size = 100;
+                window.$hsymbol = "btc_btctrade";
+                window.$theme_name = "dark";
+                window.$debug = false;
+                window.$settings = {"main_lines": {"id": "main_lines", "name": "\u5747\u7ebf\u8bbe\u7f6e", "options": {"EMA": "emas", "MA": "mas", "\u5173\u95ed\u5747\u7ebf": "none"}}, "line_style": {
+                    "id": "ls",
+                    "name": "Line Style",
+                    "options": {
+                        "Close": "c",
+                        "Median Price": "m"
+                    }
+                }, "stick_style": {"id": "stick_style", "name": "\u7ebf\u56fe\u6837\u5f0f", "options": {"K\u7ebf-OHLC": "candle_stick", "K\u7ebf-HLC": "candle_stick_hlc", "OHLC": "ohlc", "\u5355\u7ebf\u5f0f": "line", "\u5355\u7ebf-o": "line_o", "\u5173\u95ed\u7ebf\u56fe": "none"}}, "indicator": {"id": "indicator", "name": "\u6280\u672f\u6307\u6807", "options": {"MACD": "macd", "KDJ": "kdj", "StochRSI": "stoch_rsi", "\u5173\u95ed\u6307\u6807": "none"}}, "scale": {"id": "scale", "name": "\u7ebf\u56fe\u6bd4\u4f8b", "options": {"\u666e\u901aK\u7ebf": "normal", "\u5bf9\u6570K\u7ebf": "logarithmic"}}, "theme": {"id": "theme", "name": "\u9875\u9762\u8272\u8c03", "options": {"\u6697\u8272\u8c03": "dark", "\u4eae\u8272\u8c03": "light"}, "refresh": true}};
+                window.$p = false;
+                window.$port = 80;
+                window.$intervals = {
+                    60: "1" + lang.mn,
+                    180: "3" + lang.mn,
+                    300: "5" + lang.mn,
+                    600: "10" + lang.mn,
+                    900: "15" + lang.mn,
+                    1800: "30" + lang.mn,
+                    3600: "1" + lang.hr,
+                    7200: "2" + lang.hr,
+                    14400: "4" + lang.hr,
+                    21600: "6" + lang.hr,
+                    43200: "12" + lang.hr,
+                    86400: "1" + lang.dt,
+                    259200: "3" + lang.dt,
+                    604800: "1" + lang.wk
+                };
+            }).call(this);
+
+
+
+        </script>
+    </div>
+</div>
+<!--<div id="footer">-->
+<!--    <p class='pull-right'><span id="now"></span></p>-->
+<!--    <p class='center'>-->
+<!--        <span>比特币交易网 - btctrade.com</span>-->
+<!--    </p>-->
+<!--</div>-->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!--[if lte IE 8]>
+<script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+<script src="/static/assets/common/scripts/jquery.chart.js?"></script>
+<script src="/static/assets/common/scripts/tool.js?"></script>
+<!--<script src="/static/assets/common/scripts/socket.io.js?"></script>-->
+<script src="/static/assets/common/scripts/jquery.smartmenu.js?"></script>
+<script src="/static/assets/common/scripts/jquery.nicescroll.min.js"></script>
+<script src="/static/assets/bootstrap.min.js"></script>
+<script src="/static/assets/common/scripts/bootstrap-select.min.js"></script>
+<script src="/static/assets/common/scripts/jquery.numeric.js?"></script>
+<script src="/static/assets/common/scripts/jquery.jplayer.min.js"></script>
+<script src="/static/assets/common/scripts/jquery.flot.min.js"></script>
+<script src="/static/assets/common/scripts/jquery.flot.crosshair.min.js"></script>
+<script src="/static/assets/common/scripts/common_chart.js?"></script>
+<script src="/static/assets/kline.js?"></script>
+</body>
+</html>

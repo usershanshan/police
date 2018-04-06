@@ -1,0 +1,44 @@
+p {margin:0;}
+@media screen and (max-width: 425px){
+	.imgshow-title {height:30px; margin:20px auto;}
+	.imgshow-title {font-size:26px; line-height: 30px;}
+	.imgshow-all {width:100%; margin:10px auto;display: table;}
+	.show-one {height:auto;padding:10px 20px;}
+	.show-two {height:auto;padding:10px 20px;}
+	.show-two img {width:47%;}
+	.show-two-img {margin-left:6%;}
+	.showimg-lunbo {width:100%; display: table; margin-top: -125px;left:0;}
+	.showimg-lunbo-img {width:100%; height:100%;}
+	.showimg-lunbo-img img {max-width:100%; max-height: 100%;}
+	.left-button {width:13px; height:24px; top:50%; margin-top: -12px;left:10px;}
+	.right-button {width:13px; height:24px; top:50%; margin-top: -12px;right:10px;}
+	.replace {height:50px;width:100%;}
+	.showimg-none-img {top:-30px;width:10px; height:10px;right:10px;}
+}
+@media screen and (min-width: 425px){
+	.imgshow-title {height:40px; margin:50px auto;}
+	.imgshow-title {font-size: 34px; line-height: 40px;}
+	.imgshow-all {width:1200px; margin:10px auto 40px auto;display: table;}
+	.show-one {height:300px;padding:10px;}
+	.show-two {height:300px;padding:10px;}
+	.show-two-img {margin-left: 20px;}
+	.show-two img {width:280px;}
+	.showimg-lunbo {width:1200px; height:790px;margin-left: -600px;margin-top: -360px;left:50%;}
+	.showimg-lunbo-img {width:1100px; height:790px;margin:0 auto;}
+	.showimg-lunbo-img img {max-width:100%; max-height: 100%;}
+	.left-button {width:27px; height:48px; top:50%; margin-top: -24px;left:0;}
+	.right-button {width:27px; height:48px; top:50%; margin-top: -24px;right:0;}
+	.replace {height:85px;width:100%;}
+	.showimg-none-img {top:0;width:20px; height:20px;right:-20px;}
+}
+.imgshow-title { display: table;}
+.imgshow-title p { color: #202020;}
+.show-one img {width:100%; height:100%; cursor: pointer;}
+.show-two img{float: left;height:100%;cursor: pointer;}
+.showimg-none {width:100%; height:100%; position: fixed;top:0; left:0; background-color: #202020;opacity: 0.8;}
+.showimg-none-img { position: absolute;cursor: pointer;}
+.showimg-lunbo { position: fixed;top:50%;z-index: 2;}
+.left-button {position: absolute;cursor: pointer;}
+.right-button {position: absolute;cursor: pointer;}
+.xcang {display: none;}
+.midddd {display: table; margin:auto;}

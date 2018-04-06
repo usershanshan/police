@@ -1,0 +1,51 @@
+h1,p,h2 {margin:0;}
+.yourorder-left {width:550px; display: table; float: left;}
+.yourorder-left-top {width:100%; height: 40px; padding: 0 5px;background-color: #f1f1f1;}
+.yourorder-left-top p {font-size: 22px; color: #202020;line-height: 40px;}
+.additional-delete {cursor: pointer;margin-left: -5px;}
+.additional-bottom-left button{width:55px; height:25px; background-color: #cccccc; outline:none;border:none; border-radius: 5px; margin-top: 7px; margin-left: 10px;}
+.additional-add {border:none;outline: none;width:20px; height:20px;}
+.total {width:550px; min-height: 100px; margin-top: 20px;display: table;}
+.total-right {width:220px; display: table;margin-left: 330px;}
+.total-right-top {width:220px; display:table;position: relative;}
+.total-right-top p {font-size: 16px; color: #202020;line-height: 30px;}
+.total-right-top p span {position: absolute;top:0; right: 0;}
+.total-right-mid {width:220px; height:40px; border-top: 1px solid #202020;position: relative;}
+.total-right-mid p {font-size: 20px;color: #202020;line-height:40px;font-weight: 600;}
+.total-right-mid p span {position: absolute;top:0; right: 0;}
+.total-submit {width:550px; height:40px;position: relative;margin-top: 15px;}
+.total-submit input {position: absolute;top:0;right: 0; width: 140px; height:40px; border:none; outline: none; background-color: #d9b664;color: #202020;}
+.number2-left {margin-left:15px !important;}
+.yourorder-right {width:440px; float: left; margin-left: 10px;display: table;}
+.individualization {width:100%; height:40px; margin-top: 10px; display:table;padding: 0 5px;cursor: pointer;}
+.individualization:hover {background-color: #d9b664 !important;}
+#zation1 {background-color: #d9b664;}
+.individualization img { margin-top: 15px; margin-left: 20px;float: left;}
+.individualization p {font-size: 20px; color: #202020;line-height: 40px; float: left; margin-left: 15px;}
+.individualization-one {width:100%; display: table;}
+.individualization-one-top {width:100%; display:table; margin-top: 10px;}
+.individualization-top {width:100%; height:85px;}
+.individualization-top img {width:110px; height:85px; float: left;}
+.individualization-introduce {float: left; height:85px;margin-left: 10px;width:315px;}
+.individualization-introduce h1 {font-size: 18px; color: #202020;font-weight: 600;height:40px;text-overflow:ellipsis;-webkit-line-clamp:2; overflow:hidden; }
+.individualization-introduce p {font-size: 16px; color: #202020;height:44px;line-height:22px;text-overflow:ellipsis;-webkit-line-clamp:2; overflow:hidden; }
+.individualization-bottom {width:100%; height:40px;position: relative;}
+.individualization-bottom-right {position: absolute;top:0;right: 0;display: table;}
+.individualization-bottom-right p {font-size: 20px; color: #202020; line-height: 40px; float: left;}
+.individualization-bottom-right button {width:65px; height:40px; background-color: #cccccc;float: left; border:none; outline: none;
+	font-size: 20px;color: #202020;margin-left: 20px;}
+
+
+.total-discount {width:220px; height:30px;}
+.total-discount p {font-size: 16px; color: #202020;line-height: 30px; float: left;margin-left: -16px;}
+.total-discount select {width:150px; height:25px;border:1px solid #202020; outline: none; float: left; margin-left:22px;}
+.total-integral {width:220px; height:30px;}
+.total-integral p {font-size: 16px; color: #202020;line-height: 30px; float: left;}
+.total-integral select {width:150px; height:25px;border:1px solid #202020; outline: none; float: left; margin-left:22px;}
+
+.checkbox {display:none;padding: 5px 10px;margin:0;margin-left: 110px;background-color: #eeeeee;}
+.checkbox button {outline: none; background-color: #eeeeee; font-size: 12px;border:1px solid #757575;margin:5px auto;}
+.checkbox-one {display: table;}
+.checkbox-one input {float: left;margin-left:0px !important;}
+.checkbox-one p {float: left; margin-left:20px;}
+.moji {display: table;}

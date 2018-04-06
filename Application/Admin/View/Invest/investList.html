@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Table</title>
+		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
+		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<div class="admin-main">
+			<blockquote class="layui-elem-quote" style="height:28px;">
+				<button  class="layui-btn layui-btn-small" onclick="javascript:window.location.href='{:U('Invest/investAdd')}' ">
+					<i class="layui-icon">&#xe608;</i>添加投资商品
+				</button>
+				<form class="layui-form" style="float:right">
+					<span style="float:right" >
+						<div class="layui-input-inline">
+							<input type="text" name="name" value="{$_GET['name']}" lay-verify="name" autocomplete="off" placeholder="请输入投资商品" class="layui-input">
+						</div>
+					<button class="layui-btn layui-btn-normal">搜索</button>
+					</span>
+				</form>
+			</blockquote>
+			<fieldset class="layui-elem-field">
+				<legend>投资产品列表</legend>
+				<div class="layui-field-box">
+				<table class="layui-table">
+					  <thead>
+					    <tr>
+					      <th>id</th>
+					      <th>投资商品名称</th>
+					      <th>售价</th>
+					      <th>每天返钱数</th>
+					      <th>返钱天数</th>
+					      <th>推荐人每天返钱数</th>
+					      <th>推荐人返钱天数</th>
+					      <th>备注</th>
+							<th>是否上架</th>
+					      <th>操作</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					  <foreach name="info" key="k" item="vo">
+					    <tr>
+					      <td>{$vo.id}</td>
+					      <td>{$vo.name}</td>
+							<!--<td id="img_{$vo['id']}"><img src="{$vo.img1}" onclick="fd_img('#img_{$vo['id']}')" style="width: 60px;height: 24px;cursor: pointer;" /></td>-->
+						  <td>{$vo.price}</td>
+						  <td>{$vo.back}</td>
+						  <td>{$vo.num}</td>
+						  <td>{$vo.referee_back}</td>
+						  <td>{$vo.referee_num}</td>
+						  <td>{$vo.note}</td>
+							<td>
+								<if condition="$vo['display'] eq 1">
+									<input class="layui-btn layui-btn-mini layui-btn-normal" type="button" value="上架"/>
+									<else/>
+									<input class="layui-btn layui-btn-mini layui-btn-danger" type="button" value="下架"/>
+								</if>
+							</td>
+					      <td>
+							<a class="layui-btn layui-btn-mini layui-btn-normal"  onclick="javascript:window.location.href='{:U('Admin/Invest/investEdit',['id'=>$vo['id']])}' "><i class="layui-icon">&#xe642;</i>编辑</a>
+							  <if condition="$vo['display'] eq 1">
+								  <a data="{$vo.id}"  class="layui-btn layui-btn-danger layui-btn-mini del"><i class="layui-icon">&#xe640;</i>下架</a>
+								  <else/>
+								  <a data="{$vo.id}"  class="layui-btn layui-btn-danger layui-btn-mini up"><i class="layui-icon">&#xe640;</i>上架</a>
+							  </if>
+					       </td>
+					    </tr>
+					    </foreach>
+					  {$page}
+					  </tbody>
+				</table>
+			
+				</div>
+			</fieldset>
+			<div class="admin-table-page">
+				<div id="page" class="page">
+				{$page}
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['laypage','layer','form'], function() {
+				var laypage = layui.laypage,
+					$ = layui.jquery 
+				//删除
+                $('.del').click(function(){
+                    var id = $(this).attr('data');
+                    var status = $(this).attr('data-s');
+                    var url = "{:U('Admin/Invest/investDel')}";
+                    layer.confirm('确定下架该条商品吗', {
+                        icon: 3,
+                        skin: 'layer-ext-moon',
+                        btn: ['确认','取消'] //按钮
+                    }, function(){
+                        $.post(url,{id:id,status:status},function(data){
+                            if(data.status == 'error'){
+                                layer.msg(data.msg,{icon: 5});//失败的表情
+                                return;
+                            }else{
+                                layer.msg(data.msg, {
+                                    icon: 6,//成功的表情
+                                    time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                                }, function(){
+                                    location.reload();
+                                });
+                            }
+                        })
+                    });
+                });
+                $('.up').click(function(){
+                    var id = $(this).attr('data');
+                    var status = $(this).attr('data-s');
+                    var url = "{:U('Admin/Invest/investUp')}";
+                    layer.confirm('确定下架该条商品吗', {
+                        icon: 3,
+                        skin: 'layer-ext-moon',
+                        btn: ['确认','取消'] //按钮
+                    }, function(){
+                        $.post(url,{id:id,status:status},function(data){
+                            if(data.status == 'error'){
+                                layer.msg(data.msg,{icon: 5});//失败的表情
+                                return;
+                            }else{
+                                layer.msg(data.msg, {
+                                    icon: 6,//成功的表情
+                                    time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                                }, function(){
+                                    location.reload();
+                                });
+                            }
+                        })
+                    });
+                });
+
+			});
+			function fd_img(obj){
+				layer.photos({
+					photos: obj, anim:7,shade:[0.5, '#000000']
+				});
+			}
+		</script>
+	</body>
+
+</html>

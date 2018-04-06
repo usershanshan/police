@@ -1,0 +1,81 @@
+@media screen and (min-width: 1400px) {
+    .mid-container {width:1190px;}
+    .mid-container-text {width:850px;}
+    .top-video {width: 1400px;height:620px; background-color:black;margin:0 auto;}
+    .mid-container-two {width:1400px; display: table; margin:0 auto;position: relative;}
+    .guest-room {width:185px; height:185px; top:380px;right:200px;}
+}
+@media screen and (max-width: 1400px) {
+    .mid-container {width:100%;}
+    .mid-container-text {width:700px;}
+    .top-video {width: 100%; background-color:black;height:140px;}
+    .mid-container-two {width:100%; display: table;position: relative;}
+}
+@media screen and (max-width: 425px) {
+    .article-title {font-size: 20px;margin-top:20px;}
+    .article-text {font-size: 12px;margin:15px 0;}
+    .mid-container-text {width:80%;}
+    /*.biggest {margin-top: 15px;}*/
+    .grid-text {top:50px;}
+    .grid-text2 {bottom:50px;}
+    .grid-text-second {width:150px; }
+    .bottom-address-title {font-size:24px; line-height:30px;}
+    .bottom-address-text {font-size: 12px; line-height:12px;}
+    .bottom-img {margin-top: 20px;}
+    .guest-room {width:114px; height:114px;top:190px;right:0;}
+    .only-one {width:122px; height: 103px;top:350px;left:0;padding:5px;}
+    .guest-room2 {width:114px; height:114px;top:190px;right:0;}
+    .only-one2 {width:122px; height: 103px;top:350px;left:0; padding: 5px;}
+    .guest-room-text {font-size: 22px; color: #ffa600; line-height: 114px; text-align: center;}
+    .guest-room2-text {font-size: 22px; color: #202020; line-height: 114px; text-align: center;}
+    .only-one-text {font-size: 22px; line-height: 30px; color: #202020; text-align: left;}
+    .only-one-textwo {font-size:16px; line-height:20px;color: #202020; text-align: left;text-decoration:underline}
+}
+@media screen and (min-width: 425px) {
+    .article-title {font-size: 34px; margin-top:60px;}
+    .article-text {font-size: 18px;margin:30px 0;width:80%;margin:30px auto;}
+    .biggest {margin-top: 150px;}
+    .grid-kuang {padding: 25px;}
+    .grid-text {top:150px;}
+    .grid-text2 {bottom:150px;}
+    .grid-text-second {width:150px; }
+    .bottom-address-title {font-size: 34px; line-height: 40px;}
+    .bottom-address-text {font-size: 16px; line-height: 30px;}
+    .bottom-img {margin-top: 40px;}
+    .guest-room {width:185px; height:185px; top:380px;right:200px;}
+    .only-one {width:225px; height: 225px;top:1000px;left:150px;padding:30px;}
+    .guest-room2 {width:185px; height:185px; top:380px;right:200px;}
+    .only-one2 {width:235px; height: 225px;top:1000px;left:150px;padding: 25px;}
+    .guest-room-text {font-size:28px; color: #ffa600; line-height: 185px; text-align: center;}
+    .guest-room2-text {font-size: 28px; color: #202020; line-height: 185px; text-align: center;}
+    .only-one-text {font-size: 22px; line-height:34px; color: #202020; text-align: left;}
+    .only-one-textwo {font-size:20px; line-height: 50px;color: #202020; text-align: left;text-decoration:underline}
+    
+}
+
+.top-video video {width:100%; height:100%;}
+.mid-container {display: table; margin:0 auto;}
+.mid-container-text {display: table; margin:0 auto;}
+.article-title { color: #202020; text-align: center;}
+.article-text {color: #757575; text-align: center;}
+.article-img {width:96%;margin:0 auto; height:auto; display: block;}
+.grid {padding: 0; margin-top: 15px;position: relative;}
+.biggest {padding: 0;position:relative;}
+.grid-top {margin-top: 15px;}
+.grid-text {position: absolute;left:0; width:100%;}
+.grid-text h3,p {color: #757575; text-align: center;}
+.grid-text2 {position: absolute;left:0; width:100%;}
+.grid-text2 h3,p {color: #757575; text-align: center;}
+.grid-text-title {font-size: 34px; line-height: 40px; }
+.grid-text-second {font-size: 20px; line-height:30px;margin:0 auto;}
+.grid-text-third {font-size: 20px; line-height:30px; margin-top: 30px;text-decoration:underline}
+.bottom-address {width:100%; display: table;}
+.bottom-address h1,p {text-align: center; color: #202020;}
+.bottom-img {width:100%;display: table; }
+.bottom-img img {width:100%; height:auto; display: block;}
+.fixed {position: fixed;top:0; left: 0;}
+.guest-room {background-color: #000000;position: absolute;z-index: 1;}
+.only-one {background-color: #ffa600;position: absolute;z-index: 1;}
+.guest-room2 {background-color: #ffa600;position: absolute;z-index: 1;}
+.only-one2 {background-color: #ffffff;position: absolute;z-index: 1;}
+

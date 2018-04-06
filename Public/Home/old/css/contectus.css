@@ -1,0 +1,52 @@
+h1,h2,p {margin:0;}
+@media screen and (max-width: 425px){
+	.contact-form {width:90%; margin:0 auto; margin-top: 25px;}
+	.contact-form-title {font-size:24px;}
+	.contact-form-tel {font-size: 14px;margin-top:10px;}
+	.personal-first {margin-top: 15px;}
+	.personal-second {height:35px; margin-top:20px;padding: 0 10px;}
+	.personal-second-input {font-size: 14px;}
+	.personal-second-must {top:7px; right:10px;}
+	.personal-third {height:35px; margin-top:15px;padding: 0 10px;}
+	.personal-third-input {font-size: 14px;}
+	.personal-third-must {top:7px; right:10px;}
+	.personal {height:275px;}
+	.personal-select {height:35px;margin-top:15px;padding: 0 10px;font-size: 14px;}
+	.personal-textarea {height:205px;margin-top: 20px;padding: 10px;font-size: 14px;}
+	.trivial input {width:85px; height:35px;font-size: 14px;right:25px; }
+	.replace {height:50px;}
+}
+@media screen and (min-width: 425px){
+	.contact-form {width:940px; margin:0 auto; margin-top:60px;}
+	.contact-form-title {font-size: 38px;}
+	.contact-form-tel {font-size: 14px;margin-top: 20px;}
+	.contact-form-left {border-right: 1px dashed #eeeeee;margin-top: 30px;}
+	.contact-form-right {margin-top: 30px;}
+	.personal-second {height:40px; margin-top: 30px;padding: 0 15px;}
+	.personal-second-input {font-size: 16px;}
+	.personal-second-must {top:10px; right:15px;}
+	.personal-third {height:40px; margin-top:20px;padding: 0 15px;}
+	.personal-third-input {font-size: 16px;}
+	.personal-third-must {top:10px; right:15px;}
+	.personal {height:380px;}
+	.personal-select {height:40px;margin-top: 50px;padding: 0 15px;font-size: 16px;}
+	.personal-textarea {height:220px;margin-top: 20px;padding: 15px;font-size: 16px;}
+	.trivial input {width:125px; height:45px;font-size: 16px;right: 15px; }
+	.replace {height:85px;}
+}
+.contact-form {display: table;}
+.contact-form-title {color: #757575;text-align: center;}
+.contact-form-tel {color: #757575;text-align: center;}
+.personal {width:94%; margin:0 auto;}
+.personal-first {font-size:14px; color: #36455a;}
+.personal-second {width:100%;border:1px solid #ebebeb;background-color: #fbfbfb;position: relative;}
+.personal-second-input {width:90%; height:100%; border:none; outline: none;}
+.personal-second-must {position: absolute;  color: #757575;}
+.personal-third {width:100%;border:1px solid #ebebeb;background-color: #fbfbfb;position: relative;}
+.personal-third-input {width:90%; height:100%; border:none; outline: none;}
+.personal-third-must {position: absolute;  color: #757575;}
+.personal-select {width:100%;  border:1px solid #ebebeb;outline: none;background-color: #fbfbfb;color: #757575;}
+.personal-textarea {width:100%;  resize: none; border:1px solid #ebebeb;outline: none;background-color: #fbfbfb;color: #757575;}
+.trivial {width:100%; height:60px;position: relative;}
+.trivial input {border:none; outline: none;background-color: #d9b664;color: #ffffff;position: absolute;bottom: 0;}
+.contact-map {display: table;margin:0 auto;margin-top: 50px;}

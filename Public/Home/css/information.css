@@ -1,0 +1,50 @@
+h1,p {margin:0;padding: 0;}
+.information-left {width:600px; display: table;float: left;}
+.information-right {width:390px;display: table;float: left; margin-left: 10px;}
+.information-left-top {width:100%; height:45px;background-color: #f1f1f1;padding: 0 10px;}
+.information-left-top p {font-size: 22px; line-height: 45px; color: #202020;}
+.information-left-mid {width:100%; display: table;padding: 0 10px;margin-top: 20px;}
+.information-left-mid h1 {font-size: 18px; color: #182941;font-weight: 600;}
+.information-one {width:50%; float: left;position: relative;display: table;height:20px;margin-top: 10px;}
+.information-two {height:20px; display: table;position: absolute;top:0;right: 0;}
+.information-two p {font-size: 12px; line-height: 20px; color: #202020; float: left;}
+.information-two input {width:130px; height:20px; border:1px solid #757575; float: left; margin-left: 10px;outline: none;}
+.information-two p span {margin-left: 5px;outline: none;color: #c53336;}
+.gender {width:50px; height:20px;border:1px solid #757575; float: left; margin-left: 10px;outline: none;margin-right: 92px;}
+.gender2 {width:50px; height:20px;border:1px solid #757575; float: left; margin-left: 10px;outline: none;}
+.check-agree {width:100%; height:25px; margin-top: 20px;padding: 0 10px;}
+.check-agree input {width:15px; height:15px;margin-top: 5px;float: left;}
+.check-agree p {font-size: 14px; line-height: 25px;color: #202020; float: left; margin-left:10px;}
+.check-agree p span {cursor: pointer;text-decoration: underline;}
+.clause {display: table;margin-left:35px;width:350px; display: none;}
+.clause p {font-size: 12px; color: #757575;line-height:20px;}
+.information-submit {width:100%;display: table;margin-top: 30px;position: relative;}
+.information-submit-right {position: absolute; top:0; right: 0;}
+.information-submit-right p {font-size: 22px; color: #202020;}
+.submit-right {width:140px; height:35px;margin:0 auto;margin-top: 20px;}
+.submit-right input {width:100%; height:100%; background-color: #d9b664;border:none; outline: none;color: #202020;}
+.information-right-top {width:100%; height:45px; background-color:#f1f1f1;padding: 0 10px; }
+.information-right-top p {font-size: 22px; line-height: 45px; color: #202020;}
+.room-one {width:100%; display: table;position: relative;padding: 10px;margin-top: 10px;background-color: #f9f9f9;border:1px solid #757575;}
+.room-one:hover {border:1px solid #202020; background-color: #e3e3e3;}
+.room-one p {font-size: 14px; color: #202020;}
+.room-one-pos {position: absolute;top:10px; right:10px;}
+.room-one-top {margin-top: 10px;}
+.room-bottom {width:100%;display: table;border:1px solid #757575;margin-top: 10px;background-color: #f9f9f9;}
+.room-bottom-top {width:100%;padding: 10px;border-bottom:1px solid #757575;}
+.room-bottom-top p {font-size: 14px; line-height: 20px; color: #202020;}
+.room-bottom-bottom {width:100%;padding: 10px;position: relative;}
+.room-bottom-bottom p {font-size: 14px; line-height: 20px; color: #202020;}
+.redtext {color: #790305;}
+
+
+.beizhu {width:50%;display:table;position:relative;margin-left:25%;}
+.beizhu textarea {width:100%;height:130px;resize:none;outline:none;}
+.youhuiquan {width:75%;margin-left:25%;background:red;}
+.chose_you {width:50%;height:35px;float:left;margin-top:20px;}
+.chose_you input {float:left;width:14px;height:14px;margin-top:14px;}
+.chose_you img {width:45px;height:30px;margin-top:3px;float:left;margin-left:10px;}
+.chose_you_moy {float:left;margin-left:10px;height:35px;}
+.chose_you_moy p {font-size: 12px;color: #202020;line-height: 17px;}
+
+

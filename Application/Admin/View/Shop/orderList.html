@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Table</title>
+		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
+		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<div class="admin-main">
+			<blockquote class="layui-elem-quote" style="height:28px;">
+				<!--<button  class="layui-btn layui-btn-small" onclick="javascript:window.location.href='{:U('Admin/Shop/typeAdd')}' ">-->
+					<!--<i class="layui-icon">&#xe608;</i>添加分类-->
+				<!--</button>-->
+
+			</blockquote>
+			<fieldset class="layui-elem-field">
+				<legend>商品订单列表</legend>
+				<div class="layui-field-box">
+				<table class="layui-table">
+					  <thead>
+					    <tr>
+
+					      	<th>订单id</th>
+							<th>用户id</th>
+					   	   	<th>商品名称</th>
+							<th>商品单价</th>
+							<th>购买数量</th>
+					      	<th>商品总价</th>
+					      	<th>实付价格</th>
+					      	<th>支付币种</th>
+					      	<th>支付时间</th>
+							<th>订单状态</th>
+					      	<th>操作</th>
+
+					    </tr> 
+					  </thead>
+					  <tbody>
+					  <foreach name="list" key="k" item="vo">
+					    <tr>
+					      <td>{$vo['id']}</td>
+					      <td>{$vo['user_id']}</td>
+					      <td>{$vo['name']}</td>
+					      <td>{$vo['price_sale']}</td>
+					      <td>{$vo['num']}</td>
+					      <td>{$vo['price_num']}</td>
+					      <td>{$vo['price_act']}</td>
+					      <td>{$vo['coin_name']}</td>
+					      <td>{$vo['do_inputtime']}</td>
+					      <td>
+							  <if condition="$vo['state'] eq 2">
+								  <input class="layui-btn layui-btn-mini layui-btn-danger" type="button" value="未发货"/>
+							  </if>
+							  <if condition="$vo['state'] eq 3">
+								  <input class="layui-btn layui-btn-mini layui-btn-danger" type="button" value="已发货"/>
+							  </if>
+							  <if condition="$vo['state'] eq 4">
+								  <input class="layui-btn layui-btn-mini layui-btn-danger" type="button" value="已退款"/>
+							  </if>
+						  </td>
+					      <td>
+							<a class="layui-btn layui-btn-mini layui-btn-normal"  onclick="javascript:window.location.href='{:U('/Admin/shop/orderEdit',['id'=>$vo['id']])}' "><i class="layui-icon">&#xe642;</i>编辑</a>
+							  <if condition="$vo['state'] eq 2">
+							  <a data="{$vo['id']}" type="1"class="layui-btn layui-btn-danger layui-btn-mini sent"><i class="layui-icon"></i>发货</a>
+							  </if>
+							  <if condition="$vo['state'] eq 3">
+								  <a data="{$vo['id']}" type="2"class="layui-btn layui-btn-danger layui-btn-mini sent"><i class="layui-icon"></i>退货</a>
+							  </if>
+					      </td>
+					    </tr>
+					    </foreach>
+					  </tbody>
+				</table>
+			
+				</div>
+			</fieldset>
+			<div class="admin-table-page">
+				<div id="page" class="page">
+				{$page}
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['laypage','layer','form'], function() {
+				var laypage = layui.laypage,
+					$ = layui.jquery 
+				//发货 退货
+				$('.sent').click(function(){
+					var id = $(this).attr('data');
+					var type = $(this).attr('type');
+					var url = "{:U('Admin/shop/orderBut')}";
+					if(type == 1){
+					    var msg = '确定发货吗？'
+					}else{
+					    var msg = '确定退货吗？'
+					}
+					layer.confirm(msg, {
+						  icon: 3,
+						  skin: 'layer-ext-moon',
+						  btn: ['确认','取消'] //按钮
+						}, function(){
+							$.post(url,{id:id,type:type},function(data){
+
+								if(data.status == 'error'){
+									  layer.msg(data.msg,{icon: 5});//失败的表情
+									  return;
+								  }else{
+								    console.log(data);
+									  layer.msg(data.msg, {
+										  icon: 6,//成功的表情
+										  time: 2000 //2秒关闭（如果不配置，默认是3秒）
+										}, function(){
+										   location.reload();
+										}); 
+								  }	
+							})
+					  });
+				})
+
+
+			});
+		</script>
+	</body>
+
+</html>

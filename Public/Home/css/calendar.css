@@ -1,0 +1,36 @@
+.calendar-left {width:280px; display: table;float: left;}
+.calendar-left-top {width:100%; height:30px;background-color: #e9e9e9;padding: 0 10px;margin-top: 10px;}
+.calendar-left-top p {color: #445164;line-height: 30px; font-size:16px;}
+.calendar-left-mid {width:250px; margin:0 auto;margin-top: 20px;display: table;}
+.left-mid-one {width:110px; height:100px; border:1px solid #e3bb67;float: left;}
+.stay {width:100%;height: 20px; background-color:#e3bb67; }
+.stay p {font-size: 12px; color: #ffffff;font-weight: 600;text-align: center;line-height: 20px;}
+.stay-one {font-size:12px;color: #202020; text-align: center;}
+.stay-two {font-size: 32px;color: #202020; font-weight: 600;text-align: center;}
+.stay-three {text-align: center;color: #202020; font-size: 12px;}
+.llleft {margin-left: 30px;}
+.daynum {font-size: 12px; color: #202020;line-height: 30px;}
+.calendar-right {width: 700px; display: table;float: left;margin-left: 20px;}
+.calendar-right-top {width:100%; height:30px;background-color: #e9e9e9;margin-top: 10px;display: table;}
+.selectyear {width:190px; height:20px; margin:5px auto;}
+.selectyear select {width:190px;height:20px;border:1px solid #202020;border-radius:3px;background-color: #fff;outline:none;}
+.calendar-mid {width:100%; height:20px;border-top:1px solid #202020;background-color: #777777;margin-top: 10px;
+	border-bottom:1px solid #202020;}
+.calendar-mid-one {width:100px;height:18px;border-right:1px solid #202020;float: left;}
+.calendar-mid-one p {text-align: center;line-height:18px; color: #ffffff;font-size: 14px;}
+.borderleft {border-left:1px solid #202020;}
+.calendar-bottom {width:100%; display: table;}
+
+
+.calendar-one p {text-align: center;}
+.week {font-size: 14px; line-height: 20px; margin-top: 10px;}
+.day {font-size:28px;font-weight: 600; line-height: 28px;}
+.mouth {font-size: 12px;line-height:12px; margin-top: 5px;}
+.calendar-one-bottom {width:100%; height:26px;background-color:#27374d;position:absolute; left: 0; bottom: 0; }
+.calendar-one-bottom p {font-size: 16px; color: #ffffff;line-height: 26px;font-weight: 600;}
+.calendar-one {width:99px; height:80px;color: #27374d; float: left; margin-left: 1px;
+	background-color:#d6dee8;position: relative;cursor: pointer;margin-top: 1px;}
+.disable {cursor: not-allowed;opacity: 0.2;}
+
+.next-type {width:700px; height:40px; margin-top:30px;position:relative;}
+.next-type input {width:130px; height:40px; border:none;outline:none;background-color:#e3bb67;color:#202020;font-size:16px;position:absolute;top:0;right:0;}
