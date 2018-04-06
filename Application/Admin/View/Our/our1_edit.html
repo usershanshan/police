@@ -15,8 +15,8 @@
 				<legend>{$title}</legend>
 				<div class="layui-field-box">
 					 <form class="layui-form" action="">
-						 <input type="hidden" name="id" value="{$id}">
-						 <input type="hidden" name="pid" value="{$pid}">
+						 <!--<input type="hidden" name="id" value="{$id}">-->
+						 <input type="hidden" name="type_id" value="{$type_id}">
 						 <div class="layui-form-item">
 							 <label class="layui-form-label">标题</label>
 							 <div class="layui-input-block">
@@ -86,11 +86,9 @@
 				 	data.field.content = layedit.getContent(editIndex1);
 				 	data.field.content_en = layedit.getContent(editIndex2);
 				 	var bannerInfo = data.field;
-				 	if(bannerInfo.id){
+
 				 	    var url = "{:U('our1_edit')}";
-					}else{
-                        var url = "{:U('our1_add')}";
-					}
+
 
 					$.post(url,bannerInfo,function(data){
 						if(data.status == 'error'){

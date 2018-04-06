@@ -1,0 +1,136 @@
+<div class="footer">
+    <div class="container">
+        <div class="footer-nav clearfix">
+            <div class="footer-list footer-list1 wow fadeInUp time03">
+                <p>总公司服务热线：4009208110</p>
+                <p>服务时间：9:00-17:30</p>
+                <p>Email:info@security.sh.cn</p>
+                <p>传真：+86-21-22042879</p>
+            </div>
+            <div class="footer-list footer-list2 wow fadeInUp time05">
+                <!-- <p><a href="cn/map.html">网站地图</a></p> -->
+                <p><a href="terms.html">使用条款</a></p>
+                <p><a href="security.html">保密及安全</a></p>
+            </div>
+            <div class="footer-list footer-list3 wow fadeInUp time07">
+                <p><a target="_blank" href="http://sh.cyberpolice.cn/">上海网警网络110</a></p>
+                <p><a target="_blank" href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=2012010615463471">上海工商</a></p>
+                <p><a target="_blank" href="http://www.zx110.org/">网络社会征信网</a></p>
+            </div>
+            <div class="footer-wechat wow fadeInUp time09">
+                <img src="cn/images/wechat.jpg" alt="">
+                <p>关注我们</p>
+            </div>
+        </div>
+        <div class="footer-copyright clearfix wow fadeInUp time11">
+            <div class="footer-copy">&copy; 版权所有 上海市保安服务总公司1985-2017 沪ICP备14023959号<br/>建议您使用谷歌、火狐、Safari、IE8以上版本浏览器访问本网站</div>
+        </div>
+    </div>
+</div>
+
+<script src="__PUBLIC__/police/cn/js/jquery.min.js"></script>
+<script src="__PUBLIC__/police/cn/js/stickUp.min.js"></script>
+<script src="__PUBLIC__/police/cn/js/owl/owl.carousel.js"></script>
+<script src="__PUBLIC__/police/cn/js/wow.min.js"></script>
+<script src="__PUBLIC__/police/cn/js/main.js"></script>
+
+<script>
+    $(function(){
+        $("#search").click(function(){
+            var kw = $("#keyword").val()
+            if(kw=='') return;
+            var url = '/cn/s?m=news&k='+encodeURI(kw);
+            window.open(url)
+        });
+    });
+</script>
+
+<script>
+    jQuery(function($) {
+        //轮播图
+        $(".banner-carousel").owlCarousel({
+            items:1,
+            nav:true,
+            navText:["<i class='iconfont icon-zuo'></i>","<i class='iconfont icon-gengduo'></i>"],
+            rewind:true,
+            autoHeight:true,
+            autoplay:true,
+            lazyLoad:true
+        });
+    });
+</script>
+<script> $('#cccc li').click(function () { var f = this; $('#cccc li').each(function () { this.className = this == f ? 'aaa' : 'bbb' }); }); </script>
+<script> $('#ccc li').click(function () { var f = this; $('#ccc li').each(function () { this.className = this == f ? 'aaa' : 'bbb' }); }); </script>
+</script>
+
+<script src="js/jwplayer/jwplayer.js"></script>
+<script src="js/jwplayer/jwpsrv.js"></script>
+<script>
+    /*
+    var myPlayer = videojs('example_video_1');
+    videojs("example_video_1").ready(function(){
+        var myPlayer = this;
+    });
+    */
+    jwplayer('mediaplayer').setup({
+        'flashplayer': 'js/jwplayer/jwplayer.flash.swf',
+        'image': 'cn/images/video.jpg',
+        'id': 'playerID',
+        'width': '100%',
+        'aspectratio':'10:9.3',
+        'file': 'file/01.mp4'
+    });
+
+    jQuery(function($) {
+        //轮播图
+        $(".banner-carousel").owlCarousel({
+            items:1,
+            nav:true,
+            navText:["<i class='iconfont icon-zuo'></i>","<i class='iconfont icon-gengduo'></i>"],
+            rewind:true,
+            autoplay:true,
+            autoHeight:true
+        });
+        $(".service-carousel").owlCarousel({
+            nav:true,
+            navText:["<i class='iconfont icon-zuo'></i>","<i class='iconfont icon-gengduo'></i>"],
+            rewind:true,
+            autoplay:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                440:{
+                    items:2
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:4
+                }
+            }
+        });
+        $(".link-carousel").owlCarousel({
+            rewind:true,
+            autoplay:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                360:{
+                    items:2
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:5
+                }
+            }
+        });
+    });
+</script>
+</body>
+</body>
+</html>

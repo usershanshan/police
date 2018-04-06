@@ -137,7 +137,8 @@ class OurController extends AdminBaseController
 
 
 
-            $r = M('our1')->save($info);
+            $r = M('our1')->where(['type_id'=>$info['type_id']])->save($info);
+
 
             if($r){
                 $this->ajaxSuccess('修改成功');
@@ -146,9 +147,9 @@ class OurController extends AdminBaseController
             }
         }else{
             $id = I('get.id');
-            $this->assign('id',$id);
+            $this->assign('type_id',$id);
             //信息
-            $info = M('our1')->where(['id'=>$id])->find();
+            $info = M('our1')->where(['type_id'=>$id])->find();
             $this->assign('info',$info);
 
             $this->assign('title','新闻编辑');
@@ -261,5 +262,8 @@ class OurController extends AdminBaseController
             $this->ajaxError('删除失败');
         }
     }
+
+
+
 
 }

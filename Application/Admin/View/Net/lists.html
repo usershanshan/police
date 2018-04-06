@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Table</title>
+		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
+		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<div class="admin-main">
+			<blockquote class="layui-elem-quote" style="height:28px;">
+				<button  class="layui-btn layui-btn-small" onclick="javascript:window.location.href='{:U('add')}' ">
+					<i class="layui-icon">&#xe608;</i>添加营销网络
+				</button>
+
+			</blockquote>
+			<fieldset class="layui-elem-field">
+				<legend>营销网络列表</legend>
+				<div class="layui-field-box">
+				<table class="layui-table">
+					  <thead>
+					    <tr>
+					      <th>id</th>
+					      <th>名称</th>
+					      <th>联系部门</th>
+					      <th>地址</th>
+					      <th>联系电话</th>
+					      <th>服务时间(星期)</th>
+					      <th>服务时间(具体时间)</th>
+					      <th>操作</th>
+					    </tr> 
+					  </thead>
+					  <tbody>
+					  <foreach name="list" key="k" item="vo">
+					    <tr>
+					      <td>{$vo.id}</td>
+					      <td>{$vo.title}</td>
+						  <td>{$vo.part}</td>
+						  <td>{$vo.add}</td>
+						  <td>{$vo.phone}</td>
+						  <td>{$vo.time}</td>
+						  <td>{$vo.time1}</td>
+					      <td>
+								<a class="layui-btn layui-btn-mini layui-btn-normal"  onclick="javascript:window.location.href='{:U('edit',['id'=>$vo['id']])}' "><i class="layui-icon">&#xe642;</i>编辑</a>
+							  	<a data="{$vo.id}"  class="layui-btn layui-btn-danger layui-btn-mini del"><i class="layui-icon">&#xe640;</i>删除</a>
+
+					      </td>
+					    </tr>
+					    </foreach>
+					  </tbody>
+				</table>
+			
+				</div>
+			</fieldset>
+			<div class="admin-table-page">
+				<div id="page" class="page">
+				{$page}
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['laypage','layer','form'], function() {
+                var laypage = layui.laypage,
+                    $ = layui.jquery
+                //删除
+                $('.del').click(function () {
+                    var id = $(this).attr('data');
+                    var status = $(this).attr('data-s');
+                    var url = "{:U('del')}";
+                    layer.confirm('确定删除该营销网络吗', {
+                        icon: 3,
+                        skin: 'layer-ext-moon',
+                        btn: ['确认', '取消'] //按钮
+                    }, function () {
+                        $.post(url, {id: id, status: status}, function (data) {
+                            if (data.status == 'error') {
+                                layer.msg(data.msg, {icon: 5});//失败的表情
+                                return;
+                            } else {
+                                layer.msg(data.msg, {
+                                    icon: 6,//成功的表情
+                                    time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                                }, function () {
+                                    location.reload();
+                                });
+                            }
+                        })
+                    });
+                });
+
+                function fd_img(obj) {
+                    layer.photos({
+                        photos: obj, anim: 7, shade: [0.5, '#000000']
+                    });
+                }
+            })
+		</script>
+	</body>
+
+</html>

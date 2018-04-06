@@ -1,0 +1,67 @@
+<include file="Application/Home/View/Public/head1.html"/>
+    
+    <div class="inside-banner about-banner clearfix">
+		<div class="container">
+			<h2 class="wow fadeInUp">关于我们</h2>
+			<p class="wow fadeInUp"><span>shanghai security</span><span>about us</span></p>
+		</div>
+	</div>
+	<div class="container clearfix">
+		<div class="sub-nav wow fadeInLeft">
+			<h3>关于我们</h3>
+			<ul id="cccc">
+				<foreach name="type" item="vo" >
+					<li class=""><a href = "{:U('our',['our_id'=>$vo['id']])}"><span>&gt;</span>{$vo['title']}</a></li>
+				</foreach>
+			</ul>
+		</div>
+		<div class="inside-right wow fadeInRight">
+			<div class="title clearfix">
+				<h4>{$title}</h4>
+				<div class="crumbs">
+					<a href="index.html">首页</a>&gt;<a href="about-gsjj-1.html">关于我们</a>><span>{$title}</span>
+				</div>
+			</div>
+			<div class="content message">
+				{$content['content']}
+			</div>
+		</div>
+	</div>
+	
+	<div class="location media">
+		<div class="container">
+			<div class="title wow fadeInUp">
+				<h2><i></i><span>营销<em>网络</em></span><i></i></h2>
+			</div>
+			<div class="location-table wow fadeInUp">
+			
+				<table>
+					<thead>
+						<tr>
+							<th>名称</th>
+							<th>联系部门</th>
+							<th>地址</th>
+							<th>联系电话</th>
+							<th>服务时间</th>
+						</tr>
+					</thead>
+					<tbody>
+
+
+					<foreach name="net" item="vo" >
+						<tr>
+							<td>{$vo['title']}</td>
+							<td>{$vo['part']}</td>
+							<td>{$vo['add']}</td>
+							<td width="130">{$vo['phone']}</td>
+							<td width="80">{$vo['time']}<br/>{$vo['time1']}</td>
+						</tr>
+					</foreach>
+			 			
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+<include file="Application/Home/View/Public/foot1.html"/>

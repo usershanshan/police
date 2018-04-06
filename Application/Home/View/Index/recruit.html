@@ -1,0 +1,41 @@
+<include file="Application/Home/View/Public/head1.html"/>
+<div class="inside-banner service-banner clearfix">
+		<div class="container">
+			<h2 class="wow fadeInUp">诚聘英才</h2>
+			<p class="wow fadeInUp"><span>shanghai security</span><span>careers</span></p>
+		</div>
+	</div>
+	<div class="container clearfix">
+		<div class="sub-nav job-style wow fadeInLeft">
+			<h3>岗位名称</h3>
+			<ul>
+				<foreach name="type" item="vo" >
+					<li>
+						<a href="javascript:;" title="{$vo['title']}"><span>&gt;</span>{$vo['title']}</a>
+						<ul>
+							<foreach name="vo['content']" item="voo" >
+								<li><a href="{:U('recruit',['recruit_id'=>$voo['id']])}">{$voo['title']}</a></li>
+							</foreach>
+						</ul>
+					</li>
+				</foreach>
+			</ul>
+		</div>
+		<div class="inside-right wow fadeInRight">
+			<div class="title clearfix">
+				<h4>{$content['title']}</h4>
+				<div class="crumbs">
+					<a href="index.html">首页</a>&gt;<a href="javascript:;">诚聘英才</a>&gt;<span>{$content['title']}</span>
+				</div>
+			</div>
+			<div class="content message">
+				{$content['content']}
+
+
+
+
+
+			</div>
+		</div>
+	</div>
+<include file="Application/Home/View/Public/foot1.html"/>

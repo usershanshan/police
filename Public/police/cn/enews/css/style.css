@@ -1,0 +1,146 @@
+body,dl,dt,dd{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: url(../img/home_bg.jpg);
+	font-family:"Microsoft Yahei";
+}
+.newspaper{
+	overflow: hidden;
+	padding: 10px;
+	width: 1180px;
+	margin: 20px auto;
+	background-color: #fff;
+	box-shadow: -1px 1px 8px #333333, 1px -1px 10px #333333, 1px 1px 8px #111111, 1px -1px 8px #111111;
+}
+.news-left{
+	float: left;
+	width: 500px;
+}
+.news-right{
+	float: left;
+	width: 650px;
+}
+.news-top{
+	padding: 10px 0;
+	border-bottom: 1px solid #ddd;
+	overflow: hidden;
+}
+.news-top .logo{
+	width: 150px;
+	float: left;
+}
+.news-top .logo img{
+	width: 150px;
+}
+.input-append{
+	float: left;
+	margin-left: 270px;
+}
+.input-append button{
+	padding: 4px 10px;
+	border: 0;
+	background-color: #0090cf;
+	color: #fff;
+}
+.input-ropdown{
+	display: none;
+	position: absolute;
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 5px 0;
+	max-height: 300px;
+	overflow-y: auto;
+}
+.input-ropdown li{
+	list-style: none;
+	padding: 10px 10px;
+}
+.input-ropdown li a:hover{
+	text-decoration: none;
+}
+
+
+.datepicker{
+	margin-top: 40px;
+}
+.page a{
+	margin-left: 10px;
+	float: left;
+	padding: 4px 10px;
+	background-color: #0090cf;
+	color: #fff;
+}
+.page a:hover{
+	text-decoration: none;
+}
+.layout{
+	background-color: #f1f1f1;
+	padding: 10px 0;
+}
+.layout a{
+	padding: 0 10px;
+	border-right: 1px solid #ddd;
+}
+.news-list{
+	margin-top: 1px;
+	height: 620px;
+	overflow-y:auto;
+}
+.news-list dl{
+	padding: 15px 0;
+	border-bottom: 1px dashed #ddd;
+}
+.news-list dl:hover{
+	background-color: #f1f1f1;
+}
+
+.news-list dt{
+	margin-bottom: 5px;
+}
+
+.news-list dt a{
+	font-weight: normal;
+	font-size: 20px;
+	text-decoration: none;
+	color: #333;
+}
+.news-list dt a:hover{
+	color: #0090cf;
+}
+
+.news-list dd{
+	color: #999;
+	line-height: 24px;
+	text-indent: 2em;
+}
+.footer{
+	text-align: center;
+	color: #fff;
+}
+
+.news-content h1{
+	padding: 10px 0;
+	font-size: 26px;
+	text-align: center;
+}
+.news-content img{	
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
+}
+.news-content p{
+	margin-bottom: 20px;
+	line-height: 24px;
+	font-size: 14px;
+	text-indent: 2em;
+}	
+.content{
+	background: none;
+}
+.news-iframe{
+	height: auto;
+	padding: 0 20px;
+}
