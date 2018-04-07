@@ -77,6 +77,32 @@ class AdminBaseController extends CommonController {
     		//return ['status'=>'success','msg'=>'上传成功','data'=>$file_name];
     	}
     }
+
+
+    protected function uploadFileOne()
+    {
+        $upload = new \Think\Upload(); // 实例化上传类
+//        $upload->maxSize = 3145728; // 设置附件上传大小
+//        $upload->exts = array(
+//            'jpg',
+//            'gif',
+//            'png',
+//            'jpeg'
+//        ); // 设置附件上传类型
+        // $upload->mimes = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+        $upload->rootPath = './Uploads/'; // 设置附件上传根目录
+        $upload->saveName = 'up_video'. '_' . time() . '_' . rand(100000, 999999);
+        // 上传单个文件
+        $info = $upload->uploadOne($_FILES['file']);
+        if (! $info) { // 上传错误提示错误信息
+            return ['code'=>-1,'msg'=>$upload->getError(),'data'=>['src'=>'']];
+            //return ['status'=>'error','msg'=>$upload->getError()];
+        } else { // 上传成功 获取上传文件信息
+            $file_name = '/Uploads/' . $info['savepath'] . $info['savename'];
+            return ['code'=>0,'msg'=>'上传成功','data'=>['src'=>$file_name]];
+            //return ['status'=>'success','msg'=>'上传成功','data'=>$file_name];
+        }
+    }
     
     protected function setAdminLog($contetn,$type,$uid){
         $date = [

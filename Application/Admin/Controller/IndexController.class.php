@@ -75,5 +75,11 @@ class IndexController extends AdminBaseController {
     {
     	$r = $this->uploadOne();
     	$this->ajaxReturn($r);
-    } 
+    }
+
+    public function uploadFile()
+    {
+        $r = $this->uploadFileOne();
+        $this->ajaxReturn($r);
+    }
 }

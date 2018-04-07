@@ -153,7 +153,30 @@ class IndexController extends HomeController  {
 
     //新闻
     public function news(){
+        $news_id = I('get.news_id');
+        $key= true;
+        if($news_id){
+            $typef = M('news_type')->where(['id'=>$news_id,'display'=>1])->find();
+            switch($typef['type']){
+                case 1:
+                    $content = M('news1')->where(['display'=>1,'type_id'=>$news_id])->select();
+                    foreach($content as $k=>$v){
+                        $content[$k]['inputtime'] = date('Y-m-d',$v['inputtime']);
+                    }
+                    $p = 1;
+                    break;
+                case 2:
+                    //跳页
+                    $p=2;
+                    break;
+                case 3:
+                    $p = 3;
+                    $content = M('news3')->where(['display'=>1,'type_id'=>$news_id])->select();
 
+            }
+
+
+        }
     }
 
 

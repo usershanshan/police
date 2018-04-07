@@ -37,6 +37,16 @@
 							 <input type="hidden" name="img" id="upLogo" value="{$info['img']}"/>
 							 <input type="file" name="file" class="layui-upload-file" id="img">
 						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">视频</label>
+							 <video id="example_video" class="video-js" poster="{$info['img']}" preload="none" controls="controls" width="300" height="150" data-setup="{}">
+								 <source src="$info['video']" type="video/mp4" class="info">
+								 <!--<track kind="captions" src="demo.captions.vtt" srclang="en" label="English">-->
+								 <!--<track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English">-->
+							 </video>
+							 <input type="hidden" name="video" id="video_hidden" value="{$info['video']}"/>
+							 <input type="file" name="file" class="layui-upload-file" id="files">
+						 </div>
 						<div class="layui-form-item">
 							<div class="layui-input-block">
 								<button class="layui-btn" lay-submit lay-filter="subBanner">立即提交</button>
@@ -59,10 +69,21 @@
 			    ,elem: '#img' //指定原始元素，默认直接查找class="layui-upload-file"
 			    ,success: function(res){
 		    	   layer.msg(res.msg);
-		    	   LAY_demo_upload.src = res.data.src;
-                    upLogo.value = res.data.src;
+		    	   LAY_demo_upload.src = res.data.src;//图片展示
+                    example_video.poster = res.data.src;//视频封面图
+                    upLogo.value = res.data.src;//隐藏域
 			    }
 			});
+            layui.upload({
+                url:  "{:U('Index/uploadFile')}"
+                ,elem: '#files' //指定原始元素，默认直接查找class="layui-upload-file"
+                ,success: function(res){
+                    layer.msg(res.msg);
+                    info.src = res.data.src;//视频展示
+                    video_hidden.value = res.data.src;
+                }
+            });
+
 			var editIndex1 = layedit.build('LAY_demo_editor1',{
 				uploadImage:{url:"{:U('Index/uploadAllImg')}"}
 			});
