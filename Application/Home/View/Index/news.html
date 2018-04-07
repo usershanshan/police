@@ -9,84 +9,33 @@
         <div class="sub-nav wow fadeInLeft">
             <h3>要闻动态</h3>
             <ul id="ccc">
-                <li ><a ><span>&gt;</span>企业新闻</a></li>
-                <li class=""><a><span>&gt;</span>行业交流</a></li>
-                <li class=""><a><span>&gt;</span>保安风采</a></li>
-                <li><a  target="_blank"><span>&gt;</span>上海保安报</a></li>
-                <li><a ><span>&gt;</span>专题宣传片</a></li>
+                <foreach name="type" item="vo" >
+                    <li><a href="{:U('news',['news_id'=>$vo['id']])}">{$vo['title']}</a></li>
+                </foreach>
             </ul>
         </div>
         <div class="inside-right wow fadeInRight">
             <div class="title clearfix">
-                <h4>企业新闻</h4>
+                <h4>{$title}</h4>
                 <div class="crumbs">
-                    <a href="index.html">首页</a>&gt;<a href="news-qyxw-1.html">要闻动态</a>&gt;<span>企业新闻 </span>
+                    <a href="index.html">首页</a>&gt;<a href="news-qyxw-1.html">要闻动态</a>&gt;<span>{$title} </span>
                 </div>
             </div>
             <div class="content">
-            
+
+                <foreach name="content" item="vo" >
                     <dl class="inside-list wow fadeInUp">
-                        <dt><a href="14181.html"><img src="cn/attachment/20180312/84c3ed4e41104bee96f43ee39b9190a8.jpg" alt="总公司领导春节期间亲切慰问基层一线员工"></a></dt>
-                        <dd class="text-title"><a href="/cn/news/14190.html">总公司领导春节期间亲切慰问基层一线员工</a></dd>
-                        <dd class="date"><span>2018-03-12</span></dd>
+                        <if condition="$vo['img']">
+                            <dt><a href="{:U('news_info',['id'=>$vo['id']])}"><img src="{$vo['img']}" alt="{$vo['title']}"></a></dt>
+                        </if>
+                        <dd class="text-title"><a href="{:U('news1_info',['id'=>$vo['id'],'title'=>$title,'title_d'=>'要闻动态'])}">{$vo['title']}</a></dd>
+                        <dd class="date"><span>{$vo['inputtime']}</span></dd>
                     </dl>
-                    <dl class="inside-list wow fadeInUp">
-                        <dt><a href="14181.html"><img src="cn/attachment/20180312/f9af342be2454675832a77da78bc37a5.jpg" alt="上海保安，用心守护安全"></a></dt>
-                        <dd class="text-title"><a href="/cn/news/14189.html">上海保安，用心守护安全</a></dd>
-                        <dd class="date"><span>2018-03-12</span></dd>
-                    </dl>
-                    <dl class="inside-list wow fadeInUp">
-                        <dt><a href="14181.html"><img src="cn/attachment/20180312/df2effe2ef844689abdcf74c957ecf32.jpg" alt="总公司工会举办2018年迎新春企业文化周活动"></a></dt>
-                        <dd class="text-title"><a href="/cn/news/14188.html">总公司工会举办2018年迎新春企业文化周活动</a></dd>
-                        <dd class="date"><span>2018-03-12</span></dd>
-                    </dl>
-                    <dl class="inside-list wow fadeInUp">
-                        <dt><a href="14181.html"><img src="cn/attachment/20180312/99aa234978ac408eade57cb93bf15dda.jpg" alt="押运公司召开二届四次职工代表大会暨年度表彰会议"></a></dt>
-                        <dd class="text-title"><a href="/cn/news/14187.html">押运公司召开二届四次职工代表大会暨年度表彰会议</a></dd>
-                        <dd class="date"><span>2018-03-12</span></dd>
-                    </dl>
-                    <dl class="inside-list wow fadeInUp">
-                        <dt><a href="14181.html"><img src="cn/attachment/20180206/d4f88ce6a99d4d9da90365b1fc669b74.jpg" alt="市总公司召开2017年度保安工作总结表彰大会"></a></dt>
-                        <dd class="text-title"><a href="/cn/news/14182.html">市总公司召开2017年度保安工作总结表彰大会</a></dd>
-                        <dd class="date"><span>2018-02-06</span></dd>
-                    </dl>
-                    <dl class="inside-list wow fadeInUp">
-                        <dt><a href="14181.html><img src="cn/attachment/20180206/220cecd7fc014a6b855a8054ca6321ea.png" alt="最美不是下雪天，而是上海保安人在冰雪天的坚守"></a></dt>
-                        <dd class="text-title"><a href="/cn/news/14186.html">最美不是下雪天，而是上海保安人在冰雪天的坚守</a></dd>
-                        <dd class="date"><span>2018-02-01</span></dd>
-                    </dl>
-                    <dl class="inside-list wow fadeInUp">
-                        <dt><a href="/cn/news/14185.html"><img src="cn/attachment/20180206/c80f934960394a2daacc2bb0aae4d933.png" alt="押运公司领导一行到重庆学习调研"></a></dt>
-                        <dd class="text-title"><a href="/cn/news/14185.html">押运公司领导一行到重庆学习调研</a></dd>
-                        <dd class="date"><span>2018-02-01</span></dd>
-                    </dl>
-                    <dl class="inside-list wow fadeInUp">
-                        <dt><a href="/cn/news/14184.html"><img src="cn/attachment/20180206/ac05783b182349fe9f2e405afb1ab45e.png" alt="建设银行上海分行保卫处领导到押运公司座谈交流"></a></dt>
-                        <dd class="text-title"><a href="/cn/news/14184.html">建设银行上海分行保卫处领导到押运公司座谈交流</a></dd>
-                        <dd class="date"><span>2018-02-01</span></dd>
-                    </dl>
-                    <dl class="inside-list wow fadeInUp">
-                        <dt><a href="/cn/news/14183.html"><img src="cn/attachment/20180206/032c44c33d454ed1a96d752c7b843aa6.png" alt="总公司开展员工精神文明竞赛活动"></a></dt>
-                        <dd class="text-title"><a href="/cn/news/14183.html">总公司开展员工精神文明竞赛活动</a></dd>
-                        <dd class="date"><span>2018-02-01</span></dd>
-                    </dl>
-                    <dl class="inside-list wow fadeInUp">
-                        <dt><a href="/cn/news/14181.html"><img src="cn/attachment/20180109/186a30a346784982a1eb7ce81d181d8f.png" alt="总公司举行“一带一路”莫斯科中国贸易中心项目三方合作协议签约仪式"></a></dt>
-                        <dd class="text-title"><a href="/cn/news/14181.html">总公司举行“一带一路”莫斯科中国贸易中心项目三方合作协议签约仪式</a></dd>
-                        <dd class="date"><span>2018-01-09</span></dd>
-                    </dl>
+                </foreach>
+
                 
                 <div class="page wow fadeInUp">
-                        <a class="previous disabled" href="javascript:;">&lt;</a>
-                        <a class="now" href="javascript:;">1</a>
-                        <a class="" href="news-qyxw-2.html">2</a>
-                        <a class="" href="news-qyxw-3.html">3</a>
-                        <a class="" href="news-qyxw-4.html">4</a>
-                        <a class="" href="news-qyxw-5.html">5</a>
-                        <a class="disabled" href="javascript:;">...</a>
-                        <a class="" href="news-qyxw-35.html">35</a>
-                        <a class="" href="news-qyxw-36.html">36</a>
-                        <a class="next" href="news-qyxw-2.html">&gt;</a>
+                      {$page}
                 </div>
                 
             </div>

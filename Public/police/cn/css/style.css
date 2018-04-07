@@ -1548,3 +1548,12 @@ background-color: none;
 	border-bottom: 0;
 	background: url(../images/triangle.png) 36px 3px no-repeat;
 }
+
+
+.page .current{
+	display: inline-block;
+	padding: 7px 14px;
+	background-color: #b3b5b7;
+	color: #fff;
+	margin-left: 10px;
+}

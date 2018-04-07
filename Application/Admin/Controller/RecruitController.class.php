@@ -200,9 +200,9 @@ class RecruitController  extends AdminBaseController
 
 
     //新闻1删除
-    public function news1_del(){
+    public function recruit_del(){
         $id = I('post.id');
-        $r = M('news1')->where(['id'=>$id])->save(['display'=>0]);
+        $r = M('recruit_content')->where(['id'=>$id])->save(['display'=>0]);
         if($r){
             $this->ajaxSuccess('删除成功');
         }else{

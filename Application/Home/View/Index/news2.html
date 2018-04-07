@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>上海保安报</title>
+	<link rel="stylesheet" href="__PUBLIC__/police/cn/enews/css/bootstrap.min.css">
+	<link rel="stylesheet" href="__PUBLIC__/police/cn/enews/css/style.css">
+	<link rel="stylesheet" href="__PUBLIC__/police/cn/enews/css/colorbox.css" />
+	<style type="text/css">
+		.er,.san,.si,.zhong { display: none; }
+	</style>
+</head>
+<body>
+
+<div id="app">
+	<!-- 201712 -->
+	<div class="newspaper">
+		<div class="news-left yi">
+			<map name="Map1">
+				<area shape="rect" coords="3,129,485,390" class="iframe" href="__PUBLIC__/police//cn/enews/13877.html">
+				<area shape="rect" coords="3,390,225,728" class="iframe" href="__PUBLIC__/police//cn/enews/13878.html">
+				<area shape="rect" coords="225,390,485,728" class="iframe" href="__PUBLIC__/police//cn/enews/13879.html">
+            </map>
+			<img src="{$content['qi_x']['img1']}" usemap="#Map1">
+		</div>
+		<div class="news-left er">
+			<map name="Map2">
+				<area shape="rect" coords="5,20,214,370" class="iframe" href="__PUBLIC__/police//cn/enews/13880.html">
+	            <area shape="rect" coords="5,370,214,728" class="iframe" href="__PUBLIC__/police//cn/enews/13883.html">
+	            <area shape="rect" coords="214,20,490,240" class="iframe" href="__PUBLIC__/police//cn/enews/13881.html">
+	            <area shape="rect" coords="214,240,490,545" class="iframe" href="__PUBLIC__/police//cn/enews/13882.html">
+	            <area shape="rect" coords="214,545,490,728" class="iframe" href="__PUBLIC__/police//cn/enews/13884.html">
+            </map>
+			<img src="{$content['qi_x']['img2']}" usemap="#Map2">
+		</div>
+		<div class="news-left san">
+			<map name="Map3">
+				<area shape="rect" coords="5,20,254,225" class="iframe" href="__PUBLIC__/police//cn/enews/13885.html">
+	            <area shape="rect" coords="5,225,254,430" class="iframe" href="__PUBLIC__/police//cn/enews/13887.html">
+	            <area shape="rect" coords="5,430,254,558" class="iframe" href="__PUBLIC__/police//cn/enews/13889.html">
+	            <area shape="rect" coords="5,558,254,728" class="iframe" href="__PUBLIC__/police//cn/enews/13891.html">
+	            <area shape="rect" coords="254,20,490,260" class="iframe" href="__PUBLIC__/police//cn/enews/13886.html">
+	            <area shape="rect" coords="254,260,490,510" class="iframe" href="__PUBLIC__/police//cn/enews/13888.html">
+	            <area shape="rect" coords="254,510,490,728" class="iframe" href="__PUBLIC__/police//cn/enews/13890.html">
+            </map>
+			<img src="{$content['qi_x']['img3']}" usemap="#Map3">
+		</div>
+		<div class="news-left si">
+			<map name="Map4">
+			    <area shape="rect" coords="5,20,305,140" class="iframe" href="__PUBLIC__/police/cn/enews/13892.html">
+	            <area shape="rect" coords="5,140,305,320" class="iframe" href="__PUBLIC__/police/cn/enews/13894.html">
+	            <area shape="rect" coords="5,320,305,490" class="iframe" href="__PUBLIC__/police/cn/enews/13896.html">
+	            <area shape="rect" coords="305,20,488,250" class="iframe" href="__PUBLIC__/police/cn/enews/13893.html">
+	            <area shape="rect" coords="305,250,488,490" class="iframe" href="__PUBLIC__/police/cn/enews/13895.html">
+	            <area shape="rect" coords="5,490,488,728" class="iframe" href="__PUBLIC__/police/cn/enews/13897.html">
+            </map>
+			<img src="{$content['qi_x']['img4']}" usemap="#Map4">
+		</div>
+		
+		<div class="news-right">
+			<div class="news-top">
+				<div class="logo"><img src="__PUBLIC__/police/cn/enews/img/logo.jpg" alt=""></div>
+				<div class="input-append">
+					<button class="add-on">往期回顾</button>
+					<ul class="input-ropdown">
+
+						<foreach name="content['qi']" item="vo" >
+							<li><a href="{:U('news2_info',['id'=>$vo['id']])}">{$vo['title']}</a></li>
+						</foreach>
+					</ul>
+				</div>
+				<div class="page">
+					<a href="{:U('news2_info',['id'=>$content['qi_s']])}">上一期</a><a href="{:U('news2_info',['id'=>$content['qi_n']])}">下一期</a>
+				</div>
+			</div>
+			<div class="layout">
+				<a href="javascript:change('yi');">一版</a>
+				<a href="javascript:change('er');">二版</a>
+				<a href="javascript:change('san');">三版</a>
+				<a href="javascript:change('si');">四版</a>
+			</div>
+			<div class="news-list">
+				<foreach name="content['yi']" item="vo" >
+					<dl class="yi">
+						<dt><a href="{:U('news2_content',['id'=>$vo['id']])}" class="iframe">{$vo['title']}</a></dt>
+						<dd>　　{$vo['note']}</dd>
+					</dl>
+				</foreach>
+				<foreach name="content['er']" item="vo" >
+					<dl class="er">
+						<dt><a href="{:U('news2_content',['id'=>$vo['id']])}" class="iframe">{$vo['title']}</a></dt>
+						<dd>　　{$vo['note']}</dd>
+					</dl>
+				</foreach>
+				<foreach name="content['san']" item="vo" >
+					<dl class="san">
+						<dt><a href="{:U('news2_content',['id'=>$vo['id']])}" class="iframe">{$vo['title']}</a></dt>
+						<dd>　　{$vo['note']}</dd>
+					</dl>
+				</foreach>
+				<foreach name="content['si']" item="vo" >
+					<dl class="si">
+						<dt><a href="{:U('news2_content',['id'=>$vo['id']])}" class="iframe">{$vo['title']}</a></dt>
+						<dd>　　{$vo['note']}</dd>
+					</dl>
+				</foreach>
+
+			</div>
+		</div>
+	</div>
+	<!-- 201712/ -->
+
+		
+	</div>	
+	<div class="footer">© 版权所有 上海市保安服务总公司1985-2013 沪ICP备09072204号-1</div>
+	
+	<script src="__PUBLIC__/police/cn/js/vue.js"></script>
+	<script src="__PUBLIC__/police/cn/enews/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/police/cn/enews/js/jquery.colorbox.js"></script>
+	<script>
+	function change(type) {
+		$(".yi,.er,.san,.si").hide();
+		$("."+type).show();
+	}
+	
+	/*
+	var vm = new Vue({
+		el : '#app',
+		data : {
+			type:"yi"
+		},
+		updated : function() {
+			$(".iframe").colorbox({
+				iframe:true,
+				width:"80%",
+				height:"90%"
+			});
+		},
+		methods : {
+			change : function(type) {
+				this.type=type;
+			}
+		}
+	});
+	*/
+	$(document).ready(function(){
+		$(".input-append").hover(function(){
+		    $(".input-ropdown").slideToggle("slow");
+		});
+	});
+
+	$(".iframe").colorbox({
+		iframe:true,
+		width:"80%",
+		height:"90%"
+	});
+	</script>
+</body>
+</html>

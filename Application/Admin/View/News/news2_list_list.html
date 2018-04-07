@@ -12,7 +12,7 @@
 	<body>
 		<div class="admin-main">
 			<blockquote class="layui-elem-quote" style="height:28px;">
-				<button  class="layui-btn layui-btn-small" onclick="javascript:window.location.href='{:U('news2_list_add',['pid'=>$pid])}' ">
+				<button  class="layui-btn layui-btn-small" onclick="javascript:window.location.href='{:U('news2_list_add',['type_id'=>$type_id])}' ">
 					<i class="layui-icon">&#xe608;</i>添加内容
 				</button>
 				<form class="layui-form" style="float:right">
@@ -30,6 +30,8 @@
 							  <th>时间</th>
 							  <th>标题</th>
 							  <th>标题(英文)</th>
+							  <th>版面</th>
+
 								<th>操作</th>
 							</tr>
 					  </thead>
@@ -40,6 +42,7 @@
 					      <td>{$vo.inputtime}</td>
 						  <td>{$vo.title}</td>
 						  <td>{$vo.title_en}</td>
+						  <td>{$vo['do_ban']}</td>
 					      <td>
 								<a class="layui-btn layui-btn-mini layui-btn-normal"  onclick="javascript:window.location.href='{:U('news2_list_edit',['id'=>$vo['id']])}' "><i class="layui-icon">&#xe642;</i>编辑</a>
 							  	<a data="{$vo.id}"  class="layui-btn layui-btn-danger layui-btn-mini del"><i class="layui-icon">&#xe640;</i>删除</a>

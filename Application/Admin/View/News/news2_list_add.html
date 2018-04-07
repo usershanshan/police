@@ -16,7 +16,20 @@
 				<div class="layui-field-box">
 					 <form class="layui-form" action="">
 						 <input type="hidden" name="id" value="{$id}">
-						 <input type="hidden" name="pid" value="{$pid}">
+						 <input type="hidden" name="type_id" value="{$type_id}">
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">版面</label>
+							 <div class="layui-input-block">
+								 <select name="pid" lay-filter="aihao">
+									 <option>请选择</option>
+									 <option value="yi" {$info['ban'][1]}>一版</option>
+									 <option value="er" {$info['ban'][2]}>二版</option>
+									 <option value="san" {$info['ban'][3]}>三版</option>
+									 <option value="si" {$info['ban'][4]}>四版</option>
+
+								 </select>
+							 </div>
+						 </div>
 						 <div class="layui-form-item">
 							 <label class="layui-form-label">标题</label>
 							 <div class="layui-input-block">
@@ -24,6 +37,7 @@
 										autocomplete="off" placeholder="标题" class="layui-input" value="{$info['title']}">
 							 </div>
 						 </div>
+
 						 <div class="layui-form-item">
 							 <label class="layui-form-label">新闻标题(英文)</label>
 							 <div class="layui-input-block">

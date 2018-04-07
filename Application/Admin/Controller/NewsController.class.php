@@ -357,127 +357,127 @@ class NewsController extends AdminBaseController
     //======================================================================================================
 
     //版面添加
-    public  function news2_ban_add(){
-        if(IS_POST){
-            $info = I('post.');
-            $require = [
-                'title'=>'请输入版面号',
-                'title_en'=>'请输入英文版面号',
-            ];
-            $res = required($require,$info);
-            if($res['Error']){
-                $this->ajaxError($res['Msg']);
-            }
+//    public  function news2_ban_add(){
+//        if(IS_POST){
+//            $info = I('post.');
+//            $require = [
+//                'title'=>'请输入版面号',
+//                'title_en'=>'请输入英文版面号',
+//            ];
+//            $res = required($require,$info);
+//            if($res['Error']){
+//                $this->ajaxError($res['Msg']);
+//            }
+//
+//           $info['display'] = 1;
+//            $info['inputtime'] = time();
+//
+//
+//
+//            $r = M('news2_ban')->add($info);
+//
+//            if($r){
+//                $this->ajaxSuccess('添加成功');
+//            }else{
+//                $this->ajaxError('添加失败');
+//            }
+//        }else{
+//            $this->assign('title','添加版面');
+//            $this->assign('pid',I('get.pid'));//期刊id
+//            $this->display();
+//
+//        }
+//    }
+//
+//    //版面列表
+//    public function news2_ban_list(){
+//        $pid = I('get.pid');//期刊id
+//        $this->assign('pid',$pid);
+//        $page = I('get.p')?I('get.p'):1;
+//        $pagesize = I('get.pagesize')?I('get.pagesize'):10;
+//
+//
+//
+//        $where['display'] = 1;
+//        $where['pid'] = $pid;
+//        $data = getlist('news2_ban',$page,$pagesize,$where,['inputtime'=>'desc']);
+//        if($data['count']){
+//            foreach($data['list'] as $k=>$v){
+//                $data['list'][$k]['inputtime'] = date('Y-m-d H:i:s',$v['inputtime']);
+//            }
+//        }
+//
+//
+//        $this->assign('list',$data['list']);
+//        $this->assign('page',$data['page']);
+//        $this->display();
+//    }
+//
+//
+//    //新闻2删除
+//    public function news2_ban_del(){
+//        $id = I('post.id');
+//        $r = M('news2_ban')->where(['id'=>$id])->save(['display'=>0]);
+//        if($r){
+//            $this->ajaxSuccess('删除成功');
+//        }else{
+//            $this->ajaxError('删除失败');
+//        }
+//    }
+//
+//    //版面编辑
+//    public function news2_ban_edit(){
+//        if(IS_POST){
+//            $info = I('post.');
+//            unset($info['pid']);
+//            $require = [
+//                'title'=>'请输入版面号',
+//                'title_en'=>'请输入英文版面号',
+//            ];
+//            $res = required($require,$info);
+//            if($res['Error']){
+//                $this->ajaxError($res['Msg']);
+//            }
+//            if($res['Error']){
+//                $this->ajaxError($res['Msg']);
+//            }
+//
+//            $info['updatetime'] = time();
+//
+//
+//
+//            $r = M('news2_ban')->save($info);
+//
+//            if($r){
+//                $this->ajaxSuccess('修改成功');
+//            }else{
+//                $this->ajaxError('修改失败');
+//            }
+//        }else{
+//            $id = I('get.id');
+//            $this->assign('id',$id);
+//            //信息
+//            $info = M('news2_ban')->where(['id'=>$id])->find();
+//            $this->assign('info',$info);
+//
+//            $this->assign('title','版面编辑');
+//            $this->display('news2_ban_add');
+//
+//
+//
+//        }
+//    }
 
-           $info['display'] = 1;
-            $info['inputtime'] = time();
-
-
-
-            $r = M('news2_ban')->add($info);
-
-            if($r){
-                $this->ajaxSuccess('添加成功');
-            }else{
-                $this->ajaxError('添加失败');
-            }
-        }else{
-            $this->assign('title','添加版面');
-            $this->assign('pid',I('get.pid'));//期刊id
-            $this->display();
-
-        }
-    }
-
-    //版面列表
-    public function news2_ban_list(){
-        $pid = I('get.pid');//期刊id
-        $this->assign('pid',$pid);
-        $page = I('get.p')?I('get.p'):1;
-        $pagesize = I('get.pagesize')?I('get.pagesize'):10;
-
-
-
-        $where['display'] = 1;
-        $where['pid'] = $pid;
-        $data = getlist('news2_ban',$page,$pagesize,$where,['inputtime'=>'desc']);
-        if($data['count']){
-            foreach($data['list'] as $k=>$v){
-                $data['list'][$k]['inputtime'] = date('Y-m-d H:i:s',$v['inputtime']);
-            }
-        }
-
-
-        $this->assign('list',$data['list']);
-        $this->assign('page',$data['page']);
-        $this->display();
-    }
-
-
-    //新闻2删除
-    public function news2_ban_del(){
-        $id = I('post.id');
-        $r = M('news2_ban')->where(['id'=>$id])->save(['display'=>0]);
-        if($r){
-            $this->ajaxSuccess('删除成功');
-        }else{
-            $this->ajaxError('删除失败');
-        }
-    }
-
-    //版面编辑
-    public function news2_ban_edit(){
-        if(IS_POST){
-            $info = I('post.');
-            unset($info['pid']);
-            $require = [
-                'title'=>'请输入版面号',
-                'title_en'=>'请输入英文版面号',
-            ];
-            $res = required($require,$info);
-            if($res['Error']){
-                $this->ajaxError($res['Msg']);
-            }
-            if($res['Error']){
-                $this->ajaxError($res['Msg']);
-            }
-
-            $info['updatetime'] = time();
-
-
-
-            $r = M('news2_ban')->save($info);
-
-            if($r){
-                $this->ajaxSuccess('修改成功');
-            }else{
-                $this->ajaxError('修改失败');
-            }
-        }else{
-            $id = I('get.id');
-            $this->assign('id',$id);
-            //信息
-            $info = M('news2_ban')->where(['id'=>$id])->find();
-            $this->assign('info',$info);
-
-            $this->assign('title','版面编辑');
-            $this->display('news2_ban_add');
-
-
-
-        }
-    }
-
-    //新闻2删除
-    public function news2_list_del(){
-        $id = I('post.id');
-        $r = M('news2_list')->where(['id'=>$id])->save(['display'=>0]);
-        if($r){
-            $this->ajaxSuccess('删除成功');
-        }else{
-            $this->ajaxError('删除失败');
-        }
-    }
+//    //新闻2删除
+//    public function news2_list_del(){
+//        $id = I('post.id');
+//        $r = M('news2_list')->where(['id'=>$id])->save(['display'=>0]);
+//        if($r){
+//            $this->ajaxSuccess('删除成功');
+//        }else{
+//            $this->ajaxError('删除失败');
+//        }
+//    }
 
     //================================================================================================
     //内容列表
@@ -487,6 +487,7 @@ class NewsController extends AdminBaseController
             $require = [
                 'title'=>'请输入标题',
                 'title_en'=>'请输入英文标题',
+                'pid'=>'请选择版号'
             ];
             $res = required($require,$info);
             if($res['Error']){
@@ -507,26 +508,40 @@ class NewsController extends AdminBaseController
             }
         }else{
             $this->assign('title','添加内容');
-            $this->assign('pid',I('get.pid'));//版面id
+            $this->assign('type_id',I('get.type_id'));//期号
             $this->display();
 
         }
     }
     //内容列表列表
     public function news2_list_list(){
-        $pid = I('get.pid');//版面id
-        $this->assign('pid',$pid);
+        $type_id = I('get.type_id');//版面id
+        $this->assign('type_id',$type_id);
         $page = I('get.p')?I('get.p'):1;
         $pagesize = I('get.pagesize')?I('get.pagesize'):10;
 
 
 
         $where['display'] = 1;
-        $where['pid'] = $pid;
+        $where['type_id'] = $type_id;
         $data = getlist('news2_list',$page,$pagesize,$where,['inputtime'=>'desc']);
         if($data['count']){
             foreach($data['list'] as $k=>$v){
                 $data['list'][$k]['inputtime'] = date('Y-m-d H:i:s',$v['inputtime']);
+                switch($v['pid']){
+                    case 'yi':
+                        $data['list'][$k]['do_ban'] = '一版';
+                        break;
+                    case 'er':
+                        $data['list'][$k]['do_ban'] = '二版';
+                        break;
+                    case 'san':
+                        $data['list'][$k]['do_ban'] = '三版';
+                        break;
+                    case 'si':
+                        $data['list'][$k]['do_ban'] = '四版';
+                        break;
+                }
             }
         }
 
@@ -540,7 +555,7 @@ class NewsController extends AdminBaseController
     public function news2_list_edit(){
         if(IS_POST){
             $info = I('post.');
-            unset($info['pid']);
+            unset($info['type_id']);
             $require = [
                 'title'=>'请输入标题',
                 'title_en'=>'请输入英文标题',
@@ -565,6 +580,20 @@ class NewsController extends AdminBaseController
             $this->assign('id',$id);
             //信息
             $info = M('news2_list')->where(['id'=>$id])->find();
+            switch($info['pid']){
+                case 'yi':
+                    $info['ban'][1] = 'selected';
+                    break;
+                case 'er':
+                    $info['ban'][2] = 'selected';
+                    break;
+                case 'san':
+                    $info['ban'][3] = 'selected';
+                    break;
+                case 'si':
+                    $info['ban'][4] = 'selected';
+                    break;
+            }
             $this->assign('info',$info);
 
             $this->assign('title','内容编辑');
@@ -617,10 +646,9 @@ class NewsController extends AdminBaseController
         $pagesize = I('get.pagesize')?I('get.pagesize'):10;
 
 
-
         $where['display'] = 1;
         $where['type_id'] = $type_id;
-        $data = getlist('news2_list',$page,$pagesize,$where,['inputtime'=>'desc']);
+        $data = getlist('news3',$page,$pagesize,$where,['inputtime'=>'desc']);
         if($data['count']){
             foreach($data['list'] as $k=>$v){
                 $data['list'][$k]['inputtime'] = date('Y-m-d H:i:s',$v['inputtime']);
@@ -631,6 +659,53 @@ class NewsController extends AdminBaseController
         $this->assign('list',$data['list']);
         $this->assign('page',$data['page']);
         $this->display();
+    }
+
+
+    public function news3_edit(){
+        if(IS_POST){
+            $info = I('post.');
+            unset($info['type_id']);
+            $require = [
+                'title'=>'请输入标题',
+                'title_en'=>'请输入英文标题',
+            ];
+            $res = required($require,$info);
+            if($res['Error']){
+                $this->ajaxError($res['Msg']);
+            }
+
+
+            $info['updatetime'] = time();
+
+
+
+            $r = M('news3')->save($info);
+
+            if($r){
+                $this->ajaxSuccess('修改成功');
+            }else{
+                $this->ajaxError('修改失败');
+            }
+        }else{
+
+            $this->assign('title','修改内容');
+            $this->assign('id',I('get.id'));//版面id
+            $info = M('news3')->where(['id'=>I('get.id')])->find();
+            $this->assign('info',$info);
+            $this->display('news3_add');
+
+        }
+    }
+
+    public function news3_del(){
+        $id = I('post.id');
+        $r = M('news3')->where(['id'=>$id])->save(['display'=>0]);
+        if($r){
+            $this->ajaxSuccess('删除成功');
+        }else{
+            $this->ajaxError('删除失败');
+        }
     }
 
 

@@ -1,0 +1,51 @@
+<include file="Application/Home/View/Public/head1.html"/>
+<div class="inside-banner product-banner"></div>
+	<div class="product">
+		<div class="container">
+			<div class="product-nav wow fadeInUp">
+				<div class="title">
+					<h2><i></i><span>一站式服务</span><i></i></h2>
+				</div>
+				<ul class="product-list clearfix" id="cccc">
+					<foreach name="type" item="vo" >
+						<li class="wow fadeInUp time03">
+							<a href="{:U('one',['one_id'=>$vo['id']])}">
+								<img src="{$vo['icon']}">
+								<p>{$vo['title']}</p>
+							</a>
+						</li>
+					</foreach>
+				</ul>
+			</div>
+			<div class="product-content">
+				<div class="product-intro wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;"> 
+						 <dl class="clearfix"> 
+						  <dt>
+						   <img src="{$typef['img']}" alt="">
+						  </dt> 
+						  <dd> 
+						   <h3>{$typef['title']}</h3>
+						  </dd> 
+						  <dd>
+						   　{$typef['note']}&nbsp;
+						  </dd> 
+						 </dl> 
+						</div> 
+						<div class="intro-list clearfix wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+							<foreach name="content" item="vo" >
+								<div class="intro-panel">
+									<div class="title">
+										{$vo['title']}
+									</div>
+									<ul>
+										<foreach name="vo['content']" item="voo" >
+											<li>{$voo['title']}</li>
+										</foreach>
+									</ul>
+								</div>
+							</foreach>
+						</div>
+			</div>
+		</div>
+	</div>
+<include file="Application/Home/View/Public/foot1.html"/>

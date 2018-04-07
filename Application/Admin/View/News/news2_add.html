@@ -31,12 +31,37 @@
 										autocomplete="off" placeholder="选项标题" class="layui-input" value="{$info['title_en']}">
 							 </div>
 						 </div>
-						<div class="layui-form-item">
-							<div class="layui-input-block">
-								<button class="layui-btn" lay-submit lay-filter="subBanner">立即提交</button>
-								<button type="reset" class="layui-btn layui-btn-primary">重置</button>
-							</div>
-						</div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">版面一图片</label>
+							 <img id="LAY_demo_upload1" src="{$info['img1']}" style="height:200px;"  >
+							 <input type="hidden" name="img1" id="upLogo1" value="{$info['img1']}"/>
+							 <input type="file" name="file" class="layui-upload-file" id="img1">
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">版面二图片</label>
+							 <img id="LAY_demo_upload2" src="{$info['img2']}" style="height:200px;"  >
+							 <input type="hidden" name="img2" id="upLogo2" value="{$info['img2']}"/>
+							 <input type="file" name="file" class="layui-upload-file" id="img2">
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">版面三图片</label>
+							 <img id="LAY_demo_upload3" src="{$info['img3']}" style="height:200px;"  >
+							 <input type="hidden" name="img3" id="upLogo3" value="{$info['img3']}"/>
+							 <input type="file" name="file" class="layui-upload-file" id="img3">
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">版面四图片</label>
+							 <img id="LAY_demo_upload4" src="{$info['img4']}" style="height:200px;"  >
+							 <input type="hidden" name="img4" id="upLogo4" value="{$info['img4']}"/>
+							 <input type="file" name="file" class="layui-upload-file" id="img4">
+						 </div>
+						 <div class="layui-form-item">
+							 <div class="layui-input-block">
+								 <button class="layui-btn" lay-submit lay-filter="subBanner">立即提交</button>
+								 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+							 </div>
+						 </div>
+
 					</form>
 				</div>
 			</fieldset>
@@ -48,15 +73,42 @@
 				layer = layui.layer,
 				$ = layui.jquery,
 				layedit = layui.layedit
-			layui.upload({
-			    url:  "{:U('Index/uploadAllImg')}"
-			    ,elem: '#img' //指定原始元素，默认直接查找class="layui-upload-file"
-			    ,success: function(res){
-		    	   layer.msg(res.msg);
-		    	   LAY_demo_upload.src = res.data.src;
-                    upLogo.value = res.data.src;
-			    }
-			});
+            layui.upload({
+                url:  "{:U('Index/uploadAllImg')}"
+                ,elem: '#img1' //指定原始元素，默认直接查找class="layui-upload-file"
+                ,success: function(res){
+                    layer.msg(res.msg);
+                    LAY_demo_upload1.src = res.data.src;
+                    upLogo1.value = res.data.src;
+                }
+            });
+            layui.upload({
+                url:  "{:U('Index/uploadAllImg')}"
+                ,elem: '#img2' //指定原始元素，默认直接查找class="layui-upload-file"
+                ,success: function(res){
+                    layer.msg(res.msg);
+                    LAY_demo_upload2.src = res.data.src;
+                    upLogo2.value = res.data.src;
+                }
+            });
+            layui.upload({
+                url:  "{:U('Index/uploadAllImg')}"
+                ,elem: '#img3' //指定原始元素，默认直接查找class="layui-upload-file"
+                ,success: function(res){
+                    layer.msg(res.msg);
+                    LAY_demo_upload3.src = res.data.src;
+                    upLogo3.value = res.data.src;
+                }
+            });
+            layui.upload({
+                url:  "{:U('Index/uploadAllImg')}"
+                ,elem: '#img4' //指定原始元素，默认直接查找class="layui-upload-file"
+                ,success: function(res){
+                    layer.msg(res.msg);
+                    LAY_demo_upload4.src = res.data.src;
+                    upLogo4.value = res.data.src;
+                }
+            });
 			var editIndex1 = layedit.build('LAY_demo_editor1',{
 				uploadImage:{url:"{:U('Index/uploadAllImg')}"}
 			});

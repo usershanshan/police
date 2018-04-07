@@ -1,0 +1,245 @@
+﻿<include file="Application/Home/View/Public/head1.html"/>
+	<div class="banner clearfix">
+		<div class="container">
+			<div class="owl-carousel owl-theme banner-carousel wow fadeInLeft">
+				<foreach name="banner" item="vo" >
+					<div class="item">
+						<img src="{$vo['img']}">
+					</div>
+				</foreach>
+			</div>
+			<div class="video wow fadeInRight">
+				<div class="video-content">
+					<!--<div id="mediaplayer"></div>-->
+
+					<video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" poster="{$video['img']}" data-setup="{}">
+						<source src="{$video['video']}" type='video/mp4' />
+					</video>
+
+				</div>
+				<div class="video-title">
+					<h2><a href="{:U('news3_info',['id'=>$video['id']])}">{$video['title']}</a></h2><a class="more" href="{:U('news',['news_id'=>$video_arr['id']])}">更多&gt;</a>
+				</div>
+			</div>
+			<div class="video-mobile wow fadeInUp"><a href="{:U('news',['news_id'=>$video_arr['id']])}"><i class="iconfont icon-duomeiti"></i>{$video_arr['title']}</a></div>
+		</div>
+	</div>
+	<div class="home-service clearfix wow fadeInUp">
+		<div class="container">
+			<div class="title">
+				<h2><i></i><a href="{:U('one')}"><span>一站式服务</span></a><i></i></h2>
+			</div>
+			<div class="home-service-bd">
+				<div class="owl-carousel owl-theme service-carousel">
+					<!--<foreach name="one" item="vo" >-->
+						<!--<div class="item wow fadeInUp time03">-->
+							<!--<a href="{:U('one',['one_id'=>$vo['id']])}">-->
+								<!--<i><img src="{$vo['icon']}" alt="{$vo['title']}"></i>-->
+								<!--<h3>{$vo['title']}</h3>-->
+							<!--</a>-->
+						<!--</div>-->
+					<!--</foreach>-->
+					<div class="item wow fadeInUp time03">
+						<a href="31.html">
+							<i><img src="__PUBLIC__/police/cn/images/service-icon1.png" alt="人力防范"></i>
+							<h3>人力防范</h3>
+						</a>
+					</div>
+					<div class="item wow fadeInUp time05">
+						<a href="31.html">
+							<i><img src="__PUBLIC__/police/cn/images/service-icon2.png" alt="智能安防"></i>
+							<h3>智能安防</h3>
+						</a>
+					</div>
+					<div class="item wow fadeInUp time07">
+						<a href="31.html">
+							<i><img src="__PUBLIC__/police/cn/images/service-icon3.png" alt="联网报警"></i>
+							<h3>联网报警</h3>
+						</a>
+					</div>
+					<div class="item wow fadeInUp time09">
+						<a href="31.html">
+							<i><img src="__PUBLIC__/police/cn/images/service-icon4.png" alt="武装押运"></i>
+							<h3>武装押运</h3>
+						</a>
+					</div>
+					<div class="item">
+						<a href="31.html">
+							<i><img src="__PUBLIC__/police/cn/images/service-icon5.png" alt="交通设施"></i>
+							<h3>交通设施</h3>
+						</a>
+					</div>
+					<div class="item">
+						<a href="31.html">
+							<i><img src="__PUBLIC__/police/cn/images/service-icon6.png" alt="保安培训"></i>
+							<h3>保安培训</h3>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="home-news clearfix">
+		<div class="container">
+			<div class="title wow fadeInUp time03">
+				<h2><i></i><a href="news-qyxw-1.html"><span>要闻<em>动态</em></span></a><i></i></h2>
+			</div>
+			<div class="home-news-bd">
+				<div class="owl-carousel owl-theme banner-carousel news-carousel wow fadeInLeft time05">
+					<foreach name="img" item="vo" >
+						<div class="item">
+							<a href="{:U('news1_info',['id'=>$vo['id']])}">
+								<img src="{$vo['img']}" alt="{$vo['img']}">
+								<p>{$vo['img']}</p>
+							</a>
+						</div>
+					</foreach>
+				</div>
+				<div class="home-news-list">
+					<ul class="wow fadeInRight time07">
+						<foreach name="no_img" item="vo" >
+							<li><a href="{:U('news1_info',['id'=>$vo['id']])}">{$vo['title']}</a></li>
+						</foreach>
+					</ul>
+					<div class="news-newspaper wow fadeInRight time09">
+						<a target="_blank" href="enews-e201712-1.html"><img src="cn/images/newspaper.jpg" alt="上海保安报"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="home-case clearfix">
+		<div class="container">
+			<div class="title wow fadeInUp time03">
+				<h2><i></i><a href="{:U('cases')}"><span>经典<em>案例</em></span></a><i></i></h2>
+			</div>
+			<div class="home-case-bd clearfix">
+				<div class="case-big wow fadeInLeft time05">
+					<a href="{:U('cases',['id'=>$arr[0]['type_id']])}">
+						<p>{$arr[0]['title_case']}</p>
+						<img src="{$arr[0]['img']}" alt="">
+					</a>
+				</div>
+				<div class="case-right">
+					<div class="case-long wow fadeInRight time07">
+						<a href="{:U('cases'),['id'=>$arr[1]['type_id']]}">
+							<p>{$arr[1]['title_case']}</p>
+							<img src="{$arr[1]['img']}" alt="">
+						</a>
+					</div>
+					<div class="case-small wow fadeInRight time09">
+						<a href="{:U('cases'),['id'=>$arr[2]['type_id']]}">
+							<p>{$arr[2]['title_case']}</p>
+							<img src="{$arr[2]['img']}" alt="">
+						</a>
+						<a href="{:U('cases'),['id'=>$arr[3]['type_id']]}">
+							<p>{$arr[3]['title_case']}</p>
+							<img src="{$arr[3]['img']}" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="home-link clearfix">
+		<div class="container">
+			<div class="title wow fadeInUp time03">
+				<h2><i></i><span>友情<em>链接</em></span><i></i></h2>
+			</div>
+			<div class="link-btn">
+				<ul class="clearfix">
+					<foreach name="friend" item="vo" >
+						<li class="wow fadeInUp"><a target="_blank" title="{$vo['title']}" href="{$vo['href']}">{$vo['title']}</a></li>
+					</foreach>
+				</ul>
+			</div>
+			<div class="title wow fadeInUp time03">
+				<h2><i></i><span>战略<em>伙伴</em></span><i></i></h2>
+			</div>
+			<div class="home-link-bd">
+				<div class="owl-carousel owl-theme link-carousel">
+					<foreach name="partner" item="vo" >
+						<div class="item wow fadeInUp time17">
+							<a href="javascript:;"><img src="{$vo['img']}" alt=""></a>
+							<!--<a href="javascript:;"><img src="cn/images/logo/link-zsyh.jpg" alt=""></a>-->
+						</div>
+					</foreach>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+<include file="Application/Home/View/Public/foot1.html"/>
+</script>
+
+<script src="__PUBLIC__/police/js/jwplayer/jwplayer.js"></script>
+<script src="__PUBLIC__/police/js/jwplayer/jwpsrv.js"></script>
+<script>
+    /*
+    var myPlayer = videojs('example_video_1');
+    videojs("example_video_1").ready(function(){
+        var myPlayer = this;
+    });
+    */
+    jwplayer('mediaplayer').setup({
+        'flashplayer': '__PUBLIC__/police/js/jwplayer/jwplayer.flash.swf',
+        'image': '__PUBLIC__/police/cn/images/video.jpg',
+        'id': 'playerID',
+        'width': '100%',
+        'aspectratio':'10:9.3',
+        'file': 'file/01.mp4'
+    });
+
+    jQuery(function($) {
+        //轮播图
+        $(".banner-carousel").owlCarousel({
+            items:1,
+            nav:true,
+            navText:["<i class='iconfont icon-zuo'></i>","<i class='iconfont icon-gengduo'></i>"],
+            rewind:true,
+            autoplay:true,
+            autoHeight:true
+        });
+        $(".service-carousel").owlCarousel({
+            nav:true,
+            navText:["<i class='iconfont icon-zuo'></i>","<i class='iconfont icon-gengduo'></i>"],
+            rewind:true,
+            autoplay:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                440:{
+                    items:2
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:4
+                }
+            }
+        });
+        $(".link-carousel").owlCarousel({
+            rewind:true,
+            autoplay:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                360:{
+                    items:2
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:5
+                }
+            }
+        });
+    });
+</script>
+

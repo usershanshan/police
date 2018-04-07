@@ -65,6 +65,11 @@
 
 <script src="__PUBLIC__/police/js/jwplayer/jwplayer.js"></script>
 <script src="__PUBLIC__/police/js/jwplayer/jwpsrv.js"></script>
+<script src="__PUBLIC__/police/cn/js/jquery.min.js"></script>
+<script src="__PUBLIC__/police/cn/js/stickUp.min.js"></script>
+<script src="__PUBLIC__/police/cn/js/owl/owl.carousel.js"></script>
+<script src="__PUBLIC__/police/cn/js/wow.min.js"></script>
+<script src="__PUBLIC__/police/cn/js/main.js"></script>
 <script>
     /*
     var myPlayer = videojs('example_video_1');
@@ -128,6 +133,20 @@
                     items:5
                 }
             }
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+        var file = $("source").attr("src");
+        var image = "{$content['img']}";
+        jwplayer('mediaplayer').setup({
+            'flashplayer': '/Public/police/js/jwplayer/jwplayer.flash.swf',
+            'image': image,
+            'id': 'playerID',
+            'width': '100%',
+            'aspectratio':'10:5',
+            'file': file
         });
     });
 </script>

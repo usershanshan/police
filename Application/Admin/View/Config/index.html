@@ -22,16 +22,6 @@
 							<input type="file" name="file" class="layui-upload-file" id="WEB_LOGO">
 						</div>
 						<div class="layui-form-item">
-							<label class="layui-form-label">网站开关</label>
-							<div class="layui-input-block">
-								<if condition="$config['WEB_STATUS'] eq on">
-									<input type="checkbox" checked=""  name="WEB_STATUS"  lay-text="ON|OFF" lay-skin="switch">
-								<else/>
-									<input type="checkbox" name="WEB_STATUS"  lay-text="ON|OFF" lay-skin="switch" >
-								</if>
-							</div>
-						</div>
-						<div class="layui-form-item">
 							<label class="layui-form-label">网站标题</label>
 							<div class="layui-input-block">
 								<input type="text" name="WEB_TITLE" value="{$config['WEB_TITLE']}"
@@ -39,11 +29,26 @@
 							</div>
 						</div>
 						 <div class="layui-form-item">
+							 <label class="layui-form-label">网站标题 英文</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="WEB_TITLE_EN" value="{$config['WEB_TITLE_EN']}"
+										autocomplete="off" placeholder="请输入网站英文标题" class="layui-input">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
 							 <label class="layui-form-label">网站尾部协议</label>
 							 <div class="layui-input-block">
 								 <!--<input type="text" name="WEB_FOOTER1" value="{$config['WEB_FOOTER1']}"-->
 										<!--autocomplete="off" placeholder="请输入网站尾部协议" class="layui-input">-->
 								 <textarea name="note" placeholder="请输入内容" class="layui-textarea">{$config['WEB_FOOTER1']}</textarea>
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">网站尾部协议 英文</label>
+							 <div class="layui-input-block">
+								 <!--<input type="text" name="WEB_FOOTER1" value="{$config['WEB_FOOTER1']}"-->
+								 <!--autocomplete="off" placeholder="请输入网站尾部协议" class="layui-input">-->
+								 <textarea name="note_en" placeholder="请输入内容" class="layui-textarea">{$config['WEB_FOOTER1_EN']}</textarea>
 							 </div>
 						 </div>
 						<div class="layui-form-item">
