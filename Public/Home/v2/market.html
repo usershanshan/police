@@ -1,0 +1,389 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title></title>
+    <link href="/v2/css/new_market.css" rel="stylesheet" media="screen">
+
+    <meta name="keywords" content="#"/>
+    <meta name="description" content="#" />
+    <script src="/v2/js/hm.js"></script>
+</head>
+
+<body class="">
+
+
+<div class="bg"></div>
+<div class="navbar" id="navbar">
+    <div class="navbar_info clear_fix">
+        <div class="logo_box"><a href="/"><img style="height: 60px" src="/images/logo_black.png"></a></div>
+        <div class="menu"><a href="/">首页</a></div>
+        <div class="menu"><a href="/v2/market.jsp" class="cur">行情中心</a></div>
+        <div class="menu"><a href="/k/spot" >人民币现货-BTC</a></div>
+        <div class="menu"><a href="/k/spot?currency_type=2" >美元现货-BTC</a></div>
+        <div class="menu"><a href="/k/spot?symbol=4&currency_type=1" >人民币现货-LTC</a></div>
+        <div class="user_info">
+            <form action="/account/login.php" method="post" class="form_market_login clear_fix bind_validator">
+                <div class="market_input_group">
+                    <input type="text" class="input_market b_r_none" name="email_or_phone" data-type="p|e" data-msg-null="请输入邮箱或手机" value="" placeholder="邮箱/手机号">
+                    <div class="form_tip"></div>
+                </div>
+                <div class="market_input_group">
+                    <input type="password" class="input_market" name="password" data-type="*" data-msg-null="请输入密码" placeholder="输入密码">
+                    <div class="form_tip"></div>
+                </div>
+                <div class="market_input_group" id="vcode_p" style="display:none;">
+                    <input type="text" class="input_market b_l_none long" data-type="*" name="vcode" data-msg-null="请输入验证码" placeholder="验证码">
+                    <span class="vcode"><img id="vcode1" onclick="change_vcode(this);" src="" width="60" height="24" alt=""></span>
+                    <div class="form_tip"></div>
+                </div>
+                <div class="market_input_group m_l_6"><button name=""  class="btn btn_blue size_s btn_market" >登录</button></div>
+            </form>
+        </div>
+    </div>
+</div>        
+<div class="main">
+    <div class="block_chart clear_fix">
+        <div class="chart_box" id="market_cny">
+            <h2>人民币现货-BTC</h2>
+            <div class="chart">
+                <div class="chart_sub" id="chart_cny"></div>
+            </div>
+            <div class="chart_price now_price">--</div>
+            <div class="chart_line1">
+                <span class="line_tit">涨幅</span>
+                <span class="font_14 rose">--</span>
+            </div>
+            <div class="chart_line2">
+                <span class="line_tit">成交量</span>
+                <span class="font_14 total">--</span>
+            </div>
+        </div>
+        <div class="chart_box" id="market_usd">
+            <h2>美元现货-BTC</h2>
+            <div class="chart">
+                <div class="chart_sub" id="chart_usd"></div>
+            </div>
+            <div class="chart_price now_price">--</div>
+            <div class="chart_line1">
+                <span class="line_tit">涨幅</span>
+                <span class="font_14 rose">--</span>
+            </div>
+            <div class="chart_line2">
+                <span class="line_tit">成交量</span>
+                <span class="font_14 total">--</span>
+            </div>
+        </div>
+        <div class="chart_box m_r_n" id="ltc_market_cny">
+            <h2>人民币现货-LTC</h2>
+            <div class="chart">
+                <div class="chart_sub" id="chart_cny_ltc"></div>
+            </div>
+            <div class="chart_price now_price">--</div>
+            <div class="chart_line1">
+                <span class="line_tit">涨幅</span>
+                <span class="font_14 rose">--</span>
+            </div>
+            <div class="chart_line2">
+                <span class="line_tit">成交量</span>
+                <span class="font_14 total">--</span>
+            </div>
+        </div>
+    </div>
+    <div class="block_list">
+        <h1>Bitcoin <i class="icon_menu modify" data-type="closed" title="编辑"></i></h1>
+        <div class="add_box"><span>已添加</span><div class="line"></div></div>
+        <div class="added">
+            <ul class="tit_box clear_fix">
+                <li class="part_1"><span class="p_l_60">BTC行情</span></li>
+                <li class="part_2"><span>时价 (汇率<em class="rate">--</em>)</span></li>
+                <li class="part_3"><span>涨幅</span></li>
+                <li class="part_4"><span>最高价/最低价</span></li>
+                <li class="part_5"><span>成交量</span></li>
+            </ul>
+            <ul class="list_box clear_fix" id="market_cny_list">
+                <li class="part_1">
+                    <span class="icon_box">
+                        <i class="icon_huobi"></i>
+                    </span>
+                    <span class="title_box">火币人民币现货 
+                        <a href="/k/spot">
+                            <i class="icon_flash"></i>
+                        </a> 
+                    </span>
+                </li>
+                <li class="part_2">
+                    <span class="now_price">--</span>
+                </li>
+                <li class="part_3">
+                    <span class="rose">--</span>
+                </li>
+                <li class="part_4">
+                    <span class="high">--</span>
+                      /  
+                    <span class="low">--</span>
+                </li>
+                <li class="part_5">
+                    <span class="total">--</span>
+                </li>
+            </ul>
+            <ul class="list_box clear_fix" id="market_usd_list">
+                <li class="part_1">
+                    <span class="icon_box">
+                        <i class="icon_huobi"></i>
+                    </span>
+                    <span class="title_box">火币美元现货 
+                        <a href="k/spot?currency_type=2">
+                            <i class="icon_flash"></i>
+                        </a> 
+                    </span>
+                </li>
+                <li class="part_2"><span class="now_price">--</span></li>
+                <li class="part_3"><span class="rose">--</span></li>
+                <li class="part_4"><span class="high">--</span>  /  <span class="low">--</span></li>
+                <li class="part_5"><span class="total">--</span></li>
+            </ul>
+            <ul class="list_box clear_fix" id="bitstampbtc_list">
+                <li class="part_1">
+                    <span class="dis_icon">
+                        <i class="icon_reduc"></i>
+                    </span>
+                    <span class="icon_box">
+                        <i class="icon_Bitstamp"></i>
+                    </span>
+                    <span class="title_box">BitStamp  </span>
+                </li>
+                <li class="part_2"><span class="now_price">--</span></li>
+                <li class="part_3"><span class="rose">--</span></li>
+                <li class="part_4"><span class="high">--</span>  /  <span class="low">--</span></li>
+                <li class="part_5"><span class="total">--</span></li>
+            </ul>
+            <ul class="list_box clear_fix" id="btc-ebtc_list">
+                <li class="part_1">
+                    <span class="dis_icon">
+                        <i class="icon_reduc"></i>
+                    </span>
+                    <span class="icon_box">
+                        <i class="icon_Btc-e"></i>
+                    </span>
+                    <span class="title_box">BTC-E  </span>
+                </li>
+                <li class="part_2"><span class="now_price">--</span></li>
+                <li class="part_3"><span class="rose">--</span></li>
+                <li class="part_4"><span class="high">--</span>  /  <span class="low">--</span></li>
+                <li class="part_5"><span class="total">--</span></li>
+            </ul>
+            <ul class="list_box clear_fix" id="bitfinex_btc_list">
+                <li class="part_1">
+                    <span class="dis_icon">
+                        <i class="icon_reduc"></i>
+                    </span>
+                    <span class="icon_box">
+                        <i class="icon_Bitfinex"></i>
+                    </span>
+                    <span class="title_box">Bitfinex  </span>
+                </li>
+                <li class="part_2"><span class="now_price">--</span></li>
+                <li class="part_3"><span class="rose">--</span></li>
+                <li class="part_4"><span class="high">--</span>  /  <span class="low">--</span></li>
+                <li class="part_5"><span class="total">--</span></li>
+            </ul>
+        </div>
+
+        <div class="add_box"><span>未添加</span><div class="line"></div></div>
+        <div class="notadded">
+            <ul class="list_box clear_fix" id="chinabtc_list">
+                <li class="part_1">
+                    <span class="dis_icon">
+                        <i class="icon_add"></i>
+                    </span>
+                    <span class="icon_box">
+                        <i class="icon_btcchina"></i>
+                    </span>
+                    <span class="title_box">比特币中国  </span>
+                </li>
+                <li class="part_2"><span class="now_price">--</span></li>
+                <li class="part_3"><span class="rose">--</span></li>
+                <li class="part_4"><span class="high">--</span>  /  <span class="low">--</span></li>
+                <li class="part_5"><span class="total">--</span></li>
+            </ul>
+            <ul class="list_box clear_fix" id="okcoinbtc_list">
+                <li class="part_1">
+                    <span class="dis_icon">
+                        <i class="icon_add"></i>
+                    </span>
+                    <span class="icon_box">
+                        <i class="icon_OKCoin"></i>
+                    </span>
+                    <span class="title_box">OKCoin</span>
+                </li>
+                <li class="part_2"><span class="now_price">--</span></li>
+                <li class="part_3"><span class="rose">--</span></li>
+                <li class="part_4"><span class="high">--</span>  /  <span class="low">--</span></li>
+                <li class="part_5"><span class="total">--</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="block_list">
+        <h1>Litecoin <i class="icon_menu modify" data-type="closed" title="编辑"></i></h1>
+        <div class="add_box"><span>已添加</span><div class="line"></div></div>
+        <div class="added">
+            <ul class="tit_box clear_fix">
+                <li class="part_1"><span class="p_l_60">LTC行情</span></li>
+                <li class="part_2"><span>时价 (汇率<em class="rate">--</em>)</span></li>
+                <li class="part_3"><span>涨幅</span></li>
+                <li class="part_4"><span>最高价/最低价</span></li>
+                <li class="part_5"><span>成交量</span></li>
+            </ul>
+            <ul class="list_box clear_fix" id="ltc_market_cny_list">
+                <li class="part_1">
+                    <span class="icon_box">
+                        <i class="icon_huobi"></i>
+                    </span>
+                    <span class="title_box">火币人民币现货 
+                        <a href="k/spot?symbol=4&currency_type=1">
+                            <i class="icon_flash"></i>
+                        </a> 
+                    </span>
+                </li>
+                <li class="part_2"><span class="now_price">--</span></li>
+                <li class="part_3"><span class="rose">--</span></li>
+                <li class="part_4"><span class="high">--</span>  /  <span class="low">--</span></li>
+                <li class="part_5"><span class="total">--</span></li>
+            </ul>
+            <ul class="list_box clear_fix" id="btc-eltc_list">
+                <li class="part_1">
+                    <span class="dis_icon">
+                        <i class="icon_reduc"></i>
+                    </span>
+                    <span class="icon_box">
+                        <i class="icon_Btc-e"></i>
+                    </span>
+                    <span class="title_box">BTC-E  </span>
+                </li>
+                <li class="part_2"><span class="now_price">--</span></li>
+                <li class="part_3"><span class="rose">--</span></li>
+                <li class="part_4"><span class="high">--</span>  /  <span class="low">--</span></li>
+                <li class="part_5"><span class="total">--</span></li>
+            </ul>
+            <ul class="list_box clear_fix" id="bitfinex_ltc_list">
+                <li class="part_1">
+                    <span class="dis_icon">
+                        <i class="icon_reduc"></i>
+                    </span>
+                    <span class="icon_box">
+                        <i class="icon_Bitfinex"></i>
+                    </span>
+                    <span class="title_box">Bitfinex  </span>
+                </li>
+                <li class="part_2"><span class="now_price">--</span></li>
+                <li class="part_3"><span class="rose">--</span></li>
+                <li class="part_4"><span class="high">--</span>  /  <span class="low">--</span></li>
+                <li class="part_5"><span class="total">--</span></li>
+            </ul>
+        </div>
+        <div class="add_box"><span>未添加</span><div class="line"></div></div>
+        <div class="notadded">
+            <ul class="list_box clear_fix" id="chinaltc_list">
+                <li class="part_1">
+                    <span class="dis_icon">
+                        <i class="icon_add"></i>
+                    </span>
+                    <span class="icon_box">
+                        <i class="icon_btcchina"></i>
+                    </span>
+                    <span class="title_box">比特币中国  </span>
+                </li>
+                <li class="part_2"><span class="now_price">--</span></li>
+                <li class="part_3"><span class="rose">--</span></li>
+                <li class="part_4"><span class="high">--</span>  /  <span class="low">--</span></li>
+                <li class="part_5"><span class="total">--</span></li>
+            </ul>
+            <ul class="list_box clear_fix" id="okcoinltc_list">
+                <li class="part_1">
+                    <span class="dis_icon">
+                        <i class="icon_add"></i>
+                    </span>
+                    <span class="icon_box">
+                        <i class="icon_OKCoin"></i>
+                    </span>
+                    <span class="title_box">OKCoin  </span>
+                </li>
+                <li class="part_2"><span class="now_price">--</span></li>
+                <li class="part_3"><span class="rose">--</span></li>
+                <li class="part_4"><span class="high">--</span>  /  <span class="low">--</span></li>
+                <li class="part_5"><span class="total">--</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="market_footer ">
+    <ul class="foot_record">
+        <li>© 2007-2016 JY.QKLJS.COM</li>
+    </ul> 
+</div>
+
+
+    <script type="text/javascript">
+var         CONST              = {},
+            GLOBAL             = {},
+            HBVERSION          = CONST['HBVERSION']          = '2016083002',
+            MAIN_DOMAIN        = CONST['MAIN_DOMAIN']        = '10.66.242.59:8080',//'www.huobi.com',
+            HTTP_STATIC_DOMAIN = CONST['HTTP_STATIC_DOMAIN'] = '10.66.242.59:8080',//'https://static.huobi.com',
+            COOKIE_PRE         = CONST['COOKIE_PRE']         = '.localhost:8080',
+            COOKIE_DOMAIN      = CONST['COOKIE_DOMAIN']      = '.localhost:8080',//'.huobi.com',
+            AJAX_API_DOMAIN    = CONST['AJAX_API_DOMAIN']    = '10.66.242.59:8080',//'www.huobi.com/qt',
+            UID                = CONST['UID']                = '0' * 1,
+            PROTOCOL           = CONST['PROTOCOL']           = window.location.protocol,
+            $_ws_hq_url,$_ws_hq_url_usd,$_ws_hq_url_cny;
+
+/**/
+
+        /**/
+                $_ws_hq_url     = CONST['$_ws_hq_url']     = PROTOCOL + '//10.66.242.59';
+                $_ws_hq_url_usd = CONST['$_ws_hq_url_usd'] = PROTOCOL + '//10.66.242.59';
+                $_ws_hq_url_cny = CONST['$_ws_hq_url_cny'] = PROTOCOL + '//10.66.242.59';
+        /**/
+      
+
+CONST['AJAX_DAMP'] = true;
+CONST['AJAX_DAMP_TIME'] = 6;
+CONST['AJAX_DAMP_REFRESH'] = 5000;
+var Texts={
+    "NetworkError":"网络出错,请重试"
+};
+</script>
+
+
+<script src="/v2/js/lang.js"></script>
+
+<script src="/v2/js/sea.js"></script>
+<script src="/v2/js/page_glb_var.js"></script>
+
+
+
+<script>
+    seajs.use('dev/page_new_market');
+    function change_vcode(e) {
+        e.src = "/account/captcha?" + Math.random();
+    }
+
+
+</script>
+
+    <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "js/hm.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>

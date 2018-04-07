@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Table</title>
+		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
+		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<div class="admin-main">
+			<fieldset class="layui-elem-field">
+				<legend>{$title}</legend>
+				<div class="layui-field-box">
+					 <form class="layui-form" action="">
+						 <!--<input type="hidden" name="id" value="{$id}">-->
+						<div class="layui-form-item">
+							<label class="layui-form-label">订单编号</label>
+							<div class="layui-input-block">
+								<input type="text" name="id"  required
+									autocomplete="off" placeholder="商品标题" class="layui-input" value="{$order['id']}" readonly>
+							</div>
+						</div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">用户id</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="user_id"  required
+										autocomplete="off" placeholder="商品标题" class="layui-input" value="{$order['user_id']}" readonly>
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">商品id</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="good_id"  required
+										autocomplete="off" placeholder="商品标题" class="layui-input" value="{$order['good_id']}" readonly>
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">商品名称</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="name"  required
+										autocomplete="off" placeholder="商品标题" class="layui-input" value="{$order['name']}" readonly>
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">购买数量</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="num"  required
+										autocomplete="off" placeholder="商品标题" class="layui-input" value="{$order['num']}" readonly>
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">结算货币</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="coin_name"  required
+										autocomplete="off" placeholder="商品标题" class="layui-input" value="{$order['coin_name']}" readonly>
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">商品单价</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="coin_name"  required
+										autocomplete="off" placeholder="商品标题" class="layui-input" value="{$order['price_sale']}" readonly>
+							 </div>
+						 </div>
+
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">商品总价</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="price_num"  required
+										autocomplete="off" placeholder="商品标题" class="layui-input" value="{$order['price_num']}" readonly>
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">实付金额</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="price_act"  required
+										autocomplete="off" placeholder="商品标题" class="layui-input" value="{$order['price_act']}" readonly>
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">实付金额</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="price_act"  required
+										autocomplete="off" placeholder="商品标题" class="layui-input" value="{$order['price_act']}" readonly>
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">订单状态</label>
+							 <div class="layui-input-block">
+								 <select name="state" lay-filter="aihao">
+									 <option value="2" {$order['n']} >未发货</option>
+									 <option value="3" {$order['y']} >已发货</option>
+
+
+								 </select>
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">收件人姓名</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="name_add"  value="{$order['name_add']}" required
+										autocomplete="off" placeholder="请输入商品售价" class="layui-input" >
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">收件人电话</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="phone"  value="{$order['phone']}" required
+										autocomplete="off" placeholder="请输入商品售价" class="layui-input" >
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">收件人地址</label>
+							 <div class="layui-input-inline">
+								<select name="sheng"  lay-filter="test">
+									<option value="">请选择省</option>
+									<foreach name="province" item="vo">
+										<option  {$vo['selected']} value="{$vo['id']}" >{$vo['name']}</option>
+									</foreach>
+								</select>
+							 </div>
+							 <div class="layui-input-inline">
+								<select name="shi" id="cityy">
+									<option value="">请选择市</option>
+									<foreach name="city" item="vo">
+										<option value="{$vo['id']}" {$vo['selected']}>{$vo['name']}</option>
+									</foreach>
+								</select>
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+
+							 <label class="layui-form-label">详细地址</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="address"  value="{$order['address']}" required
+										autocomplete="off" placeholder="请输入商品售价" class="layui-input" >
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+
+							 <label class="layui-form-label">买家备注</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="address"  value="{$order['note']}" readonly
+										autocomplete="off"  class="layui-input" >
+							 </div>
+						 </div>
+
+
+
+
+						<!--<div class="layui-form-item">-->
+							<!--<label class="layui-form-label">商品分类</label>-->
+							<!--<div class="layui-input-block">-->
+								<!--<select name="type" lay-filter="aihao">-->
+									<!--<option>请选择</option>-->
+									<!--<foreach name="data" key="k" item="vo">-->
+									<!--<option value="{$vo['id']}" {$vo['disabled']} {$vo['selected']}>{$vo['title']}</option>-->
+									<!--</foreach>-->
+								<!--</select>-->
+							<!--</div>-->
+						<!--</div>-->
+
+						<div class="layui-form-item">
+							<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="subBanner">立即提交</button>
+								<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</fieldset>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
+		<script>
+		layui.use(['form','upload','layedit','laydate'], function() {
+			var form = layui.form(),
+				layer = layui.layer,
+				$ = layui.jquery,
+				layedit = layui.layedit
+			layui.upload({
+			    url:  "{:U('Index/uploadAllImg')}"
+			    ,elem: '#img' //指定原始元素，默认直接查找class="layui-upload-file"
+			    ,success: function(res){
+		    	   layer.msg(res.msg);
+		    	   LAY_demo_upload.src = res.data.src;
+                    upLogo.value = res.data.src;
+			    }
+			});
+            layui.upload({
+                url:  "{:U('Index/uploadAllImg')}"
+                ,elem: '#img2' //指定原始元素，默认直接查找class="layui-upload-file"
+                ,success: function(res){
+                    layer.msg(res.msg);
+                    LAY_demo_upload2.src = res.data.src;
+                    upLogo1.value = res.data.src;
+                }
+            });
+            layui.upload({
+                url:  "{:U('Index/uploadAllImg')}"
+                ,elem: '#img3' //指定原始元素，默认直接查找class="layui-upload-file"
+                ,success: function(res){
+                    console.log(res);
+                    layer.msg(res.msg);
+                    LAY_demo_upload3.src = res.data.src;
+                    upLogo3.value = res.data.src;
+                }
+            });
+            layui.upload({
+                url:  "{:U('Index/uploadAllImg')}"
+                ,elem: '#img4' //指定原始元素，默认直接查找class="layui-upload-file"
+                ,success: function(res){
+                    layer.msg(res.msg);
+                    LAY_demo_upload4.src = res.data.src;
+                    upLogo4.value = res.data.src;
+                }
+            });
+            layui.upload({
+                url:  "{:U('Index/uploadAllImg')}"
+                ,elem: '#img5' //指定原始元素，默认直接查找class="layui-upload-file"
+                ,success: function(res){
+                    layer.msg(res.msg);
+                    LAY_demo_upload5.src = res.data.src;
+                    upLogo5.value = res.data.src;
+                }
+            });
+			var editIndex1 = layedit.build('LAY_demo_editor1',{
+				uploadImage:{url:"{:U('Index/uploadAllImg')}"}
+			});
+			//城市选择
+            form.on('select(test)', function(data){
+                console.log(data.value); //得到select原始DOM对象
+                var id = data.value;
+				var url = "{:U('Shop/city')}";
+                $.post(url,{id:id},function(data){
+					console.log(data)
+					if(data.status == 'success'){
+						$('#cityy').empty();
+						for(var i=0;i<data.data.length;i++){
+							$('#cityy').append('<option value="'+data.data[i].id+'">'+data.data[i].name+'</option>')
+						}
+						form.render('select');
+					}	
+				})
+            });
+
+
+			//监听提交
+			form.on('submit(subBanner)', function(data) { 
+				 	data.field.note = layedit.getContent(editIndex1);
+				 	var bannerInfo = data.field;
+				    var url = "{:U('Shop/orderEdit')}";
+
+
+					$.post(url,bannerInfo,function(data){
+						if(data.status == 'error'){
+							  layer.msg(data.msg,{icon: 5});//失败的表情
+							  return;
+						  }else if(data.status == 'success'){
+							  layer.msg(data.msg, {
+								  icon: 6,//成功的表情
+								  time: 2000 //2秒关闭（如果不配置，默认是3秒）
+								}, function(){
+									self.location=document.referrer;
+								}); 
+						  }
+					})
+				return false;
+			});
+		});
+		</script>
+	</body>
+
+</html>

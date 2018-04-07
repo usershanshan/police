@@ -1,0 +1,40 @@
+.payment-top {width:550px;display: table;position:relative;height:50px;}
+.payment-top-left {font-size: 22px; color: #202020;}
+.payment-top-right {position: absolute; right:0;top:0; height:50px;display: table;}
+.payment-top-right p {font-size: 14px; line-height: 25px; color: #202020;}
+.payment-mid {width:550px; display:table;margin-top: 10px;}
+.payment-mid-top {width:100%; height:146px; border-bottom: 1px solid #d9b664;padding: 5px;}
+.payment-mid-bottom {width:100%; display:table;}
+.payment-img {width:120px; height:135px;float: left;}
+.payment-introduce {width:410px; height:135px; float: left;margin-left: 10px;}
+.payment-img-top {width:100%; height:30px;background-color: #202020;padding: 0 10px;}
+.payment-img-top p {font-size: 18px; line-height: 30px; color: #ffffff;}
+.payment-img img {width: 100%; height:100px; margin-top: 5px;}
+.payment-introduce-top {width:100%; height:50px; border-bottom:1px solid #202020;}
+.payment-introduce-top p {font-size: 14px; line-height: 25px; color: #202020;}
+.payment-introduce-bottom {width:100%; height:85px;}
+.payment-introduce-bottom p {font-size: 14px; line-height: 22px; color: #202020;}
+.payment-additional-top {width:100%; height:80px;}
+.payment-additional-bottom {width:100%; height:40px; margin-top: 5px;}
+.additional-top-left {width:330px; height:80px; padding: 0 10px;float: left;margin-top:10px;}
+.additional-top-right {width:220px; height:80px;float: left;}
+.additional {width:50px; height:80px; float: left;}
+.additional p {font-size: 14px; color: #202020;line-height: 25px;}
+.flower {width:260px; float: left; height:80px;}
+.flower-one {font-size: 16px; color: #202020;line-height: 20px;font-weight: 600;}
+.flower-two {font-size: 14px; line-height: 20px; color: #202020;}
+.additional-top-right img {width:90px; height:75px; float: left;margin-top: 5px;}
+.number {width:130px; height:35px; background-color: #ffe6ae;float: left;margin-top: 5px;}
+.number p {font-size: 16px; color: #202020;line-height: 35px;text-align: center;}
+.tuifang {width:130px; height:35px; margin-top: 5px; background-color: #fff2d5;float: left;}
+.tuifang p {font-size: 12px; color: #202020;text-align: center;}
+.additional-bottom-left {width:420px; height:40px; background-color: #eeeeee; float: left;position: relative;}
+.additional-bottom-left p {font-size: 16px; color: #202020;line-height: 40px; position: absolute; top:0; right: 10px;}
+.tuifang2 {width:130px; height:40px;background-color: #cccccc;float: left;}
+.tuifang2 p {font-size: 12px; color: #202020;text-align: center;line-height: 20px;}
+
+.number2 {width:130px; height:35px; background-color: #ffe6ae;float: left;margin-top: 5px;}
+.number2 p {font-size: 16px; color: #202020;line-height: 35px;float: left;margin-left: 5px;}
+.number2 button {width:20px; height:20px;background-color: #e7c98a;border:1px solid #202020;outline: none;float: left;margin-left: 5px;
+ margin-top:7px;opacity: 0.5;font-weight: 600;}
+.number2 button:hover {opacity: 1; color: #ffffff;}

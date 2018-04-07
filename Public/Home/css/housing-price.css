@@ -1,0 +1,19 @@
+.roomnumber-right-mid2 {width:100%; height:230px; margin-top: 30px;}
+.roomnumber-right-img2 {width:310px; height:230px;float: left;}
+.right-img-big2 {width:100%; height:230px;position:relative;overflow: hidden;}
+.right-img-big2 img {width:100%; height:100%;}
+.roomnumber-right-introduce2 {width:340px; height:230px; float: left; margin-left: 20px;position: relative;}
+.right-introduce-title2 {font-size: 24px; color: #202020;}
+.right-introduce-text2 {font-size: 20px; color: #202020;margin-top: 10px;}
+.price-rule {width:100%; display: table;position: absolute;bottom: 0;left:0;}
+.price-rule-left {display: table;width:90px; height:80px;cursor: pointer;}
+.price-rule-left p {font-size: 20px; color: #202020;text-align:center;}
+.price-rule-left img {width:35px; height:35px; margin:0 auto; margin-top:17px;display: block;}
+.price-rule-right {display: table;width:90px; height:80px;position: absolute; top:0; right: 40px; cursor: pointer;}
+.price-rule-right p {font-size: 20px; color: #202020;text-align:center;}
+.price-rule-right img {width:35px; height:35px; margin:0 auto; margin-top:17px;display: block;}
+.big-black {position: absolute;bottom: 0; left:310px; display: table;width:100%;}
+.big-black-one {width:100%; padding: 10px; display: table;position: absolute;bottom: 0;background-color: #202020;opacity: 0.5;}
+.big-black-two {width:100%; padding: 10px; display: table;position: absolute;bottom: 0;z-index: 1;}
+.big-black-two ul li {color:#d9b664; list-style: disc !important;margin-left: 25px;height:24px;font-size: 20px;}
+.big-black-two ul li p {color: #ffffff;line-height:24px;font-size: 14px;}

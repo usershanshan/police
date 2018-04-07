@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Table</title>
+		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
+		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<div class="admin-main">
+			<fieldset class="layui-elem-field">
+				<legend>支付宝充值</legend>
+				<div class="layui-field-box">
+					 <form class="layui-form" action="">
+						 <input type="hidden" name="id" value="{$id}">
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">充值状态</label>
+							 <div class="layui-input-block">
+								 <select name="status" lay-filter="aihao" {$disabled}>
+
+									 <option value="">请选择</option>
+
+									 <option value="2"  >充值成功</option>
+									 <option value="3"  >充值失败</option>
+
+
+								 </select>
+							 </div>
+						 </div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">充值金额</label>
+							<div class="layui-input-block">
+								<input type="text" name="price"  required
+									autocomplete="off" placeholder="请输入充值金额" class="layui-input">
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="subBanner">立即提交</button>
+								<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</fieldset>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
+		<script>
+		layui.use(['form'], function() {
+			var form = layui.form(),
+				layer = layui.layer,
+				$ = layui.jquery,
+				layedit = layui.layedit
+
+			//监听提交
+			form.on('submit(subBanner)', function(data) {
+				 	var bannerInfo = data.field;
+				 	console.log(bannerInfo);
+				 	if(bannerInfo.id){
+				 	    var url = "{:U('zhifubao')}";
+					}
+					$.post(url,bannerInfo,function(data){
+						if(data.status == 'error'){
+							  layer.msg(data.msg,{icon: 5});//失败的表情
+							  return;
+						  }else if(data.status == 'success'){
+							  layer.msg(data.msg, {
+								  icon: 6,//成功的表情
+								  time: 2000 //2秒关闭（如果不配置，默认是3秒）
+								}, function(){
+									self.location=document.referrer;
+								}); 
+						  }
+					})
+				return false;
+			});
+		});
+		</script>
+	</body>
+
+</html>

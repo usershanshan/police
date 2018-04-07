@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Table</title>
+		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
+		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<div class="admin-main">
+			<blockquote class="layui-elem-quote" style="height:28px;">
+				<button  class="layui-btn layui-btn-small" onclick="javascript:window.location.href='{:U('Member/addMember')}' ">
+					<i class="layui-icon">&#xe608;</i>添加会员信息
+				</button>
+				<form class="layui-form" style="float:right">
+					<span style="float:right" >
+						<div class="layui-input-inline">
+							<input type="text" name="id" value="{$_GET['id']}" lay-verify="title" autocomplete="off" placeholder="请输入会员ID" class="layui-input">
+						</div>
+						<div class="layui-input-inline">
+							<input type="text" name="phone" value="{$_GET['phone']}" lay-verify="title" autocomplete="off" placeholder="请输入手机号码" class="layui-input">
+						</div>
+						<div class="layui-input-inline">
+							<input type="text" name="nick" value="{$_GET['nick']}" lay-verify="title" autocomplete="off" placeholder="请输入昵称" class="layui-input">
+						</div>
+						<div class="layui-input-inline">
+							<input type="text" name="email" value="{$_GET['email']}" lay-verify="title" autocomplete="off" placeholder="请输入邮箱" class="layui-input">
+						</div>
+					<button class="layui-btn layui-btn-normal">搜索</button>
+					</span>
+				</form>
+			</blockquote>
+			<fieldset class="layui-elem-field">
+				<legend>会员信息列表</legend>
+				<div class="layui-field-box">
+				<table class="layui-table">
+					  <thead>
+					    <tr>
+					      <th>#</th>
+					      <th>手机号码</th> 
+					      <th>邮箱</th>
+					      <th>昵称</th> 
+					      <th>真实姓名</th> 
+					      <th>证件类型</th> 
+					      <th>证件号码</th>
+					      <th>注册时间</th>
+					      <th>状态</th>
+					      <th>操作</th>
+					    </tr> 
+					  </thead>
+					  <tbody>
+					  <foreach name="list" key="k" item="vo">
+					    <tr>
+					      <td>{$vo['id']}</td>
+					      <td>{$vo.phone}</td> 
+					      <td>{$vo.email}</td> 
+					      <td>{$vo.nick}</td> 
+					      <td>{$vo.real_name}</td> 
+					      <td>{$vo.idcard_type|formartUserRealType=###}</td> 
+					      <td>{$vo.real_idcard}</td> 
+					      <td>{$vo['add_time']|date="Y-m-d H:i:s",###}</td> 
+					      <td>
+					      <if condition="$vo['status'] eq 1">
+							 <input class="layui-btn layui-btn-mini layui-btn-normal" type="button" value="可用"/> 
+						  <else/>
+							<input class="layui-btn layui-btn-mini layui-btn-danger" type="button" value="禁用"/>
+						  </if>  
+						  </td> 
+						  <td>
+							<a class="layui-btn layui-btn-mini"  onclick="javascript:window.location.href='{:U('Member/editMember',['id'=>$vo['id']])}' "><i class="layui-icon">&#xe642;</i>编辑</a>
+							<a class="layui-btn layui-btn-normal layui-btn-mini"  onclick="javascript:window.location.href='{:U('Member/editMember',['id'=>$vo['id']])}' "><i class="layui-icon">&#xe642;</i>查看财务日志</a>
+							<a class="layui-btn layui-btn-mini"  onclick="javascript:window.location.href='{:U('Member/showCurrencyUserList',['id'=>$vo['id']])}' "><i class="layui-icon">&#xe642;</i>查看会员资金</a>
+							<a data="{$vo.id}" data-s="{$vo.status}" class="layui-btn layui-btn-danger layui-btn-mini del"><i class="layui-icon">&#xe640;</i>启用/禁用</a>
+					      </td>
+					    </tr>
+					    </foreach>
+					  </tbody>
+				</table>
+			
+				</div>
+			</fieldset>
+			<div class="admin-table-page">
+				<div id="page" class="page">
+				{$page}
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['laypage','layer','form'], function() {
+				var laypage = layui.laypage,
+					$ = layui.jquery 
+				//删除
+				$('.del').click(function(){
+					var id = $(this).attr('data');
+					var status = $(this).attr('data-s');
+					var url = "{:U('Admin/Member/delMember')}";
+					layer.confirm('确定（启用/禁用）此用户吗?', {
+						  icon: 3,
+						  skin: 'layer-ext-moon',
+						  btn: ['确认','取消'] //按钮
+						}, function(){
+							$.post(url,{id:id,status:status},function(data){
+								if(data.status == 'error'){
+									  layer.msg(data.msg,{icon: 5});//失败的表情
+									  return;
+								  }else{
+									  layer.msg(data.msg, {
+										  icon: 6,//成功的表情
+										  time: 2000 //2秒关闭（如果不配置，默认是3秒）
+										}, function(){
+										   location.reload();
+										}); 
+								  }	
+							})
+					  });
+				})
+			});
+			function fd_img(obj){
+				layer.photos({
+					photos: obj, anim:7,shade:[0.5, '#000000']
+				});
+			}
+		</script>
+	</body>
+
+</html>

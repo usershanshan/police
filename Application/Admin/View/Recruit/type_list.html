@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Table</title>
+		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
+		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<div class="admin-main">
+			<blockquote class="layui-elem-quote" style="height:28px;">
+				<button  class="layui-btn layui-btn-small" onclick="javascript:window.location.href='{:U('type_add')}' ">
+					<i class="layui-icon">&#xe608;</i>添加分类
+				</button>
+				<form class="layui-form" style="float:right">
+
+				</form>
+
+			</blockquote>
+			<fieldset class="layui-elem-field">
+				<legend>分类列表</legend>
+				<div class="layui-field-box">
+				<table class="layui-table">
+					  <thead>
+							<tr>
+							  <th>id</th>
+							  <th>时间</th>
+							  <th>标题</th>
+							  <th>标题(英文)</th>
+							  <th>操作</th>
+							</tr>
+					  </thead>
+					  <tbody>
+					  <foreach name="list" key="k" item="vo">
+					    <tr>
+					      <td>{$vo.id}</td>
+					      <td>{$vo.inputtime}</td>
+						  <td>{$vo.title}</td>
+						  <td>{$vo.title_en}</td>
+					      <td>
+							  <a class="layui-btn layui-btn-mini layui-btn-normal"  onclick="javascript:window.location.href='{:U('type_edit',['id'=>$vo['id']])}' "><i class="layui-icon">&#xe642;</i>编辑</a>
+							  <a class="layui-btn layui-btn-mini layui-btn-normal"  onclick="javascript:window.location.href='{:U("recruit_list",['type_id'=>$vo['id']])}' "><i class="layui-icon">&#xe642;</i>列表</a>
+							  <a data="{$vo.id}"  class="layui-btn layui-btn-danger layui-btn-mini del"><i class="layui-icon">&#xe640;</i>删除</a>
+						  </td>
+					    </tr>
+					    </foreach>
+					  </tbody>
+				</table>
+			
+				</div>
+			</fieldset>
+			<div class="admin-table-page">
+				<div id="page" class="page">
+				{$page}
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['laypage','layer','form'], function() {
+                var laypage = layui.laypage,
+                    $ = layui.jquery
+                //删除
+                $('.del').click(function () {
+                    var id = $(this).attr('data');
+                    var status = $(this).attr('data-s');
+                    var url = "{:U('type_del')}";
+                    layer.confirm('确定删除该分类吗？', {
+                        icon: 3,
+                        skin: 'layer-ext-moon',
+                        btn: ['确认', '取消'] //按钮
+                    }, function () {
+                        $.post(url, {id: id, status: status}, function (data) {
+                            if (data.status == 'error') {
+                                layer.msg(data.msg, {icon: 5});//失败的表情
+                                return;
+                            } else {
+                                layer.msg(data.msg, {
+                                    icon: 6,//成功的表情
+                                    time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                                }, function () {
+                                    location.reload();
+                                });
+                            }
+                        })
+                    });
+                });
+
+                function fd_img(obj) {
+                    layer.photos({
+                        photos: obj, anim: 7, shade: [0.5, '#000000']
+                    });
+                }
+            })
+		</script>
+	</body>
+
+</html>

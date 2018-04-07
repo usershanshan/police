@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Table</title>
+		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
+		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="__PUBLIC__/Admin/css/tishi.css" media="all">
+		<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.min.js"></script>
+	</head>
+
+	<body>
+
+	<div class="admin-main">
+			<blockquote class="layui-elem-quote" style="height:28px;">
+				<form class="layui-form" style="float:right">
+					<span style="float:right" >
+						<div class="layui-input-inline">
+							<select  name="status_q" >
+								<option value="">订单状态</option>
+								<option  value="0">全部</option>
+								<option  value="1" {$q_1}>持仓中</option>
+								<option  value="2" {$q_2}>已结算</option>
+							</select>
+						</div>
+						<div class="layui-input-inline">
+							<select  name="status_h" >
+								<option value="">购买情况</option>
+								<option  value="0">全部</option>
+								<option  value="1" {$h_1}>未购买</option>
+								<option  value="2" {$h_2}>已购买</option>
+								<option  value="3" {$h_3}>已驳回</option>
+								<option  value="4" {$h_4}>止盈确认</option>
+								<option  value="5" {$h_5}>止损确认</option>
+								<option  value="6" {$h_6}>平仓确认</option>
+							</select>
+						</div>
+						<div class="layui-input-inline">
+							<input type="text" name="phone" value="{$_GET['phone']}" lay-verify="phone" autocomplete="off" placeholder="请输入手机号" class="layui-input">
+						</div>
+						<div class="layui-input-inline">
+							<input type="text" name="uid" value="{$_GET['uid']}" lay-verify="uid" autocomplete="off" placeholder="请输入用户id" class="layui-input">
+						</div>
+					<button class="layui-btn layui-btn-normal">搜索</button>
+					</span>
+				</form>
+			</blockquote>
+			<fieldset class="layui-elem-field">
+				<legend>订单列表</legend>
+				<div class="layui-field-box">
+				<table class="layui-table">
+					  <thead>
+							<tr>
+								<th>订单号</th>
+								<th>买入时间</th>
+								<th>卖出时间</th>
+								<th>用户id</th>
+								<th>手机</th>
+								<th>股票名称</th>
+								<th>股票编码</th>
+								<th>购买数量(股)</th>
+								<th>点买金额</th>
+								<th>买入价格</th>
+								<th>卖出价格</th>
+								<th>总盈利</th>
+								<th>订单状态</th>
+								<th>购买情况</th>
+								<th>操作</th>
+							</tr>
+					  </thead>
+					  <tbody>
+					  <foreach name="list" key="k" item="vo">
+							<tr>
+								  <td>{$vo.id}</td>
+								  <td>{$vo.inputtime}</td>
+								  <td>{$vo.updatetime}</td>
+								  <td>{$vo.user_id}</td>
+								  <td>{$vo.phone}</td>
+								  <td>{$vo.name}</td>
+								  <td>{$vo.gid}</td>
+								  <td>{$vo.num}</td>
+								  <td>{$vo.d_price}</td>
+								  <td>{$vo.buy_price}</td>
+								  <td>{$vo.sel_price}</td>
+								  <td>{$vo.al_balance}</td>
+								  <td><a class="layui-btn layui-btn-mini layui-btn-normal">{$vo.do_status_q}</a>
+								  <td>
+									<if condition="$vo['status_q'] eq 1  AND $vo['buy_note'] != '新手点买体验'">
+										<if condition="$vo['status_h'] eq 1 ">
+											<a class="layui-btn layui-btn-mini layui-btn-normal"  onclick="javascript:window.location.href='{:U('buy',['id'=>$vo['id']])}' ">线下购买</a>
+											<a data="{$vo.id}"  class="layui-btn layui-btn-normal layui-btn-mini del"> &nbsp;&nbsp;驳&nbsp;回 &nbsp;&nbsp;  </a>
+											<else/>
+											<a  class="layui-btn layui-btn-normal layui-btn-mini ">{$vo.do_status_h}</a>
+
+
+										</if>
+										<else/>
+										<if condition="$vo['status_h'] eq 1  AND $vo['buy_note'] != '新手点买体验'">
+												<a class="layui-btn layui-btn-mini layui-btn-normal"  onclick="javascript:window.location.href='{:U('sel',['id'=>$vo['id']])}' ">线下卖出</a>
+											<elseif condition="$vo['status_h'] neq 2  AND $vo['buy_note'] != '新手点买体验'" />
+												<a data="{$vo.id}"  class="layui-btn layui-btn-normal layui-btn-mini act">{$vo.do_status_h}</a>
+											<else/>
+												<a  class="layui-btn layui-btn-normal layui-btn-mini ">{$vo.do_status_h}</a>
+
+
+										</if>
+
+									</if>
+
+							      </td>
+
+								  <td>
+									<a class="layui-btn layui-btn-mini layui-btn-normal"  onclick="javascript:window.location.href='{:U('orderInfo',['order_id'=>$vo['id']])}' "><i class="layui-icon">&#xe642;</i>订单详情</a>
+								  </td>
+							</tr>
+					  </foreach>
+					  </tbody>
+				</table>
+			
+				</div>
+			</fieldset>
+			<div class="admin-table-page">
+				<div id="page" class="page">
+				{$page}
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
+		<script>
+			layui.use(['laypage','layer','form'], function() {
+				var laypage = layui.laypage,
+					$ = layui.jquery 
+				//删除
+				$('.del').click(function(){
+					var id = $(this).attr('data');
+					var url = "{:U('reject')}";
+					layer.confirm('确定驳回改订单吗？', {
+						  icon: 3,
+						  skin: 'layer-ext-moon',
+						  btn: ['确认','取消'] //按钮
+						}, function(){
+							$.post(url,{id:id},function(data){
+								if(data.status == 'error'){
+									  layer.msg(data.msg,{icon: 5});//失败的表情
+									  return;
+								  }else{
+									  layer.msg(data.msg, {
+										  icon: 6,//成功的表情
+										  time: 2000 //2秒关闭（如果不配置，默认是3秒）
+										}, function(){
+										   location.reload();
+										}); 
+								  }	
+							})
+					  });
+				});
+                $('.act').click(function(){
+                    var id = $(this).attr('data');
+                    var url = "{:U('act')}";
+                    layer.confirm('确定更改订单状态吗？', {
+                        icon: 3,
+                        skin: 'layer-ext-moon',
+                        btn: ['确认','取消'] //按钮
+                    }, function(){
+                        $.post(url,{id:id},function(data){
+                            if(data.status == 'error'){
+                                layer.msg(data.msg,{icon: 5});//失败的表情
+                                return;
+                            }else{
+                                layer.msg(data.msg, {
+                                    icon: 6,//成功的表情
+                                    time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                                }, function(){
+                                    location.reload();
+                                });
+                            }
+                        })
+                    });
+                })
+			});
+			function fd_img(obj){
+				layer.photos({
+					photos: obj, anim:7,shade:[0.5, '#000000']
+				});
+			}
+
+		</script>
+	</body>
+
+</html>

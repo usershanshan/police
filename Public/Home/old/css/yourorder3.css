@@ -1,0 +1,19 @@
+.allremove {width:550px; height:90px;}
+.allremove-right {width:220px; height:90px;margin-left: 330px;}
+.allremove-right-one {width:220px; height:30px;position: relative;}
+.allremove-right-one p {font-size: 16px; color: #202020;line-height: 30px;}
+.allremove-right-one p span {position: absolute;top:0; right: 0;}
+.payway {width:100%; margin-top: 30px;display: table;}
+.payway p {font-size: 22px; color: #202020;}
+.wecheat {width:100%; display: table;margin-top:30px;}
+.wecheat-one {height:56px; display: table;float: left;}
+.wecheat-one input {float: left;margin-top: 22px;cursor: pointer;}
+.wecheat-one img {float: left;width:150px; height:56px;margin-left: 20px;}
+.wecheatleft {margin-left: 120px;}
+.bank {width:100%; display: table;}
+.bank-one {height:50px; display: table; float: left;margin-top: 30px;}
+.bank-one input{margin-top: 18px; float: left;cursor: pointer;}
+.bank-one img {width:180px; height:50px; float: left; margin-left: 10px;}
+.bankleft {margin-left: 50px;}
+.payway-submit {width:140px; height:35px; margin:0 auto; margin-top: 50px;}
+.payway-submit input {width:140px; height:35px; border:none;outline: none;background-color: #d9b664;color: #202020;}

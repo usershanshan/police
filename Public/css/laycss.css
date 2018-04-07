@@ -1,0 +1,186 @@
+.all_mask_loginbox
+{
+	border-radius: 4px;
+	width: 498px;
+	border: 1px solid #7F7F7F;
+	position: fixed;
+	left: 50%;
+	top: 300px;
+	margin-left: -250px;
+	box-shadow: 0 0 15px #7F7F7F;
+	background: #FFF;
+	padding-top: 10px;
+	padding-bottom: 32px;
+	z-index: 1000;
+}
+.all_mask {
+	width: 100%;
+	background: #000;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 999;
+}
+.mask_wrap {
+	padding-left: 138px;
+	width: 360px;
+}
+
+.zin80 {
+	z-index: 80;
+}
+
+.login_text {
+
+	margin-bottom: 15px;
+	position: relative;
+	font-size: 12px;
+}
+
+.mask_wrap_title {
+	margin-left: -138px;
+	width: 138px;
+	text-align: right;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color: #333;
+	float: left;
+}
+
+.pl20 {
+	padding-left: 20px;
+}
+
+.login_title {
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	margin-bottom: 19px;
+	border-bottom: 1px dotted #CCC;
+}
+
+
+
+input[type=button], input[type=submit], .cursor, a, .hand {
+	cursor: pointer;
+}
+
+.btns {
+	font-size: 14px;
+	width: 200px;
+	height: 34px;
+	line-height: 34px;
+	cursor: pointer;
+	border-radius: 4px;
+	background-color: #FFF;
+	border: 1px solid #4f94e7;
+	color: #4f94e7;
+}
+
+.mask_wrap_close {
+	position: absolute;
+	right: 14px;
+	top: 12px;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+.Kline-shift-btn:hover a, .dialog-step-2 div > span em.vali, .ui-datepicker-today > a, .move, .move a, .move_hov a:hover {
+	color: #4f94e7 !important;
+}
+
+#all_mask_loginbox .mask_wrap {
+	padding-left: 138px;
+	width: 360px;
+}
+
+#all_mask_loginbox .login_text {
+	margin-bottom: 15px;
+	position: relative;
+	font-size: 12px;
+	text-align:left;
+	width:300px;
+}
+.zin90 {
+	z-index: 90;
+}
+
+#all_mask_loginbox .mask_wrap_title {
+	margin-left: -138px;
+	width: 138px;
+	text-align: right;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color: #333;
+	float: left;
+}
+
+.hg40 {
+	height: 40px!important;
+	line-height: 40px!important;
+}
+#all_mask_loginbox .texts {
+	border: 1px solid #C5C5BC;
+	vertical-align: middle;
+	font-size: 14px;
+	width: 200px;
+	height: 34px;
+	line-height: 34px;
+	cursor: pointer;
+	border-radius: 4px;
+	background-color: #FFF;
+	padding: 5px;
+}
+.w250 {
+	width: 250px !important;
+}
+
+.w145 {
+	width: 145px !important;
+}
+
+#all_mask_loginbox .btns2 {
+	font-size: 14px;
+	width: 200px;
+	height: 34px;
+	line-height: 34px;
+	color: #FFF;
+	cursor: pointer;
+	border-radius: 4px;
+	background-color: #4f94e7;
+}
+.login-footer.wwxwwx {
+	width: 80%;
+	position: relative;
+	right: 50px;
+	bottom: -20px;
+	margin: 0 auto;
+	font-size: 14px;
+	text-align: left;
+}
+#all_mask_loginbox .mask_wrap_close {
+	position: absolute;
+	right: 14px;
+	top: 12px;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+.fz_20 {
+	font-size: 20px !important;
+}
+.move{
+	color:#4f94e7;
+}
+.login-footer a {
+	color: #4f94e7;
+}
+
+#form-login .intl-tel-input .flag-dropdown{
+	right:auto;
+}

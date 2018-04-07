@@ -1,0 +1,110 @@
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" href="__PUBLIC__/duoduo/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="__PUBLIC__/duoduo/css/publicthree.css" type="text/css">
+<link rel="stylesheet" href="__PUBLIC__/duoduo/css/navone.css" type="text/css">
+<link rel="stylesheet" href="__PUBLIC__/duoduo/css/navsix.css" type="text/css">
+<link rel="stylesheet" href="__PUBLIC__/duoduo/css/swiper.min.css" type="text/css">
+</head>
+
+<body>
+<div class="back-tu">
+    <div class="header">
+        <div class="header_mid">
+            <div class="header_mid_top">
+                <a href="navfour.html"><img src="__PUBLIC__/duoduo/img/logo_icon.png" class="logo"></a>
+                <div class="header_mid_right">
+                    <div class="right_one">
+                        <img src="__PUBLIC__/duoduo/img/china_icon.png">
+                        <p>中文</p>
+                    </div>
+                    <if condition="$_SESSION['USER_INFO']">
+                        <div class="right_one">
+                            <img src="__PUBLIC__/duoduo/img/login_icon.png">
+                            <p><a href="个人中心跳">{:onPhone($_SESSION['USER_INFO']['phone'])}</a></p>
+                        </div>
+                        <div class="right_one">
+                            <img src="__PUBLIC__/duoduo/img/zhuce_icon.png">
+                            <p><a href="{:U('Login/logout')}">退出</a></p>
+                        </div>
+                        <else/>
+                        <div class="right_one">
+                            <img src="__PUBLIC__/duoduo/img/login_icon.png">
+                            <p><a href="{:U('Login/dologin')}">登入</a></p>
+                        </div>
+                        <div class="right_one">
+                            <img src="__PUBLIC__/duoduo/img/zhuce_icon.png">
+                            <p><a href="注册也">注册</a></p>
+                        </div>
+                    </if>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="login">
+        <div class="header_mid_last">
+            <div class="kaihu">
+                <ul class="navfirst">
+                    <li class="navseacond">
+                        <a href="xjkaihu.html">下级开户</a>
+                    </li>
+                    <li class="navseacond">
+                        <a href="charge.html">充值</a>
+                    </li>
+                    <li class="navseacond">
+                        <a href="cash.html">提现</a>
+                    </li>
+                    <li class="navseacond">
+                        <a href="commend.html">推荐图</a>
+                    </li>
+                    <li class="dropdown navseacond">
+                        <a type="button" data-toggle="dropdown">财务日志<span><img src="__PUBLIC__/duoduo/img/xuanzhonggengduo_icon.png"</span></a>
+                        <ul class="dropdown-menu navthree" role="menu">
+                            <li>
+                                <a href="{:U('User/investOrder')}">投资日志</a>
+                            </li>
+                            <li>
+                                <a href="{:U('User/investLog')}">股东分红日志</a>
+                            </li>
+                            <li>
+                                <a href="{:U('User/classOrder')}">成为代理</a>
+                            </li>
+                            <li>
+                                <a href="{:U('User/activityLog')}">新手红包</a>
+                            </li>
+                            <li>
+                                <a href="{:U('User/classback')}">推荐红包</a>
+                            </li>
+                            <li>
+                                <a href="#">充值记录</a>
+                            </li>
+                            <li>
+                                <a href="#">提现记录</a>
+                            </li>
+                            <li>
+                                <a href="#">收益日志</a>
+                            </li>
+
+                        </ul>
+
+
+                    </li>
+                    <li class="dropdown navseacond">
+                        <a type="button" data-toggle="dropdown">个人中心<span><img src="__PUBLIC__/duoduo/img/xuanzhonggengduo_icon.png"</span>
+                            <ul class="dropdown-menu navthree" role="menu">
+                                <li>
+                                    <a href="{:U('User/password')}">修改密码</a>
+                                </li>
+                                <li>
+                                    <a href="{:U('User/paypassword')}">修改二级密码</a>
+                                </li>
+                                <li>
+                                    <a href="account.html">资金互转</a>
+                                </li>
+
+                            </ul>
+
+                        </a>
+                    </li>
+
+                </ul>
+            </div>

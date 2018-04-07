@@ -1,0 +1,112 @@
+.fl{float:left;}
+.fr{float:right;}
+.cf:before,.cf:after {
+    content: " ";
+    display: table
+}
+
+.cf:after {
+    clear: both
+}
+
+.cf {
+    zoom:1;clear: both
+}
+article.jygz h3{
+	font-size:20px;
+	margin:10px 0;
+	padding-bottom:10px;
+	border-bottom:2px solid #333;1	
+}
+article.jygz p{
+	font-size:14px;
+	color:#333;
+	margin-bottom:10px;
+}
+ul.jygztable{
+	width:400px;
+	border:1px solid #ddd;
+	margin:10px auto;
+}
+ul.jygztable li{
+	border-bottom:1px solid #ddd;
+	font-size:14px;
+}
+ul.jygztable li em{
+	font-style: normal;
+	display:block;
+	width:150px;
+	text-align:center;
+	margin:10px 0;
+}
+ul.jygztable li span{
+	display:block;
+	width:248px;
+	text-align:center;
+	margin:10px 0;
+}
+/*代理商机制*/
+article.dlsjz h4{
+	font-size:20px;
+	margin:10px 0;
+	padding-bottom:10px;
+	border-bottom:2px solid #333;1	
+}
+.dlstext h5{
+	font-size:16px;
+	margin:10px 0;
+}
+.dlstext p{
+	font-size:16px;
+	margin:10px 0;
+}
+.dlstext ul li{
+	font-size:14px;
+	margin:10px 0;
+}
+/*上币流程*/
+article.sblc h2{
+	font-size:20px;
+	text-align:center;
+	margin:10px auto;
+}
+.tpingtai h3{
+	font-size:18px;
+	margin:10px 0;
+}
+.tpingtai ul{
+	margin-left:20px;
+}
+.tpingtai ul li{
+	line-height:30px;
+}
+.tpingtai p{
+	margin-left:20px;
+	line-height:30px;
+}
+.tpingtai dl dt{
+	margin-left:30px;
+	line-height:40px;
+}
+.bzjieshaopic{
+	width:600px;
+	margin:10px auto;
+}
+/*zhaopin*/
+article.zhaopin h2{
+	font-size: 20px;
+    margin: 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+}
+article.zhaopin p{
+	font-size: 18px;
+	margin:10px 0;
+}
+article.zhaopin h3{
+	font-size:18px;
+	margin:10px 0;
+}
+article.zhaopin ul{
+	margin-left:10px;
+}

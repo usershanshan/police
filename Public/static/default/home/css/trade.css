@@ -1,0 +1,1781 @@
+body{
+	background:#f7f7f7;
+}
+.clearfix:after, .clearfix:before{
+	clear:both;
+	display:block;
+	visibility:hidden;
+	overflow:hidden;
+	height:0;
+	content:"."
+}
+
+::selection{
+	background:#E55600;
+	color:#FFF
+}
+
+.clear{
+	clear:both
+}
+
+.mt20{
+	margin-top:20px
+}
+
+.nav #deal_center img, .topwrap #deal_center span{
+	float:left
+}
+
+#footer{
+	padding:30px 0;
+	width:100%;
+	background:#354051;
+	text-align:center
+}
+
+#footer, #footer a{
+	color:#FFF
+}
+
+#footer a:hover{
+	color:#E55600
+}
+
+.main{
+	margin:0 auto;
+	width:75pc
+}
+
+.right_table td{
+	padding:6px 0 6px 8px;
+	color:#999;
+	text-align:left;
+	font-size:9pt
+}
+
+.right_table td.c_green{
+	color:#55C931
+}
+
+.right_table td.c_orange{
+	padding-right:8px;
+	color:#FF8A00;
+	text-align:right
+}
+
+.right_table th{
+	background:#F9F9F9;
+	color:#666;
+	font-weight:400
+}
+
+.right_table td.td_c{
+	text-align:center
+}
+
+.more_hongbao li.first{
+	border-top:0
+}
+
+.register .text{
+	margin-bottom:0;
+	padding:10px 8px;
+	width:277px;
+	font-size:9pt
+}
+
+.rank_table.right{
+	float:right
+}
+
+.datalist .quotelist .list{
+	border:1px solid #D5D5D5
+}
+
+.datalist .quotelist .list .list-box{
+	padding-top:10px;
+	padding-left:25px;
+	height:60px;
+	background:#FFF
+}
+
+.datalist .quotelist .list .list-box .DataDl{
+	float:left;
+	font-weight:700
+}
+
+.datalist .quotelist .list .list-box .DataDl dt{
+	height:26px;
+	color:#747474;
+	font-size:.875rem;
+	line-height:1.625rem
+}
+
+.datalist .quotelist .list .list-box .DataDl dd{
+	height:23px;
+	color:red;
+	line-height:1.4375rem
+}
+
+.datalist .quotelist .list .list-box .firstDl{
+	width:110px
+}
+
+.Transaction{
+	width:100%
+}
+
+.Transaction td, .Transaction th{
+	overflow:hidden;
+	text-align:center
+}
+
+.Transaction th{
+	height:28px;
+	background:none 0 0 repeat scroll #EDEDED;
+	font-weight:700;
+	line-height:1.75rem
+}
+
+.Transaction tr{
+	background:none 0 0 repeat scroll silver
+}
+
+.no-border-right tr:hover{
+	background-color:#C3FEC8
+}
+
+.Transaction td{
+	height:3.5pc;
+	background:none 0 0 repeat scroll #FFF;
+	line-height:3.5pc;
+	border-bottom: 1px solid #eee;
+	font-size: 14px;
+}
+
+.no-border-left-right tr:hover{
+	background-color:#FFEBD7
+}
+
+.autobox{
+	margin:10px auto;
+	width:1200px
+}
+
+.slideTxtBox .hd li.on, .slideTxtBox .hd li.on a{
+	width:251px
+}
+
+.main1200.header .Search{
+	padding-left:0
+}
+
+.main1200.header .Search .searchInputT{
+	width:150px
+}
+
+.gallery .img_scroll ul li.on img{
+	border-color:#865
+}
+
+.storeSelector .text{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:9;
+	float:left;
+	overflow:hidden;
+	padding:0 5px;
+	height:18px;
+	border:1px solid #CCC;
+	background:#FFF;
+	line-height:1.125rem
+}
+
+.storeSelector .text b{
+	float:right;
+	display:block;
+	overflow:hidden;
+	margin:7px 0 0 6px;
+	width:9px;
+	height:5px
+}
+
+.storeSelector.hover .text{
+	border-bottom:0 none
+}
+
+.fixed_bar li.active{
+	height:29px;
+	border:0;
+	line-height:1.8125rem
+}
+
+.fixed_bar li.active a{
+	color:#FFF;
+	font-weight:700;
+	font-size:.875rem
+}
+
+.fixed_bar li.active span{
+	color:#FFF
+}
+
+.commentBox #star ul li.on p{
+	color:#D80000
+}
+
+.CommentTab ul li.active{
+	border-bottom:3px solid #CCC;
+	color:#000;
+	font-weight:700
+}
+
+.within1 a span.left{
+	float:left;
+	display:inline-block;
+	width:2pc;
+	height:2pc
+}
+
+.within1 a span.right{
+	float:left;
+	display:inline-block;
+	margin-top:4px;
+	width:40px;
+	height:40px
+}
+
+select{
+	height:24px;
+	line-height:1.5rem
+}
+
+.fast_tr{
+	padding:9px 0 8px;
+	border:1px solid #E1E1E1;
+	background:#FFF
+}
+
+.ft_box{
+	float:left;
+	width:343px;
+	border-right:1px dashed #D2D2D2
+}
+
+.ft_box dt{
+	margin-top:20px;
+	margin-bottom:2px;
+	padding-left:20px;
+	height:40px;
+	font-size:1.25rem;
+	line-height:2.5rem
+}
+
+.ratio{
+	float:right;
+	margin-right:25px;
+	color:#888;
+	text-align:center
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default{
+	outline:0;
+	border:1px solid #D3D3D3;
+	color:#555;
+	font-weight:400;
+}
+#form-buy .ui-state-default, .ui-widget-content .ui-state-default{
+	background:#EE3B3B;
+}
+#form-sell .ui-state-default, .ui-widget-content .ui-state-default{
+	background:#1eae58;
+}
+
+.ui-slider .ui-slider-handle{
+	position:absolute;
+	z-index:2;
+	width:1.2em;
+	height:1.2em
+}
+
+.el_dl dl:hover{
+	background:#FFEBD7
+}
+
+.right .zcxx{
+	margin-bottom:9pt;
+	border:1px solid #E1E1E1;
+	background:#FFF;
+	font-size:.875rem
+}
+
+.right .zcxx .p1{
+	height:37px;
+	border-bottom:1px solid #E1E1E1;
+	text-indent:1pc;
+	line-height:2.3125rem
+}
+
+.right .zcxx .p2{
+	float:left;
+	width:84px;
+	height:30px;
+	border-right:1px solid #E1E1E1;
+	border-bottom:1px solid #E1E1E1;
+	background:#F8F8F8;
+	text-align:center;
+	line-height:1.875rem
+}
+
+.right_table table{
+	border-top:1px solid #E1E1E1;
+	border-bottom:none;
+	border-left:1px solid #E1E1E1;
+	border-image:initial;
+	background:#FFF
+}
+
+.right_table table, .right_table th{
+	border-right:1px solid #E1E1E1;
+	font-size:9pt
+}
+
+.right_table th{
+	width:90px;
+	background:#FBFBFB;
+	font-weight:400;
+	line-height:2pc
+}
+
+.right_table td, .right_table th{
+	border-bottom:1px solid #E1E1E1;
+	color:#333
+}
+
+.mask_wrap_close{
+	position:absolute;
+	top:9pt;
+	right:14px;
+	width:1pc;
+	height:1pc
+}
+
+
+
+.zhuce{
+	display:inline-block;
+	padding-left:29px;
+	/*background:url(../img/zhuce.png) 6px 6px/35% no-repeat*/
+}
+
+.trader_btn{
+	margin:30px auto 15px;
+	width:350px;
+	height:40px
+}
+
+.trader_btn input{
+	width:100%;
+	height:100%;
+	border:none;
+	border-radius:8px;
+	color:#FFF;
+	font-size:1pc
+}
+
+.coin_menu .active{
+	padding-left:0;
+	height:40px;
+	border-top:1px solid #D5D5D5;
+	border-right:none;
+	border-bottom:1px solid #D5D5D5;
+	border-left:3px solid #E55600;
+	background:url(../img/now.png) 222px 1pc no-repeat #FFF;
+	line-height:2.5rem
+}
+
+.tpwd .text{
+	padding:10px 4px;
+	width:190px;
+	height:9pt;
+	border:1px solid #E1E1E1;
+	vertical-align:middle;
+	line-height:9pt
+}
+
+.no-border-left-right tr:hover{
+	background-color:#EBF4FE
+}
+
+.no-border-left-right tr:hover td{
+	background:0 0
+}
+
+select{
+	width:auto;
+	height:24px;
+	border:1px solid #CCC;
+	background-color:#FFF;
+	vertical-align:1px
+}
+
+.TitleBox{
+	overflow:hidden;
+	width:100%;
+	height:36px;
+	line-height:2.25rem
+}
+
+.PlateTitle{
+	padding-left:15px;
+	background:none 0 0 repeat scroll #FDFDFD;
+	text-align:left;
+	font-size:.875rem;
+	height:100%;
+}
+
+#marqueebox1{
+	overflow-x:hidden;
+	overflow-y:auto;
+	height:630px;
+	max-height:625px
+}
+
+#marqueebox1 li{
+	padding:1px 1px 1px 5px;
+	text-align:left;
+	font-size:.875rem
+}
+
+#marqueebox1 li:hover{
+	background:#EBF4FE
+}
+
+#marqueebox1 img{
+	margin-bottom:-3px
+}
+
+#marqueebox2{
+	height:30px;
+	border-top:1px solid #D5D5D5
+}
+
+#marqueebox2 img{
+	margin-top:2px;
+	margin-bottom:-2px;
+	margin-left:2px;
+	padding:2px;
+	border:1px solid #D5D5D5
+}
+
+#marqueebox2 li a{
+	font-size:.875rem
+}
+
+#marqueebox2 input{
+	margin:2px;
+	padding:1px;
+	width:2in;
+	height:22px;
+	border:1px solid #D5D5D5;
+	border-radius:3px;
+	background:#FFF;
+	color:#333;
+	font-size:9pt
+}
+
+#marqueebox2 .tijiao, #marqueebox2 input:hover{
+	border:1px solid #E55600
+}
+
+#marqueebox2 .tijiao{
+	margin:2px;
+	padding:1px;
+	width:58px;
+	height:26px;
+	outline:0;
+	border-radius:3px;
+	background:#E55600;
+	color:#FFF;
+	font-size:9pt
+}
+
+#marqueebox2 .tijiao:hover{
+	background:#FF660B;
+	color:#FFF
+}
+
+.buyonesellone{
+	border:1px solid #D5D5D5;
+	background-color:#FFF
+}
+
+.faceBtn{
+	width:5pc;
+	height:25px;
+	color:#656565;
+	font-size:9pt;
+	cursor:pointer
+}
+
+.nav .deal_lista{
+	position:absolute;
+	z-index:999;
+	width:460px;
+	border-color:#E55600 #CDCDBA #CDCDBA;
+	border-style:solid;
+	border-width:2px 1px 1px;
+	border-image:initial;
+	background:#FFF;
+	box-shadow:#CDCDBA 0 3px 5px
+}
+
+.nav .deal_lista dl{
+	margin:0 auto;
+	width:460px
+}
+
+.nav .deal_lista dd{
+	float:left;
+	padding-left:4px;
+	width:155px;
+	height:40px;
+	border-bottom:1px solid #EEE;
+	line-height:2.5rem
+}
+
+.nav .deal_lista dd i{
+	float:left;
+	margin-top:11px;
+	width:24px;
+	height:19px
+}
+
+.nav .deal_lista dd a{
+	float:left;
+	font-size:9pt
+}
+
+.nav .deal_lista dd a:hover{
+	text-decoration:none
+}
+
+.slideTxtBox .slideHd{
+	height:5pc;
+	border-bottom:1px solid #DDD;
+	background:#F4F4F4;
+	line-height:5pc
+}
+
+.slideTxtBox .slideHd ul{
+	float:left;
+	height:82px
+}
+
+.slideTxtBox .slideHd ul li.on{
+	height:78px;
+	border-color:#FF6D00 #E1E1E1 #FFF;
+	border-style:solid;
+	border-width:2px 1px;
+	background:#FFF
+}
+
+.tradeBox{
+	margin-bottom:20px;
+	text-align:left
+}
+
+.tradeBox .slideHd{
+	height:40px;
+	border-bottom:1px solid #DDD;
+	background:#F4F4F4;
+	line-height:2.5rem
+}
+
+.tradeBox .slideHd ul{
+	float:left
+}
+
+.tradeBox .slideHd ul li{
+	float:left;
+	width:95px;
+	border-left:1px solid #E1E1E1;
+	text-align:center;
+	font-weight:700;
+	font-size:.875rem;
+	cursor:pointer
+}
+
+.tradeBox .slideHd ul li.on{
+	height:38px;
+	border-color:#FF6D00 #E1E1E1 #FFF;
+	border-style:solid;
+	border-width:2px 1px;
+	background:#FFF
+}
+
+.tradeBox .slideBd .slideBdItem{
+	display:none
+}
+
+.tradeBox .slideBd ul{
+	padding:15px;
+	zoom:1
+}
+
+.tradeBox .slideBd li{
+	height:24px;
+	line-height:1.5rem
+}
+
+.tradeBox .slideBd li .date{
+	float:right;
+	color:#999
+}
+
+.tradeBox .slideBd{
+	margin:30px;
+	zoom:1
+}
+
+.tradeBox .slideBd .major{
+	font-size:.875rem
+}
+
+.tradeBox .slideBd .major h6{
+	padding-left:10px;
+	height:40px;
+	border-bottom:1px dashed #E1E1E1;
+	font-weight:400;
+	font-size:1.125rem;
+	line-height:2.5rem
+}
+
+.tradeBox .slideBd .major_info{
+	margin-top:9pt;
+	margin-bottom:9pt;
+	line-height:1.875rem
+}
+
+.tradeBox .slideBd .major .borrower{
+	overflow:hidden;
+	margin:15px 0
+}
+
+.tradeBox .slideBd .major .borrower ul{
+	float:left;
+	width:254px
+}
+
+.tradeBox .slideBd .major .borrower ul li{
+	height:38px;
+	line-height:2.375rem
+}
+
+.slideTxtBox .slideHd{
+	height:45px;
+	border-bottom:1px solid #DDD;
+	background:#F4F4F4;
+	line-height:2.8125rem
+}
+
+.slideTxtBox .slideHd ul{
+	float:left;
+	height:45px
+}
+
+.slideTxtBox .slideHd ul li{
+	float:left;
+	width:298px;
+	border-left:1px solid #E1E1E1;
+	text-align:center;
+	font-weight:700;
+	font-size:1.125rem;
+	cursor:pointer
+}
+
+.slideTxtBox .slideHd ul li.on{
+	height:45px;
+	border-top:2px solid #FF6D00;
+	border-bottom:2px solid #FFF;
+	background:#FFF
+}
+
+.header .ad-div{
+	float:right;
+	height:60px
+}
+
+.header .ad-div img{
+	display:block
+}
+
+.hide{
+	display:none
+}
+
+.left{
+	float:left
+}
+
+.right{
+	float:right
+}
+
+.po_re{
+	position:relative
+}
+
+.fz_12{
+	font-size:9pt !important
+}
+
+.col_333{
+	color:#333 !important
+}
+
+.w62{
+	width:62px
+}
+
+.w64{
+	width:93px
+}
+
+.w85{
+	width:60px
+}
+
+.w390{
+	width:390px
+}
+
+.w790{
+	width:790px
+}
+
+.bg_w{
+	background:#FFF
+}
+
+.zin100{
+	z-index:100
+}
+
+.zin90{
+	z-index:90
+}
+
+.zin80{
+	z-index:80
+}
+
+.pl20{
+	padding-left:20px
+}
+
+.right .zcxx{
+	margin-bottom:9pt;
+	border:1px solid #EFEFEF;
+	background:#FFF;
+	font-size:.875rem
+}
+
+.right .zcxx .p1{
+	height:37px;
+	border-bottom:1px solid #EFEFEF;
+	text-indent:1pc;
+	line-height:2.3125rem
+}
+
+.right .zcxx .p2{
+	float:left;
+	width:84px;
+	height:30px;
+	border-right:1px solid #EFEFEF;
+	border-bottom:1px solid #EFEFEF;
+	background:#F8F8F8;
+	text-align:center;
+	line-height:1.875rem
+}
+
+.right .zcxx .p3{
+	width:118px;
+	border-right:none
+}
+
+.right .zcxx .p4{
+	background:#FFF;
+	color:#E55600
+}
+
+.right .zcxx .p5{
+	background:#FFF;
+	color:#690
+}
+
+.right .zcxx .p6{
+	width:118px;
+	border-right:none;
+	background:#FFF
+}
+
+.right .zcxx .p7{
+	padding-left:1pc;
+	line-height:2.125rem
+}
+
+.right .zcxx .p7 span{
+	padding:0 10px;
+	color:#E55600
+}
+
+.tan_btn i{
+	position:absolute;
+	display:block;
+	margin:30px 0 0 20px;
+	width:1pc;
+	height:1pc;
+	background:url(../img/icon.png) -84px -90px no-repeat
+}
+
+.tan_btn{
+	position:absolute;
+	display:none;
+	margin-top:-75pt;
+	width:264px;
+	height:73px;
+	background:#FFF;
+	box-shadow:#DDD 0 0 18px;
+	color:#690;
+	text-align:center;
+	font-size:.875rem;
+	line-height:4.5625rem
+}
+
+.right_table table{
+	border-top:1px solid #EFEFEF;
+	border-right:1px solid #EFEFEF;
+	border-bottom:none;
+	border-left:1px solid #EFEFEF;
+	border-image:initial;
+	background:#FFF;
+	font-size:9pt
+}
+
+.right_table tr:last-child td, .right_table tr:last-child th{
+	border-bottom:none
+}
+
+.right_table th{
+	width:90px;
+	border-right:1px solid #EFEFEF;
+	background:#FBFBFB;
+	font-weight:400;
+	font-size:9pt;
+	line-height:2pc
+}
+
+.right_table td, .right_table th{
+	padding-left:8px;
+	border-bottom:1px solid #EFEFEF;
+	color:#333;
+	text-align:left
+}
+
+.right_table td{
+	padding-left:10px
+}
+
+.trader_btn input{
+	width:100%;
+	height:100%;
+	border:none;
+	border-radius:4px;
+	color:#FFF;
+	font-size:1pc;
+	cursor:pointer
+}
+
+.coin_menu .active{
+	padding-left:0;
+	height:40px;
+	border-top:1px solid #D5D5D5;
+	border-right:none;
+	border-bottom:1px solid #D5D5D5;
+	border-left:3px solid #E55600;
+	background:url(../img/now.png) 232px 1pc no-repeat #FFF;
+	line-height:2.5rem
+}
+
+.coin_menu .active a, .coin_menu .here a{
+	color:#E55600
+}
+
+.autobox .disc{
+	border-radius:2px;
+	background:#E55600
+}
+
+.autobox .disc, .price_today_ul .autobox i{
+	float:left;
+	display:inline;
+	overflow:hidden;
+	margin-top:17px;
+	margin-right:8px;
+	width:4px;
+	height:4px
+}
+
+.coin_menu .active i{
+	height:40px
+}
+
+.page .active, .page a:hover{
+	z-index:50;
+	border:1px solid #BE4700;
+	background:#E55600;
+	color:#FFF
+}
+
+.nav{
+	color:#333;
+	font-size:.875rem;
+	font-family:tahoma, Microsoft YaHei, Arial, Helvetica, sans-serif
+}
+
+.nav li{
+	position:relative;
+	z-index:100;
+	float:left;
+	width:5pc;
+	height:30px;
+	line-height:1.875rem
+}
+
+.nav li img{
+	vertical-align:middle;
+	transition:all .3s ease
+}
+
+.nav li img:hover{
+	transition:all .3s ease;
+	transform:rotateZ(180deg)
+}
+
+.nav li a{
+	color:#333
+}
+
+.nav .active, .nav li a:hover{
+	color:#E55600;
+	text-decoration:none
+}
+
+.sj{
+	position:absolute;
+	top:-6px;
+	left:39px;
+	overflow:hidden;
+	width:11px;
+	height:6px;
+	background:url(../img/icon.png) no-repeat
+}
+
+.all_coin_price{
+
+	float:left
+}
+
+.all_coin_show{
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	color: #ccc;
+
+}
+
+.all_coin_box i, .all_coin_show i{
+	float:left;
+	width:55px;
+	height:47px;
+	background-image:url(../img/coin_all.png?v=1.45);
+	background-repeat:no-repeat
+}
+
+.all_coin_show span{
+	width:90pt;
+	height:47px;
+	line-height:2.9375rem;
+	font-size:14px;
+	margin-top:3px;
+}
+
+.all_coin_show em{
+	float:left;
+	overflow:hidden;
+	margin-top:20px;
+	width:9px;
+	height:5px;
+	background:url(../img/icon.png) left -173px no-repeat;
+	transition:all .3s ease
+}
+
+.all_coin_price:hover .all_coin_show em{
+	transform:rotateZ(180deg)
+}
+
+
+.all_coin_list{
+	position:absolute;
+	top:5pc;
+	left:0;
+	display:none;
+	padding:0;
+	width:792px;
+	border:1px solid #D9D9D9;
+	background:#FFF;
+	box-shadow:#D9D9D9 0 0 4px
+}
+
+.all_coin_box{
+	overflow:hidden;
+	width:auto
+}
+
+.all_coin_box ul{
+	float:left;
+	margin-top:-1px;
+	padding:2px 14px 9pt 11px;
+	width:50pc
+}
+
+.all_coin_box li{
+	float:left;
+	padding-top:14px;
+	padding-left:2px;
+	width:172px;
+	height:70px;
+	border-top:1px solid #EEE
+}
+
+.all_coin_name{
+	float:left;
+	padding-top:0;
+	font-size:.875rem
+}
+
+.all_coin_name p{
+	height:22px;
+	color:#333;
+	line-height:1.375rem
+}
+
+.all_coin_name p:hover{
+	color:#E55600
+}
+
+.all_coin_name span{
+	color:#E55600;
+	line-height:1.25rem
+}
+
+.all_coin_info{
+	float:right;
+	line-height:50px;
+}
+
+.all_coin_info dt{
+	float: left;
+	width: 200px;
+	font-size: 1.5pc;
+	color:#ccc;
+}
+
+.all_coin_info dd{
+	float:left;
+	padding-top:8px;
+	width:90pt;
+	color:#ccc;
+	text-align:center;
+	font-size:9pt;
+	line-height:1.7rem
+}
+
+.all_coin_info dd p{
+	font-size:1.125rem;
+	line-height:1.375rem
+}
+
+.fast_tr{
+	padding:9px 0 5px;
+	border:1px solid #EFEFEF;
+	background:#FFF
+}
+
+.ft_box{
+	float:left;
+	padding-bottom:24px;
+	width:392px;
+	border-right:1px dashed #D2D2D2
+}
+
+.ft_box dt{
+	margin-bottom:6px;
+	padding-left:20px;
+	height:40px;
+	font-size:1.25rem;
+	line-height:2.5rem
+}
+
+.ft_box dd{
+	position:relative;
+	margin-bottom:26px;
+	padding-left:20px;
+	height:34px;
+	color:#999;
+	font-size:11pt;
+	line-height:2.125rem
+}
+
+.ft_box dd p{
+	/*float: right;*/
+	color: #333;
+	margin-top: -32px;
+	margin-right: 30px;
+	text-align: right;
+	font-size: 10px;
+}
+
+.ui-slider-range{
+	position:absolute;
+	z-index:1;
+	display:block;
+	border:0;
+	font-size:.7em
+}
+
+.ui-widget-content{
+	color:#222
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default{
+	outline:0;
+	border:1px solid #D3D3D3;
+	background:50% 50% repeat-x #EFEFEF;
+	color:#555;
+	font-weight:400
+}
+
+.ui-slider .ui-slider-range{
+	position:absolute;
+	z-index:1;
+	display:block;
+	font-size:.7em
+}
+
+.ui-slider{
+	position:relative;
+	background:#EEE;
+	text-align:left
+}
+
+.slider_wrap .sliderbox{
+	padding-top:9pt;
+	padding-left:6px;
+	width:90pt;
+	display:inline-block;
+}
+
+.ui-slider .ui-slider-handle{
+	position:absolute;
+	z-index:2;
+	width:1.2em;
+	height:1.2em;
+	cursor:default
+}
+
+.ui-corner-all{
+	border-radius:4px
+}
+
+.ui-slider-horizontal{
+	height:7px !important;
+	border-color:#CCC !important
+}
+
+.ui-slider-horizontal .ui-slider-range{
+	top:0;
+	height:100%
+}
+
+.ui-slider{
+	position:relative;
+	width:200px;
+	text-align:left
+}
+
+.ui-slider-horizontal .ui-slider-handle{
+	top:-.3em;
+	margin-left:-.6em;
+	width:16px !important;
+	height:16px !important;
+	border-radius:8px !important
+}
+
+.ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-content .ui-state-hover{
+	outline:0;
+	border:1px solid #999;
+	background:50% 50% repeat-x #DADADA;
+	color:#212121;
+	font-weight:400
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active{
+	outline:0;
+	border:1px solid #AAA;
+	background:50% 50% repeat-x #FFF;
+	color:#212121;
+	font-weight:400
+}
+
+.settings{
+	position:absolute;
+	top:10px;
+	right:35px;
+	width:20px;
+	height:20px;
+	background:url(../img/mimashezhi.png) no-repeat
+}
+
+.settings:hover{
+	background:url(../img/mimashezhi.png) 0 -30px no-repeat
+}
+
+.entrust{
+	overflow:hidden;
+	border:1px solid #EFEFEF;
+	background:#FFF;
+}
+
+.entrust .entrust_title{
+	margin-bottom:11px;
+	height:24px;
+	line-height:1.5rem
+}
+
+.entrust .entrust_title h4{
+	float:left;
+	padding-left:1pc;
+	color:#333;
+	font-weight:400;
+	font-size:.875rem
+}
+
+.entrust .entrust_title a{
+	float:right;
+	display:inline;
+	margin-right:13px;
+	color:#E55600;
+	font-size:9pt
+}
+
+.entrust .entrust_title a:hover{
+	text-decoration:underline
+}
+
+.entrust_list{
+	margin:0 auto;
+	/*width:355px*/
+}
+
+.entrust ul{
+	height:2rem;
+	border-bottom:1px solid #EFEFEF;
+	line-height:2rem
+}
+
+.entrust li{
+	float:left;
+	color:#666;
+	font-size:9pt
+}
+
+.el_dl dt, .entrust .first{
+	padding-left:6px;
+	width:42px
+}
+
+.el_dl dl{
+	height:24px;
+	color:#666;
+	font-size:10pt;
+	line-height:1.5rem
+}
+
+.el_dl dd, .el_dl dt{
+	float:left
+}
+
+.el_dl{
+	margin-bottom:3px;
+	padding-top:4px;
+	padding-bottom:1pt
+}
+
+.my-carousel .my-carousel-inner .item.active{
+	z-index:2
+}
+
+#kline, .my-carousel-indicators li.active{
+	background-color:#FFF
+}
+
+#kline{
+	margin-bottom:20px;
+	padding:10px 5px 5px !important;
+	height:415px
+}
+
+.btn.active, .btn:active{
+	background-image:none;
+	box-shadow:rgba(0, 0, 0, .14902) 0 2px 4px inset, rgba(0, 0, 0, .0470588) 0 1px 2px
+}
+
+.btn-danger.active, .btn-info.active, .btn-inverse.active, .btn-primary.active, .btn-success.active, .btn-warning.active{
+	color:hsla(0, 0%, 100%, .74902)
+}
+
+.btn-primary.active, .btn-primary.disabled, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .btn-primary[disabled]{
+	background-color:#04C;
+	color:#FFF
+}
+
+.btn-warning.active, .btn-warning.disabled, .btn-warning:active, .btn-warning:focus, .btn-warning:hover, .btn-warning[disabled]{
+	background-color:#F89406;
+	color:#FFF
+}
+
+.btn-danger.active, .btn-danger.disabled, .btn-danger:active, .btn-danger:focus, .btn-danger:hover, .btn-danger[disabled]{
+	background-color:#BD362F;
+	color:#FFF
+}
+
+.btn-success.active, .btn-success.disabled, .btn-success:active, .btn-success:focus, .btn-success:hover, .btn-success[disabled]{
+	background-color:#E55600;
+	color:#FFF
+}
+
+.btn-info.active, .btn-info.disabled, .btn-info:active, .btn-info:focus, .btn-info:hover, .btn-info[disabled]{
+	background-color:#2F96B4;
+	color:#FFF
+}
+
+.btn-inverse.active, .btn-inverse.disabled, .btn-inverse:active, .btn-inverse:focus, .btn-inverse:hover, .btn-inverse[disabled]{
+	background-color:#222;
+	color:#FFF
+}
+
+.btn-group > .btn.active, .btn-group > .btn:active, .btn-group > .btn:focus, .btn-group > .btn:hover{
+	z-index:2
+}
+
+.tpwd .text{
+	padding:10px 4px;
+	width:190px;
+	height:9pt;
+	border:1px solid #EFEFEF;
+	vertical-align:middle;
+	line-height:9pt
+}
+
+#kline{
+	padding:0
+}
+
+.list-tab-box{
+	width:100%
+}
+
+.list-tab{
+	margin:0 auto;
+	width:75pc;
+	height:2pc;
+	border-bottom:2px solid #E3E3E3
+}
+
+.list-tab li{
+	position:relative;
+	float:left;
+	margin-right:30px;
+	width:auto;
+	height:2pc;
+	text-align:center
+}
+
+.list-tab li > a{
+	width:100%;
+	height:2pc;
+	font-size:.875rem
+}
+
+.clearfix{
+	clear:both;
+	zoom:1
+}
+
+.clearfix:after, .clearfix:before{
+	display:block;
+	visibility:hidden;
+	overflow:hidden;
+	width:0;
+	height:0;
+	content:".";
+	font-size:0;
+	line-height:0
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover{
+	z-index:2;
+	border-color:#E55600;
+	background-color:#E55600;
+	color:#FFF;
+	cursor:default
+}
+
+.star-level ul li.active{
+	background:url(../img/icon_xx.jpg) no-repeat
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover{
+	border-color:#DDD #DDD transparent;
+	border-style:solid;
+	border-width:1px;
+	border-image:initial;
+	background-color:#FFF;
+	color:#E55600;
+	cursor:default
+}
+
+.pill-content > .active, .tab-content > .active{
+	display:block;
+	opacity:1
+}
+
+.login-footer{
+	position:absolute;
+	right:0;
+	bottom:0;
+	width:100%;
+	height:40px;
+	background:hsla(0, 0%, 100%, .701961);
+	text-align:left;
+	text-indent:1.2em;
+	font-size:.875rem;
+	line-height:2.5rem
+}
+
+
+
+.login-footer.wwxwwx{
+	position:relative;
+	right:50px;
+	bottom:-20px;
+	margin:0 auto;
+	width:80%
+}
+
+.login-footer img{
+	padding-right:5px;
+	vertical-align:text-bottom
+}
+
+.login-footer span{
+	float:right;
+	margin-right:10px;
+	color:#BBB
+}
+
+.login-footer a{
+	font-size:9pt
+}
+
+.record_title_ul.left{
+	text-align:left
+}
+
+.record_title_ul.left li{
+	padding-left:10px
+}
+
+.cnyin_data.left li dl dd, .cnyin_data.left li dl dt{
+	padding-left:10px;
+	text-align:left
+}
+
+.bg_w h1{
+	margin-bottom:20px
+}
+
+.wawaha.active .sankkaku{
+	top:-102px;
+	z-index:0;
+	transition:top .2s ease-out .2s, border-top-width .2s ease-in 0s, border-bottom-width .2s ease-out .2s, z-index .2s linear .2s;
+	border-top-width:0;
+	border-bottom-width:102px
+}
+
+.wawaha.active .kami{
+	top:-60px;
+	z-index:333;
+	transition:all .6s ease-in-out .4s
+}
+
+.wawaha.active .evenlop{
+	z-index:444
+}
+
+.wawaha.active .tiaozi{
+	z-index:555
+}
+
+.wawaha.active .qianqian{
+	z-index:500;
+	opacity:1;
+	animation-name:bounceIn;
+	animation-duration:1s;
+	animation-delay:1.2s;
+	animation-timing-function:ease;
+	animation-fill-mode:both
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled{
+	background-image:none;
+	opacity:.35
+}
+
+.ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-content .ui-state-hover{
+	border:1px solid #999;
+	background-color:#DADADA;
+	color:#FF3C00
+}
+
+.infotable.first tr td, .infotable.first tr th{
+	padding-left:0;
+	border-right:1px solid #F5F5F5;
+	text-align:center
+}
+
+.deepbar.buy{
+	background-color:#FFE8DA
+}
+
+.deepbar.sell{
+	right:auto;
+	left:0;
+	background-color:#E3F1C8
+}
+
+#leftsead{
+	position:fixed;
+	top:350px;
+	right:0;
+	z-index:100;
+	width:161px;
+	height:290px
+}
+
+#leftsead li{
+	width:161px;
+	height:60px
+}
+
+#leftsead li img{
+	float:right
+}
+
+#leftsead li a{
+	float:right;
+	display:block;
+	height:49px;
+	max-width:161px;
+	min-width:47px
+}
+
+#leftsead li a .shows{
+	display:block
+}
+
+#leftsead li a .hides{
+	margin-right:-143px;
+	cursor:pointer
+}
+
+#leftsead li a.youhui .hides, #leftsead li a.youhui .wm{
+	position:absolute;
+	right:143px;
+	display:none
+}
+
+#p2{
+	border:1px solid #8BC48D;
+	background-color:#A7D2A9
+}
+
+#p2, #p3{
+	margin-left:47px;
+	width:7pc;
+	height:47px;
+	text-align:center;
+	line-height:2.9375rem
+}
+
+#p3{
+	border:1px solid #E6776C;
+	background-color:#EC9890
+}
+
+#p4{
+	margin-left:47px;
+	width:7pc;
+	height:47px;
+	border:1px solid #6D6D9E;
+	background-color:#6D6D9E;
+	text-align:center;
+	line-height:2.9375rem
+}
+
+#p1{
+	float:left;
+	width:47px;
+	height:49px
+}
+
+.list-tab-box{
+	padding-top:15px;
+	padding-bottom:15px
+}
+
+.movesay_btn{
+	width:250px;
+	height:40px;
+	border:none;
+	border-radius:15px;
+	background:#E55600;
+	color:#FFF;
+	font-size:1.125rem;
+	cursor:pointer
+}
+
+.movesay_btn:hover{
+	background:#FF6102;
+	color:#FFF
+}
+
+.trade-nav-move dd, .trade-nav-move dl{
+	height:50px;
+	line-height:3.125rem
+}
+
+.trade-nav-move dd{
+	padding:0 28px;
+	border-right:1px solid #E0E0E0;
+	background-color:#F6F6F6
+}
+
+.trade-nav-move{
+	float:left;
+	height:auto
+}
+
+#all_coins{
+	float:left;
+	width:600px
+}
+
+#all_coin_show:hover .trade_hover{
+	display:block;
+	top:80px;
+}
+
+.trade-text{
+	border: 1px solid #C5C5BC;
+	vertical-align: middle;
+	font-size: 14px;
+	width: 350px;
+	height: 40px;
+	line-height: 34px;
+	cursor: pointer;
+	border-radius: 4px;
+	padding: 5px;
+	padding-right: 70px;
+}
+
+.content2 .content2_nav_left .home_logo_box[data-v-803eb566]{
+	vertical-align: top;
+}
+#coin_hq{
+	overflow: hidden;
+	width: 370px;
+	margin: 20px auto;
+}
+
+#coin_hq .coin_price_list{
+	height:30px;
+	line-height: 30px;
+	width: 180px;
+	font-size: 14px;
+}
+.list-tab li.on{
+	border-bottom: 2px solid #0093F1;
+}
+
+
+.nav_header{
+	background:#282828;
+	height:50px;
+	width:100%;
+	z-index:9;
+}
+
+.trade-top{
+	width:1200px;
+	margin:auto;
+
+}
+
+.all_coin_show>img{
+	width: 24px;
+	float: left;
+	margin-right: 8px;
+	margin-top: 12px;
+}
+
+#content-trade{
+	overflow:hidden;
+}
+
+.orange,.buy{
+	color:#EE3B3B
+}
+.move_bg{
+	background:#0093F1;
+}
+.buySpan{
+	background: none repeat scroll 0 0 #EE3B3B;
+	display: inline;
+	float: left;
+	height: 20px;
+}
+
+.green,.sell{
+	color:#1eae58;
+}
+.sellSpan{
+	background: none repeat scroll 0 0 #1eae58;
+	display: inline;
+	float: left;
+	height: 20px;
+}

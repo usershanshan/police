@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Table</title>
+		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
+		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+	</head>
+
+	<body>
+		<div class="admin-main">
+			<fieldset class="layui-elem-field">
+				<legend>{$title}</legend>
+				<div class="layui-field-box">
+					 <form class="layui-form" action="" >
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">推荐送红包活动是否开启</label>
+							 <div class="layui-input-block">
+								 <select name="new_key" lay-filter="aihao" {$disabled}>
+									 <option value="">请选择</option>
+									 <option value="1" {$new_key_y} >开启</option>
+									 <option value="0" {$new_key_n} >不开</option>
+								 </select>
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">推荐红包</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="new_value"  required
+										autocomplete="off" placeholder="请输入新手红包金额" class="layui-input" value="{$info['new_value']}">
+							 </div>
+						 </div>
+						<label class="layui-form-label" style="float: left;">点买金额</label>
+						<div class="layui-form-pane" style="float: left;width: calc(100% - 110px);margin-left: -14px;" id="jine">
+							<foreach name="info['price']" item="vo" key="k">
+								<div class="layui-form-item dmje" style="float: left;clear:none;margin-left: 15px;">
+									<div class="layui-input-inline">
+										<input type="text" name="price{$k}" lay-verify="required" placeholder="请输入点买金额" autocomplete="off" class="layui-input" value="{$vo}">
+									</div>
+									<input type="button" class="layui-btn layui-btn-sm layui-btn-danger" onclick="dele_je('price{$k}')" value="删除"/>
+								</div>
+							</foreach>
+						</div>
+						<input class="layui-btn layui-btn-normal" style="margin-left: 110px;margin-bottom:15px;width: 64px;" value="添加" onclick="add_je()" />
+						<div class="layui-form-item" style="margin-bottom: 0;">
+							<label class="layui-form-label" style="float: left;">杠杆倍数</label>
+							<div style="float: left;width: calc(100% - 110px);" id="ggbs">
+								<foreach name="info['multiple']" item="vo" key="k">
+									<div class="layui-form-item beishu">
+										<div class="layui-inline">
+											<div class="layui-input-inline" style="width: 180px;">
+												<input type="text" name="times{$k}" placeholder="请输入杠杆倍数" autocomplete="off" class="layui-input" value="{$vo['times']}">
+											</div>
+											<div class="layui-input-inline" style="width: 180px;">
+												<input type="text" name="e_loss{$k}" placeholder="请输入止损率" autocomplete="off" class="layui-input" value="{$vo['e_loss']}">
+											</div>
+											<div class="layui-input-inline" style="width: 180px;">
+												<input type="text" name="delay_loss{$k}" placeholder="请输入递延条件比率" autocomplete="off" class="layui-input" value="{$vo['delay_loss']}">
+											</div>
+											<input class="layui-btn layui-btn-sm layui-btn-danger" value='删除' onclick="dele_beishu('times{$k}','e_loss{$k}','delay_loss{$k}')" style="width: 64px;" />
+										</div>
+									</div>
+								</foreach>
+							</div>
+						</div>
+						<input class="layui-btn layui-btn-normal" style="margin-left: 110px;margin-bottom:15px;width: 64px;" value="添加" onclick="add_beishu()" />
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">止盈率(百分比)</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="e_profit"  required
+										autocomplete="off" placeholder="请输入止盈率" class="layui-input" value="{$info['e_profit']}">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">交易综合费</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="routine"  required
+										autocomplete="off" placeholder="请输入交易综合费" class="layui-input" value="{$info['routine']}">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">递延费</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="delay_price"  required
+										autocomplete="off" placeholder="请输入递延费" class="layui-input" value="{$info['delay_price']}">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">盈利分配比率</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="allot_profit"  required
+										autocomplete="off" placeholder="请输入盈利分配比率" class="layui-input" value="{$info['allot_profit']}">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">亏损分配比率</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="allot_loss"  required
+										autocomplete="off" placeholder="请输入亏损分配比率" class="layui-input" value="{$info['allot_loss']}">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">最多持仓天数</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="limit_day"  required
+										autocomplete="off" placeholder="请输入最多持仓天数" class="layui-input" value="{$info['limit_day']}">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">每天最多提现次数</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="cash_day"  required
+										autocomplete="off" placeholder="请输入每天最多提现次数" class="layui-input" value="{$info['cash_day']}">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">每月提现额度</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="cash_month"  required
+										autocomplete="off" placeholder="请输入每天最多提现次数" class="layui-input" value="{$info['cash_month']}">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">提现手续费（千分之一）</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="cash_charge"  required
+										autocomplete="off" placeholder="请输入每天最多提现次数" class="layui-input" value="{$info['cash_charge']}">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">提现渠道</label>
+							 <div class="layui-input-block">
+								 <select name="cash_key" lay-filter="aihao" {$disabled}>
+									 <option value="">请选择</option>
+									 <option value="2" {$cash_key_y} >线上</option>
+									 <option value="1" {$cash_key_n} >线下</option>
+								 </select>
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">新手体验红包金额</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="new_red"  required
+										autocomplete="off" placeholder="新手体验红包金额" class="layui-input" value="{$info['new_red']}">
+							 </div>
+						 </div>
+
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">新手止盈率（百分比）</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="new_profit"  required
+										autocomplete="off" placeholder="新手止盈率（百分比）" class="layui-input" value="{$info['new_profit']}">
+							 </div>
+						 </div>
+
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">新手体验点买金额</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="new_dprice"  required
+										autocomplete="off" placeholder="新手体验点买金额" class="layui-input" value="{$info['new_dprice']}">
+							 </div>
+						 </div>
+
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">点买渠道</label>
+							 <div class="layui-input-block">
+								 <select name="line" lay-filter="aihao" {$disabled}>
+									 <option value="">请选择</option>
+									 <option value="1" {$line_y} >线上</option>
+									 <option value="2" {$line_n} >线下</option>
+								 </select>
+							 </div>
+						 </div>
+						 <!--<div class="layui-form-item">-->
+							 <!--<label class="layui-form-label">充值</label>-->
+							 <!--<div class="layui-input-block">-->
+								 <!--<input type="text" name="new_dprice"  required-->
+										<!--autocomplete="off" placeholder="新手体验点买金额" class="layui-input" value="{$info['new_dprice']}">-->
+							 <!--</div>-->
+						 <!--</div>-->
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">充值单卡单次单日限额</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="deposit_day"  required
+										autocomplete="off" placeholder="充值单卡单次单日限额" class="layui-input" value="{$info['deposit_day']}">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">充值每月限额</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="deposit_month"  required
+										autocomplete="off" placeholder="充值每月限额" class="layui-input" value="{$info['deposit_month']}">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <div class="layui-input-block">
+								 <button class="layui-btn" lay-submit lay-filter="subBanner" type="button">立即提交</button>
+								 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+							 </div>
+						 </div>
+					</form>
+				</div>
+			</fieldset>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/js/jquery-2.1.1.min.js"></script>
+		<script>
+		layui.use(['form'], function() {
+			var form = layui.form(),
+				layer = layui.layer,
+				$ = layui.jquery,
+				layedit = layui.layedit
+
+			//监听提交
+			form.on('submit(subBanner)', function(data) {
+				var all = $('.layui-form').serialize();
+				console.log(all);
+				$.ajax({
+					url:"edit?" + all,
+					dataType: "json",
+					type: "GET",
+					success: function(reg) {
+					    console.log(reg);
+						if(reg.status == 'error'){
+							layer.msg(reg.msg,{icon: 5});//失败的表情
+						}else{
+							layer.msg(reg.msg, {
+								icon: 6,//成功的表情
+								time: 2000 //2秒关闭（如果不配置，默认是3秒）
+							});
+							window.location.reload();
+						}
+					}
+				});
+			});
+		});
+		// 点买金额操作
+		function dele_je(name){
+			layui.use('layer', function(){ //独立版的layer无需执行这一句
+				var $ = layui.jquery, layer = layui.layer;
+				layer.open({
+					type: 1
+					,title: '操作提示'
+					,id: 'layerDemo' //防止重复弹出
+					,offset:'auto'
+					,content: '<div style="padding: 20px 100px;">确定要删除本条信息吗</div>'
+					,btn: ['确定', '取消']
+					,btnAlign: 'c' //按钮居中
+					,shade:0.5 //不显示遮罩
+					,success: function(layero){
+						var btn = layero.find('.layui-layer-btn');
+						btn.find('.layui-layer-btn0').attr({
+							onclick: 'quxiaoxs(\''+ name +'\')'
+						});
+					}
+			    });
+			});
+		}
+		function quxiaoxs(name){
+			$("input[name='"+ name +"']").parents(".dmje").css('display','none');
+			$("input[name='"+ name +"']").val('#无');
+		}
+		function add_je(){
+			var price = 'price' + $('#jine .dmje').length;
+			var html = '<div class="layui-form-item dmje" style="float: left;clear:none;margin-left: 15px;"><div class="layui-input-inline"><input type="text" name="'+ price +'" lay-verify="required" placeholder="请输入点买金额" autocomplete="off" class="layui-input" value=""></div><input type="button" class="layui-btn layui-btn-sm layui-btn-danger" onclick="dele_je(\''+ price +'\')" value="删除"/></div>'
+			$('#jine').append(html);
+		}
+		// 杠杆倍数操作
+		function dele_beishu(a,b,c){
+			layui.use('layer', function(){ //独立版的layer无需执行这一句
+				var $ = layui.jquery, layer = layui.layer;
+				layer.open({
+					type: 1
+					,title: '操作提示'
+					,id: 'layerDemo2' //防止重复弹出
+					,offset:'auto'
+					,content: '<div style="padding: 20px 100px;">确定要删除本条信息吗</div>'
+					,btn: ['确定', '取消']
+					,btnAlign: 'c' //按钮居中
+					,shade:0.5 //不显示遮罩
+					,success: function(layero){
+						var btn = layero.find('.layui-layer-btn');
+						btn.find('.layui-layer-btn0').attr({
+							onclick: 'quxiaobs(\''+ a +'\',\''+ b +'\',\''+ c +'\')'
+						});
+					}
+			    });
+			});
+		}
+		function quxiaobs(a,b,c){
+			$("input[name='"+ a +"']").parents(".beishu").css('display','none');
+			$("input[name='"+ a +"']").val('#无');
+			$("input[name='"+ b +"']").val('#无');
+			$("input[name='"+ c +"']").val('#无');
+		}
+		function add_beishu(){
+			var length = $('#ggbs .beishu').length;
+			var times = 'times' + (length);
+			var e_loss = 'e_loss' + (length);
+			var delay_loss = 'delay_loss' + (length);
+			var html = '<div class="layui-form-item beishu"><div class="layui-inline"><div class="layui-input-inline" style="width: 180px;"><input type="text" name="'+ times +'" placeholder="请输入杠杆倍数" autocomplete="off" class="layui-input" value=""></div><div class="layui-input-inline" style="width: 180px;"><input type="text" name="'+ e_loss +'" placeholder="请输入止损率" autocomplete="off" class="layui-input" value=""></div><div class="layui-input-inline" style="width: 180px;"><input type="text" name="'+ delay_loss +'" placeholder="请输入递延条件比率" autocomplete="off" class="layui-input" value=""></div><input class="layui-btn layui-btn-sm layui-btn-danger" value="删除" onclick="dele_beishu(\''+ times +'\',\''+ e_loss +'\',\''+ delay_loss +'\')" style="width: 64px;" /></div></div>';
+			$('#ggbs').append(html);
+		}
+		</script>
+	</body>
+
+</html>

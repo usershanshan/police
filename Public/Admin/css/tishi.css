@@ -1,0 +1,12 @@
+.tishi {width:100%; height:100%;position:absolute;top:0; left:0; z-index:99999999;display: none;background-color: #202020;opacity: 0.5;}
+.tishi_kuang {width:300px; height:200px; position: absolute; top:50%; left:50%; margin-top: -100px; margin-left: -150px; 
+	background-color: #fff; z-index: 1000000000; display: none;border-radius: 10px;}
+.tishi_kuang_top {height:49px; width:270px; margin:0 auto;border-bottom: 1px solid #757575;}
+.tishi_kuang_top p {margin:0; padding: 0; font-size: 16px; color: #202020;text-align: center;line-height: 49px;}
+.tishi_kuang_mid {width:270px; height:100px;margin:0 auto;border-bottom: 1px solid #757575;height:99px;}
+.tishi_kuang_mid p {font-size: 22px; color: #52937d;line-height: 99px; text-align: center;margin:0;padding: 0;}
+.tishi_kuang_bottom {height:50px;display: table;margin:0 auto;}
+.tishi_kuang_left {width:135px; height:40px;float: left; margin-top: 5px;}
+.tishi_kuang_left p {font-size: 16px; color: #202020;line-height: 40px;margin:0; padding: 0;text-align: center;cursor: pointer;}
+.tishi_kuang_right {width:134px; height:40px;float: left; margin-top: 5px;border-right:1px solid #757575;}
+.tishi_kuang_right p {font-size: 16px; color: #52937d;line-height: 40px;margin:0; padding: 0;text-align: center;cursor: pointer;}

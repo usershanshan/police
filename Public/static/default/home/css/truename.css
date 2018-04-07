@@ -1,0 +1,157 @@
+.person-identity-toggle {
+	margin: 50px auto;
+	width: 660px;
+}
+
+.form-group {
+	line-height: 40px;
+	margin: 18px 0;
+}
+#person_identity_form label {
+	display:inline-block;
+	width: 160px;
+	line-height: 20px;
+	vertical-align: middle;
+}
+.form-group label {
+	color: #737373;
+	font-size: 14px;
+	font-weight: 400;
+	text-align: right;
+	vertical-align: top;
+}
+ .form-group input{
+	 border: 1px solid #d1d1d1;
+	 color: #0b0b0b;
+	 font-size: 14px;
+	 height: 40px;
+	 line-height: 40px;
+	 width: 307px;
+	 padding: 3px 15px;
+	 outline: 0;
+	 vertical-align: middle;
+ }
+.form-group input:focus {
+	border-color: #66afe9;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.form-group {
+	line-height: 40px;
+	margin: 18px 0;
+}
+#agency_identity_form .m30{
+	margin: 30px 0;
+}
+label.id-card{
+	vertical-align: top;
+	padding-top: 10px;
+}
+.upload-identity {
+	background: #fff;
+	border: 1px dashed #ccc;
+	display: inline-block;
+	height: 155px;
+	width: 147px;
+	text-align: center;
+}
+.upload-file-button {
+	display: block;
+	height: 123px;
+	width: 145px;
+	position: relative;
+}
+#person_identity_form .file-upload{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 145px;
+	height: 125px;
+	opacity: 0;
+	z-index: 2;
+}
+.upload-identity p{
+	background: #a4a4a4;
+	color: #fff;
+	font-size: 15px;
+	margin-left: -1px;
+	height: 31px;
+	line-height: 31px;
+	width: 147px;
+}
+.upload-example{
+	display: inline-block;
+	height: 155px;
+	vertical-align: top;
+	margin-left: 15px;
+}
+.picture-example {
+	background: #a4a4a4;
+	display: inline-block;
+	vertical-align: top;
+	height: 155px;
+	width: 147px;
+	text-align: center;
+}
+.example-intro {
+	display: inline-block;
+	margin-left: 20px;
+	padding-top: 45px;
+}
+.upload-example h4 {
+	color: #0b0b0b;
+	font-size: 14px;
+	font-weight: 700;
+	height: 20px;
+	line-height: 20px;
+}
+.upload-example p {
+	color: #737373;
+	height: 20px;
+	line-height: 20px;
+	margin-top: 5px;
+}
+.submit-person-btn,.updatebtn{
+	display:block;
+	width: 130px;
+	color: #fff;
+	background: #4f94e7;
+	border: 0;
+	border-radius: 5px;
+	height: 40px;
+	line-height: 40px;
+	outline: 0;
+	padding: 0 15px;
+	margin:auto;
+	vertical-align: middle;
+}
+.fa-plus-square-o{
+	font-size: 40px;
+	position: absolute;
+	top: 40px;
+	right: 55px;
+}
+#idcard_type{
+	border: 1px solid #d1d1d1;
+	width: 307px;
+	height: 40px;
+	color: #0b0b0b;
+	font-size: 14px;
+	padding: 3px 15px;
+}
+.promise input[type="checkbox"]{
+	width:13px;
+}
+.identity-form h1{
+	text-align: center;
+	width: 635px;
+	font-size: 20px;
+}
+.update_item{
+	width:400px;
+	font-size:14px;
+	line-height:25px;
+	padding:10px;
+}
+#app{
+	text-align:inherit;
+}

@@ -1,0 +1,40 @@
+.center-mid-background {width:100%; height:820px; background-color: #f5f5f5;display: table;}
+.signin {width:370px; height:270px; margin:0 auto; margin-top: 135px; background-color: #ffffff;display: table;}
+.signin-top {width:245px; height:35px;margin:0 auto; margin-top: 30px;}
+.signin-top input {width:243px; height:33px; background-color: #f5f5f5;border:1px solid #e5e5e5; padding: 0 5px;outline: none;}
+.prompt {height:30px; display: table;margin:0 auto;width:245px;}
+.prompt p {font-size: 12px; color: #c53336; line-height: 30px;text-align: left;}
+.signin-submit {width:245px; height:35px;margin:0 auto;}
+.signin-submit input {width:245px; height:35px; border:none;outline: none;background-color: #d9b664; color: #ffffff;}
+.signin-bottom {width:245px; height:35px;margin:0 auto;position: relative;}
+.signin-bottom p {font-size: 12px; color: #202020;line-height: 35px; text-decoration: underline !important; cursor: pointer;}
+.signin-bottom-right {position: absolute;top:0; right:0; }
+.register {width:370px;display: table; margin:0 auto; margin-top: 135px; background-color: #ffffff;display: table;}
+.register-way {width:100%; height:40px;display: table;}
+.register-phone {width:50%; height:40px; float: left;}
+.register-phone p {font-size: 18px; color: #202020;text-align: center;line-height: 40px;cursor: pointer;}
+.signin-one {width:245px; height:35px;margin:0 auto; margin-top:20px;}
+.signin-one input {width:243px; height:33px; background-color: #f5f5f5;border:1px solid #e5e5e5; padding: 0 5px;outline: none;}
+.signin-two {width:245px; height:35px;margin:0 auto; margin-top:20px;}
+.signin-two-left {width:140px; height:35px; float: left;}
+.signin-two-left input {width:138px; height:33px;background-color: #f5f5f5;border:1px solid #e5e5e5; padding: 0 5px;outline: none;}
+.signin-two-right {width:85px; height:35px; float: left; margin-left: 20px;}
+.signin-two-right input {width:85px; height:33px;border:none; outline: none; background-color: #d9b664;color: #ffffff;}
+.signin-three {width:245px;height:40px; margin:0 auto;}
+.signin-three input{width:10px;height:10px; margin-top:15px; float: left;}
+.signin-three p {font-size: 12px; color: #202020;line-height: 40px; float: left; margin-left: 10px;}
+.signin-three p a {color: #202020;}
+.signin-three p span {text-decoration: underline; cursor: pointer;}
+.register-way-two {display: none;}
+#register-phone-one {text-decoration: underline;}
+.prompt-two {width:320px; height:60px; margin:20px auto 30px auto;}
+.prompt-two p {font-size: 12px; color: #202020; line-height: 20px;text-align: center;}
+.prompt-two p span {color: #c53336;text-decoration: underline;cursor: pointer;}
+.submittop {margin-top: 20px;}
+.back-sign {width:245px; height:30px;margin:0 auto;}
+.back-sign p {font-size: 12px; color: #202020; text-decoration: underline !important; cursor: pointer;line-height: 30px;}
+.article {width:600px; display: table;margin:0 auto;}
+.article-title {font-size: 24px; color: #202020; line-height: 100px;text-align: center;}
+.article-text {font-size: 14px; color: #202020; line-height: 20px; margin-top: 30px;}
+.agree {width:600px; height:35px; margin-top: 30px;position: relative;}
+.agree input {width:170px; height:35px; background-color: #d9b664; color: #ffffff; border:none; outline: none; position: absolute;right:0; top:0;}

@@ -1,0 +1,5 @@
+.payment-submit {width:550px; margin-top:30px;height:40px; position: relative;}
+.payment-submit-left {width:140px; height:40px; float: right; position: absolute;right:170px;background-color: #cccccc;
+	border:none;outline: none;font-size: 16px;top:0;}
+.payment-submit-right {width:140px; height:40px; float: right; background-color: #d9b664;
+	border:none;outline: none;font-size: 16px;position: absolute;top:0; right:0;}

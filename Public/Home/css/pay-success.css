@@ -1,0 +1,5 @@
+.pay-success {width:650px; height:300px; background-color: #f1f1f1; margin:0 auto; margin-top: 80px;}
+.pay-success img {margin-top: 50px; margin-left: 130px;float: left;}
+.pay-success-text {display: table;float: left; margin-top: 60px; margin-left: 15px;}
+.pay-success-text p {font-size: 22px; color: #202020;line-height: 40px;}
+.pay-success-text p span {color: #c53336;text-decoration: underline;cursor: pointer;}

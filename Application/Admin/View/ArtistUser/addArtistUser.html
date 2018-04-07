@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Table</title>
+		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
+		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<div class="admin-main">
+			<fieldset class="layui-elem-field">
+				<legend>添加艺术家</legend>
+				<div class="layui-field-box">
+					 <form class="layui-form" action="">
+					 <div class="layui-form-item"> 
+					 	<div class="layui-form-item">
+						   <label class="layui-form-label">登录用户名</label>
+						   <div class="layui-input-inline">
+						     <input type="text" name="username" lay-verify="required" placeholder="请输入艺术家登陆用户名" autocomplete="off" class="layui-input">
+						   </div>
+						   <label class="layui-form-label">登陆密码</label>
+						   <div class="layui-input-inline">
+						     <input type="password" name="password" lay-verify="required" placeholder="请输入登陆密码" autocomplete="off" class="layui-input">
+						   </div>
+						</div>
+						<div class="layui-form-item">
+						   <label class="layui-form-label">艺术家名称</label>
+						   <div class="layui-input-inline">
+						     <input type="text" name="name" lay-verify="required" placeholder="请输入艺术家名称" autocomplete="off" class="layui-input">
+						   </div>
+						</div>
+						<div class="layui-form-item">
+						   <label class="layui-form-label">艺术家简单描述</label>
+						   <div class="layui-input-block">
+						     <input type="text" name="simple" lay-verify="required" placeholder="请输入简易描述" autocomplete="off" class="layui-input">
+						   </div>
+						</div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">艺术家头像</label>
+							<img id="LAY_demo_upload" src="" style="height:200px;"  >
+							<input type="hidden" name="head_img" id="upLogo" value="" />
+							<input type="file" name="file" class="layui-upload-file" id="img">
+						</div> 
+						<div class="layui-form-item">
+							<label class="layui-form-label">摆放场景</label>
+							<div class="layui-input-block">
+								<volist name="type1" id="vo">
+									<input type="checkbox" name="type1[{$vo['id']}]" value="{$vo['id']}" title="{$vo['describe']}">
+								</volist>
+							</div>
+						</div> 
+						<div class="layui-form-item">
+							<label class="layui-form-label">馈赠人群</label>
+							<div class="layui-input-block">
+								<volist name="type2" id="vo">
+									<input type="checkbox" name="type2[{$vo['id']}]" value="{$vo['id']}" title="{$vo['describe']}">
+								</volist>
+							</div>
+						</div> 
+						<div class="layui-form-item">
+							<label class="layui-form-label">馈赠原因</label>
+							<div class="layui-input-block">
+								<volist name="type3" id="vo">
+									<input type="checkbox" name="type3[{$vo['id']}]" value="{$vo['id']}" title="{$vo['describe']}">
+								</volist>
+							</div>
+						</div> 
+						<div class="layui-form-item">
+							<label class="layui-form-label">作品类型</label>
+							<div class="layui-input-block">
+								<volist name="type4" id="vo">
+									<input type="checkbox" name="type4[{$vo['id']}]" value="{$vo['id']}" title="{$vo['describe']}">
+								</volist>
+							</div>
+						</div> 
+						<div class="layui-form-item">
+							<label class="layui-form-label">擅长内容</label>
+							<div class="layui-input-block">
+								<volist name="type5" id="vo">
+									<input type="checkbox" name="type5[{$vo['id']}]" value="{$vo['id']}" title="{$vo['describe']}">
+								</volist>
+							</div>
+						</div>  
+						<div class="layui-form-item">
+						   <label class="layui-form-label">权重排序</label>
+						   <div class="layui-input-inline">
+						     <input type="number" name="sort" value="10" lay-verify="required" autocomplete="off" class="layui-input" placeholder="权重排序(高↑--底↓)">
+						   </div>
+						</div> 
+						<div class="layui-form-item layui-form-text">
+							<label class="layui-form-label">艺术家描述</label>
+							<div class="layui-input-block">
+								<textarea class="layui-textarea layui-hide"  name="present" lay-verify="content" id="LAY_demo_editor"></textarea>
+							</div>
+						</div> 
+						<div class="layui-form-item">
+						   <label class="layui-form-label">分成比例(小数)</label>
+						   <div class="layui-input-inline">
+						     <input type="number" name="fcbl" value="" autocomplete="off" class="layui-input" placeholder="如需单独配置则填写此项">
+						   </div>
+						</div> 
+						<div class="layui-form-item">
+							<label class="layui-form-label">用户状态</label>
+							<div class="layui-input-block">
+								<input type="checkbox" checked=""  name="status"  lay-text="ON|OFF" lay-skin="switch">
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="subArtist">立即提交</button>
+								<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</fieldset>
+		</div>
+		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
+		<script>
+		layui.use(['form','upload','layedit'], function() {
+			var form = layui.form(),
+				layer = layui.layer,
+				$ = layui.jquery,
+				layedit = layui.layedit
+			layui.upload({
+			    url: "{:U('Index/uploadAllImg')}"
+			    ,elem: '#img' //指定原始元素，默认直接查找class="layui-upload-file"
+			    ,success: function(res){
+			    	layer.msg(res.msg);
+		    	   LAY_demo_upload.src = res.data.src;
+		    	   upLogo.value = res.data.src;
+			    }
+			});
+			var editIndex = layedit.build('LAY_demo_editor',{
+				uploadImage:{url:"{:U('Index/uploadAllImg')}"}
+			}); 
+			//监听提交
+			form.on('submit(subArtist)', function(data) { 
+					data.field.present = layedit.getContent(editIndex);
+				 	var bannerInfo = data.field;
+					var url = "{:U('ArtistUser/addArtistUser')}";
+					$.post(url,bannerInfo,function(data){
+						if(data.status == 'error'){
+							  layer.msg(data.msg,{icon: 5});//失败的表情
+							  return;
+						  }else if(data.status == 'success'){
+							  layer.msg(data.msg, {
+								  icon: 6,//成功的表情
+								  time: 2000 //2秒关闭（如果不配置，默认是3秒）
+								}, function(){
+									self.location=document.referrer;
+								}); 
+						  }
+					})
+				return false;
+			});
+		});
+		</script>
+	</body>
+
+</html>
