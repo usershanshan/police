@@ -35,3 +35,18 @@
 		</div>
 	</div>
 <include file="Application/Home/View/Public/foot1.html"/>
+<script>
+    jQuery(function($) {
+        //轮播图
+        $(".banner-carousel").owlCarousel({
+            items:1,
+            nav:true,
+            navText:["<i class='iconfont icon-zuo'></i>","<i class='iconfont icon-gengduo'></i>"],
+            rewind:true,
+            autoHeight:true,
+            autoplay:true,
+            lazyLoad:true
+        });
+    });
+</script>
+<script> $('#cccc li').click(function () { var f = this; $('#cccc li').each(function () { this.className = this == f ? 'aaa' : 'bbb' }); }); </script>

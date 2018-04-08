@@ -56,7 +56,7 @@
 						<div class="item">
 							<a href="{:U('news1_info',['id'=>$vo['id']])}">
 								<img src="{$vo['img']}" alt="{$vo['title']}">
-								<p>{$vo['title']}</p>
+								<p>{$vo['title_en']}</p>
 							</a>
 						</div>
 					</foreach>
@@ -148,14 +148,14 @@
         var myPlayer = this;
     });
     */
-    jwplayer('mediaplayer').setup({
-        'flashplayer': '__PUBLIC__/police/js/jwplayer/jwplayer.flash.swf',
-        'image': '__PUBLIC__/police/cn/images/video.jpg',
-        'id': 'playerID',
-        'width': '100%',
-        'aspectratio':'10:9.3',
-        'file': 'file/01.mp4'
-    });
+    // jwplayer('mediaplayer').setup({
+    //     'flashplayer': 'js/jwplayer/jwplayer.flash.swf',
+    //     'image': 'cn/images/video.jpg',
+    //     'id': 'playerID',
+    //     'width': '100%',
+    //     'aspectratio':'10:9.3',
+    //     'file': 'file/01.mp4'
+    // });
 
     jQuery(function($) {
         //轮播图

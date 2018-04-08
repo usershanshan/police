@@ -28,41 +28,6 @@
     </div>
 </div>
 
-<script src="__PUBLIC__/police/cn/js/jquery.min.js"></script>
-<script src="__PUBLIC__/police/cn/js/stickUp.min.js"></script>
-<script src="__PUBLIC__/police/cn/js/owl/owl.carousel.js"></script>
-<script src="__PUBLIC__/police/cn/js/wow.min.js"></script>
-<script src="__PUBLIC__/police/cn/js/main.js"></script>
-
-<script>
-    $(function(){
-        $("#search").click(function(){
-            var kw = $("#keyword").val()
-            if(kw=='') return;
-            var url = "{:U('search')}"+"?keyword="+kw;
-            window.open(url)
-        });
-    });
-</script>
-
-<script>
-    jQuery(function($) {
-        //轮播图
-        $(".banner-carousel").owlCarousel({
-            items:1,
-            nav:true,
-            navText:["<i class='iconfont icon-zuo'></i>","<i class='iconfont icon-gengduo'></i>"],
-            rewind:true,
-            autoHeight:true,
-            autoplay:true,
-            lazyLoad:true
-        });
-    });
-</script>
-<script> $('#cccc li').click(function () { var f = this; $('#cccc li').each(function () { this.className = this == f ? 'aaa' : 'bbb' }); }); </script>
-<script> $('#ccc li').click(function () { var f = this; $('#ccc li').each(function () { this.className = this == f ? 'aaa' : 'bbb' }); }); </script>
-
-
 <script src="__PUBLIC__/police/js/jwplayer/jwplayer.js"></script>
 <script src="__PUBLIC__/police/js/jwplayer/jwpsrv.js"></script>
 <script src="__PUBLIC__/police/cn/js/jquery.min.js"></script>
@@ -70,86 +35,7 @@
 <script src="__PUBLIC__/police/cn/js/owl/owl.carousel.js"></script>
 <script src="__PUBLIC__/police/cn/js/wow.min.js"></script>
 <script src="__PUBLIC__/police/cn/js/main.js"></script>
-<script>
-    /*
-    var myPlayer = videojs('example_video_1');
-    videojs("example_video_1").ready(function(){
-        var myPlayer = this;
-    });
-    */
-    jwplayer('mediaplayer').setup({
-        'flashplayer': '__PUBLIC__/police/js/jwplayer/jwplayer.flash.swf',
-        'image': '__PUBLIC__/police/cn/images/video.jpg',
-        'id': 'playerID',
-        'width': '100%',
-        'aspectratio':'10:9.3',
-        'file': 'file/01.mp4'
-    });
 
-    jQuery(function($) {
-        //轮播图
-        $(".banner-carousel").owlCarousel({
-            items:1,
-            nav:true,
-            navText:["<i class='iconfont icon-zuo'></i>","<i class='iconfont icon-gengduo'></i>"],
-            rewind:true,
-            autoplay:true,
-            autoHeight:true
-        });
-        $(".service-carousel").owlCarousel({
-            nav:true,
-            navText:["<i class='iconfont icon-zuo'></i>","<i class='iconfont icon-gengduo'></i>"],
-            rewind:true,
-            autoplay:true,
-            responsive:{
-                0:{
-                    items:1
-                },
-                440:{
-                    items:2
-                },
-                600:{
-                    items:3
-                },
-                1000:{
-                    items:4
-                }
-            }
-        });
-        $(".link-carousel").owlCarousel({
-            rewind:true,
-            autoplay:true,
-            responsive:{
-                0:{
-                    items:1
-                },
-                360:{
-                    items:2
-                },
-                600:{
-                    items:3
-                },
-                1000:{
-                    items:5
-                }
-            }
-        });
-    });
-</script>
-<script type="text/javascript">
-    $(function(){
-        var file = $("source").attr("src");
-        var image = "{$content['img']}";
-        jwplayer('mediaplayer').setup({
-            'flashplayer': '/Public/police/js/jwplayer/jwplayer.flash.swf',
-            'image': image,
-            'id': 'playerID',
-            'width': '100%',
-            'aspectratio':'10:5',
-            'file': file
-        });
-    });
-</script>
 </body>
 </body>
 </html>

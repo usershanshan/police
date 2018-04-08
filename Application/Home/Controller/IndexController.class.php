@@ -396,6 +396,7 @@ class IndexController extends HomeController  {
 
 
     public function index(){
+        $this->assign('now_index','now');
         $this->friend();
         $this->partner();
         $this->getBannerList();
