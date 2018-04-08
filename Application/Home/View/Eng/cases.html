@@ -1,4 +1,4 @@
-<include file="Application/Home/View/Public/head1.html"/>
+<include file="Application/Home/View/Public/head2.html"/>
 <div class="inside-banner case-banner clearfix">
 		<div class="container">
 			<h2 class="wow fadeInUp">经典案例</h2>
@@ -10,7 +10,7 @@
 			<h3>经典案例</h3>
 			<ul id="cccc">
 				<foreach name="type" item="vo" >
-					<li class=""><a href = "{:U('cases',['case_id'=>$vo['id']])}"><span>&gt;</span>{$vo['title']}</a></li>
+					<li class=""><a href = "{:U('cases',['case_id'=>$vo['id']])}"><span>&gt;</span>{$vo['title_en']}</a></li>
 				</foreach>
 			</ul>
 		</div>
@@ -18,7 +18,7 @@
 			<div class="title clearfix">
 				<h4>{$title}</h4>
 				<div class="crumbs">
-					<a href="{:U('index')}">首页</a>&gt;<a href="javascript:;">经典案例</a>&gt;<span>{$title}</span>
+					<a href="{:U('index')}">首页</a>&gt;<a href="javascript:;">经典案例</a>&gt;<span>{$title_en}</span>
 				</div>
 			</div>
 			<div class="content">
@@ -26,7 +26,7 @@
 					<foreach name="content" item="vo" >
 						<div class="item">
 							<img class="owl-lazy" src="{$vo['img']}" alt="">
-							<p>{$vo['title']}</p>
+							<p>{$vo['title_en']}</p>
 						</div>
 					</foreach>
 
@@ -34,4 +34,4 @@
 			</div>
 		</div>
 	</div>
-<include file="Application/Home/View/Public/foot1.html"/>
+<include file="Application/Home/View/Public/foot2.html"/>

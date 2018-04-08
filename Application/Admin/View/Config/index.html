@@ -35,22 +35,6 @@
 										autocomplete="off" placeholder="请输入网站英文标题" class="layui-input">
 							 </div>
 						 </div>
-						 <div class="layui-form-item">
-							 <label class="layui-form-label">网站尾部协议</label>
-							 <div class="layui-input-block">
-								 <!--<input type="text" name="WEB_FOOTER1" value="{$config['WEB_FOOTER1']}"-->
-										<!--autocomplete="off" placeholder="请输入网站尾部协议" class="layui-input">-->
-								 <textarea name="note" placeholder="请输入内容" class="layui-textarea">{$config['WEB_FOOTER1']}</textarea>
-							 </div>
-						 </div>
-						 <div class="layui-form-item">
-							 <label class="layui-form-label">网站尾部协议 英文</label>
-							 <div class="layui-input-block">
-								 <!--<input type="text" name="WEB_FOOTER1" value="{$config['WEB_FOOTER1']}"-->
-								 <!--autocomplete="off" placeholder="请输入网站尾部协议" class="layui-input">-->
-								 <textarea name="note_en" placeholder="请输入内容" class="layui-textarea">{$config['WEB_FOOTER1_EN']}</textarea>
-							 </div>
-						 </div>
 						<div class="layui-form-item">
 							<label class="layui-form-label">网站尾部</label>
 							<div class="layui-input-block">
@@ -58,6 +42,13 @@
 									autocomplete="off" placeholder="请输入网站尾部" class="layui-input">
 							</div>
 						</div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">网站尾部 英文</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="WEB_FOOTER_EN" value="{$config['WEB_FOOTER_EN']}"
+										autocomplete="off" placeholder="请输入网站尾部 英文" class="layui-input">
+							 </div>
+						 </div>
 						<div class="layui-form-item">
 							<label class="layui-form-label">联系方式</label>
 							<div class="layui-input-block">
@@ -66,116 +57,102 @@
 							</div>
 						</div>
 						 <div class="layui-form-item">
-							 <label class="layui-form-label">支付宝账号</label>
+							 <label class="layui-form-label">传真</label>
 							 <div class="layui-input-block">
-								 <input type="text" name="WEB_ZFB" value="{$config['WEB_ZFB']}"
-										autocomplete="off" placeholder="请输入支付宝账号" class="layui-input">
+								 <input type="text" name="CHUAN_ZHEN" value="{$config['CHUAN_ZHEN']}"
+										autocomplete="off" placeholder="请输入传真号" class="layui-input">
 							 </div>
 						 </div>
-						 <!--<div class="layui-form-item">-->
-							 <!--<label class="layui-form-label">开始交易时间（上午）</label>-->
-							 <!--<div class="layui-input-block">-->
-								 <!--<input type="text" name="WEB_TIME_S_S" value="{$config['WEB_TIME_S_S']}"-->
-										<!--autocomplete="off" placeholder="请输入电话" class="layui-input">-->
-							 <!--</div>-->
-						 <!--</div>-->
-						 <!--<div class="layui-form-item">-->
-							 <!--<label class="layui-form-label">结束交易时间（上午）</label>-->
-							 <!--<div class="layui-input-block">-->
-								 <!--<input type="text" name="WEB_TIME_S_E" value="{$config['WEB_TIME_S_E']}"-->
-										<!--autocomplete="off" placeholder="请输入电话" class="layui-input">-->
-							 <!--</div>-->
-						 <!--</div>-->
-						 <!--<div class="layui-form-item">-->
-							 <!--<label class="layui-form-label">开始交易时间（下午）</label>-->
-							 <!--<div class="layui-input-block">-->
-								 <!--<input type="text" name="WEB_TIME_X_S" value="{$config['WEB_TIME_X_S']}"-->
-										<!--autocomplete="off" placeholder="请输入电话" class="layui-input">-->
-							 <!--</div>-->
-						 <!--</div>-->
-						 <!--<div class="layui-form-item">-->
-							 <!--<label class="layui-form-label">结束交易时间（下午）</label>-->
-							 <!--<div class="layui-input-block">-->
-								 <!--<input type="text" name="WEB_TIME_X_E" value="{$config['WEB_TIME_X_E']}"-->
-										<!--autocomplete="off" placeholder="请输入电话" class="layui-input">-->
-							 <!--</div>-->
-						 <!--</div>-->
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">服务时间</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="TIME" value="{$config['TIME']}"
+										autocomplete="off" placeholder="请输入服务时间" class="layui-input">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">邮箱</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="WEB_EMAIL" value="{$config['WEB_EMAIL']}"
+										autocomplete="off" placeholder="请输入邮箱" class="layui-input">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">二维码</label>
+							 <img id="LAY_demo_upload1" src="{$config['ER_WEI_MA']}" style="height:200px;"  >
+							 <input type="hidden" name="ER_WEI_MA" id="upLogo1" value="{$config['ER_WEI_MA']}" />
+							 <input type="file" name="file" class="layui-upload-file" id="ER_WEI_MA">
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">尾部链接名称1</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="WEB_TITLE_1" value="{$config['WEB_TITLE_1']}"
+										autocomplete="off" placeholder="请输入尾部链接名称1" class="layui-input">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">尾部链接名称1 英文</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="WEB_TITLE_1_en" value="{$config['WEB_TITLE_1_en']}"
+										autocomplete="off" placeholder="请输入尾部链接名称1 英文" class="layui-input">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">尾部链接名称2</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="WEB_TITLE_2" value="{$config['WEB_TITLE_2']}"
+										autocomplete="off" placeholder="请输入尾部链接名称2" class="layui-input">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">尾部链接名称2 英文</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="WEB_TITLE_2_en" value="{$config['WEB_TITLE_2_en']}"
+										autocomplete="off" placeholder="请输入尾部链接名称2 英文" class="layui-input">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">尾部链接1</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="WEB_VALUE1" value="{$config['WEB_VALUE1']}"
+										autocomplete="off" placeholder="请输入尾部链接1" class="layui-input">
+							 </div>
+						 </div>
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">尾部链接2</label>
+							 <div class="layui-input-block">
+								 <input type="text" name="WEB_VALUE2" value="{$config['WEB_VALUE2']}"
+										autocomplete="off" placeholder="请输入尾部链接2" class="layui-input">
+							 </div>
+						 </div>
 
-						<hr> 
-						<!-- <div class="layui-form-item">
-							<label class="layui-form-label">公司名称</label>
-							<div class="layui-input-block">
-								<input type="text" name="WEB_PAY_GSMC" value="{$config['WEB_PAY_GSMC']}"
-									autocomplete="off" placeholder="请输入公司名称" class="layui-input">
-							</div>
-						</div>
-						<div class="layui-form-item">
-							<label class="layui-form-label">汇款银行</label>
-							<div class="layui-input-block">
-								<input type="text" name="WEB_PAY_HKYH" value="{$config['WEB_PAY_HKYH']}"
-									autocomplete="off" placeholder="请输入汇款银行" class="layui-input">
-							</div>
-						</div>
-						<div class="layui-form-item">
-							<label class="layui-form-label">汇款账户</label>
-							<div class="layui-input-block">
-								<input type="text" name="WEB_PAY_HKZH" value="{$config['WEB_PAY_HKZH']}"
-									autocomplete="off" placeholder="请输入汇款账户" class="layui-input">
-							</div>
-						</div>
-						<div class="layui-form-item">
-							<label class="layui-form-label">提现最小额度</label>
-							<div class="layui-input-block">
-								<input type="text" name="WITHDRAW_MIN_MONEY" value="{$config['WITHDRAW_MIN_MONEY']}"
-									autocomplete="off" placeholder="请输入提现最小额度" class="layui-input">
-							</div>
-						</div>
-						<div class="layui-form-item">
-							<label class="layui-form-label">提现最大额度</label>
-							<div class="layui-input-block">
-								<input type="text" name="WITHDRAW_MAX_MONEY" value="{$config['WITHDRAW_MAX_MONEY']}"
-									autocomplete="off" placeholder="请输入提现最大额度" class="layui-input">
-							</div>
-						</div> -->
-						<!-- <div class="layui-form-item">
-							<label class="layui-form-label">邮件</label>
-							<div class="layui-input-block">
-								<input type="text" name="WEB_EMAIL" value="{$config['WEB_EMAIL']}"
-									autocomplete="off" placeholder="请输入邮件" class="layui-input">
-							</div>
-						</div> -->
-						<!-- <div class="layui-form-item layui-form-text">
-							<label class="layui-form-label">网站描述</label>
-							<div class="layui-input-block">
-								<textarea placeholder="请输入内容" name="WEB_INTRODUCTION" class="layui-textarea">{$config['WEB_INTRODUCTION']}</textarea>
-							</div>
-						</div> -->
 						<hr>
 						<div class="layui-form-item layui-form-text">
-							<label class="layui-form-label">用户服务协议</label>
+							<label class="layui-form-label">使用条款</label>
 							<div class="layui-input-block">
-								<textarea class="layui-textarea layui-hide"  name="WEB_REG_CONTENT" lay-verify="content" id="LAY_demo_editor2">{$config['WEB_REG_CONTENT']}</textarea>
+								<textarea class="layui-textarea layui-hide"  name="WEB_USE_ITEM" lay-verify="content" id="LAY_demo_editor2">{$config['WEB_USE_ITEM']}</textarea>
 							</div>
 						</div>
-						<!-- <div class="layui-form-item">
-							<label class="layui-form-label">费用说明</label>
+						 <div class="layui-form-item layui-form-text">
+							 <label class="layui-form-label">使用条款 英文</label>
+							 <div class="layui-input-block">
+								 <textarea class="layui-textarea layui-hide"  name="WEB_USE_ITEM_EN" lay-verify="content" id="LAY_demo_editor1">{$config['WEB_USE_ITEM_EN']}</textarea>
+							 </div>
+						 </div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">保密与安全</label>
 							<div class="layui-input-block">
-								<textarea class="layui-textarea layui-hide"  name="WEB_LEGAL" lay-verify="content" id="LAY_demo_editor3">{$config['WEB_LEGAL']}</textarea>
+								<textarea class="layui-textarea layui-hide"  name="WEB_SAFE" lay-verify="content" id="LAY_demo_editor3">{$config['WEB_SAFE']}</textarea>
 							</div>
 						</div>
 						
 						 <div class="layui-form-item layui-form-text">
-							<label class="layui-form-label">法律申明</label>
+							<label class="layui-form-label">保密与安全 英文</label>
 							<div class="layui-input-block">
-								<textarea class="layui-textarea layui-hide"  name="WEB_INTEGRAL_CONTENT" lay-verify="content" id="LAY_demo_editor4">{$config['WEB_INTEGRAL_CONTENT']}</textarea>
+								<textarea class="layui-textarea layui-hide"  name="WEB_SAFE_EN" lay-verify="content" id="LAY_demo_editor4">{$config['WEB_SAFE_EN']}</textarea>
 							</div>
 						</div>  
-						<div class="layui-form-item layui-form-text">
-							<label class="layui-form-label">联系我们</label>
-							<div class="layui-input-block">
-								<textarea class="layui-textarea layui-hide"  name="WEB_ABOUT" lay-verify="content" id="LAY_demo_editor1">{$config['WEB_ABOUT']}</textarea>
-							</div>
-						</div> -->
+
 						<div class="layui-form-item">
 							<div class="layui-input-block">
 								<button class="layui-btn" lay-submit="" lay-filter="subConfig">立即提交</button>
@@ -202,6 +179,15 @@
 				    	   upLogo.value = res.data.src; 
 				    }
 				});
+				layui.upload({
+					url:  "{:U('Index/uploadAllImg')}"
+					,elem: '#ER_WEI_MA' //指定原始元素，默认直接查找class="layui-upload-file"
+					,success: function(res){
+						layer.msg(res.msg);
+						LAY_demo_upload1.src = res.data.src;
+						upLogo1.value = res.data.src;
+					}
+				});
 			var editIndex1 = layedit.build('LAY_demo_editor1',{
 				uploadImage:{url:"{:U('Index/uploadAllImg')}"}
 			}); 
@@ -216,10 +202,10 @@
 			}); 
 			//监听提交
 			form.on('submit(subConfig)', function(data) {
-					data.field.WEB_ABOUT = layedit.getContent(editIndex1);
-					data.field.WEB_REG_CONTENT = layedit.getContent(editIndex2);
-					data.field.WEB_LEGAL = layedit.getContent(editIndex3);
-					data.field.WEB_INTEGRAL_CONTENT = layedit.getContent(editIndex4);
+					data.field.WEB_USE_ITEM = layedit.getContent(editIndex2);//使用条款
+					data.field.WEB_USE_ITEM_EN = layedit.getContent(editIndex1);//使用条款 英文
+					data.field.WEB_SAFE = layedit.getContent(editIndex3);//使用条款 英文
+					data.field.WEB_SAFE_EN = layedit.getContent(editIndex4);//使用条款 英文
 				 	var configInfo = data.field;
 					var url = "{:U('Config/changeConfig')}";
 					$.post(url,configInfo,function(data){

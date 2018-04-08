@@ -1,4 +1,4 @@
-﻿<include file="Application/Home/View/Public/head1.html"/>
+﻿<include file="Application/Home/View/Public/head2.html"/>
 	<div class="banner clearfix">
 		<div class="container">
 			<div class="owl-carousel owl-theme banner-carousel wow fadeInLeft">
@@ -18,10 +18,10 @@
 
 				</div>
 				<div class="video-title">
-					<h2><a href="{:U('news3_info',['id'=>$video['id']])}">{$video['title']}</a></h2><a class="more" href="{:U('news',['news_id'=>$video_arr['id']])}">更多&gt;</a>
+					<h2><a href="{:U('news3_info',['id'=>$video['id']])}">{$video['title_en']}</a></h2><a class="more" href="{:U('news',['news_id'=>$video_arr['id']])}">更多&gt;</a>
 				</div>
 			</div>
-			<div class="video-mobile wow fadeInUp"><a href="{:U('news',['news_id'=>$video_arr['id']])}"><i class="iconfont icon-duomeiti"></i>{$video_arr['title']}</a></div>
+			<div class="video-mobile wow fadeInUp"><a href="{:U('news',['news_id'=>$video_arr['id']])}"><i class="iconfont icon-duomeiti"></i>{$video_arr['title_en']}</a></div>
 		</div>
 	</div>
 	<div class="home-service clearfix wow fadeInUp">
@@ -34,47 +34,12 @@
 					<foreach name="one" item="vo" >
 						<div class="item wow fadeInUp time03">
 							<a href="{:U('one',['one_id'=>$vo['id']])}">
-								<i><img src="{$vo['icon']}" alt="{$vo['title']}"></i>
-								<h3>{$vo['title']}</h3>
+								<i><img src="{$vo['icon']}" alt="{$vo['title_en']}"></i>
+								<h3>{$vo['title_en']}</h3>
 							</a>
 						</div>
 					</foreach>
-					<div class="item wow fadeInUp time03">
-						<a href="31.html">
-							<i><img src="__PUBLIC__/police/cn/images/service-icon1.png" alt="人力防范"></i>
-							<h3>人力防范</h3>
-						</a>
-					</div>
-					<div class="item wow fadeInUp time05">
-						<a href="31.html">
-							<i><img src="__PUBLIC__/police/cn/images/service-icon2.png" alt="智能安防"></i>
-							<h3>智能安防</h3>
-						</a>
-					</div>
-					<div class="item wow fadeInUp time07">
-						<a href="31.html">
-							<i><img src="__PUBLIC__/police/cn/images/service-icon3.png" alt="联网报警"></i>
-							<h3>联网报警</h3>
-						</a>
-					</div>
-					<div class="item wow fadeInUp time09">
-						<a href="31.html">
-							<i><img src="__PUBLIC__/police/cn/images/service-icon4.png" alt="武装押运"></i>
-							<h3>武装押运</h3>
-						</a>
-					</div>
-					<div class="item">
-						<a href="31.html">
-							<i><img src="__PUBLIC__/police/cn/images/service-icon5.png" alt="交通设施"></i>
-							<h3>交通设施</h3>
-						</a>
-					</div>
-					<div class="item">
-						<a href="31.html">
-							<i><img src="__PUBLIC__/police/cn/images/service-icon6.png" alt="保安培训"></i>
-							<h3>保安培训</h3>
-						</a>
-					</div>
+
 
 				</div>
 			</div>
@@ -99,7 +64,7 @@
 				<div class="home-news-list">
 					<ul class="wow fadeInRight time07">
 						<foreach name="no_img" item="vo" >
-							<li><a href="{:U('news1_info',['id'=>$vo['id']])}">{$vo['title']}</a></li>
+							<li><a href="{:U('news1_info',['id'=>$vo['id']])}">{$vo['title_en']}</a></li>
 						</foreach>
 					</ul>
 					<div class="news-newspaper wow fadeInRight time09">
@@ -117,24 +82,24 @@
 			<div class="home-case-bd clearfix">
 				<div class="case-big wow fadeInLeft time05">
 					<a href="{:U('cases',['id'=>$arr[0]['type_id']])}">
-						<p>{$arr[0]['title_case']}</p>
+						<p>{$arr[0]['title_case_en']}</p>
 						<img src="{$arr[0]['img']}" alt="">
 					</a>
 				</div>
 				<div class="case-right">
 					<div class="case-long wow fadeInRight time07">
 						<a href="{:U('cases'),['id'=>$arr[1]['type_id']]}">
-							<p>{$arr[1]['title_case']}</p>
+							<p>{$arr[1]['title_case_en']}</p>
 							<img src="{$arr[1]['img']}" alt="">
 						</a>
 					</div>
 					<div class="case-small wow fadeInRight time09">
 						<a href="{:U('cases'),['id'=>$arr[2]['type_id']]}">
-							<p>{$arr[2]['title_case']}</p>
+							<p>{$arr[2]['title_case_en']}</p>
 							<img src="{$arr[2]['img']}" alt="">
 						</a>
 						<a href="{:U('cases'),['id'=>$arr[3]['type_id']]}">
-							<p>{$arr[3]['title_case']}</p>
+							<p>{$arr[3]['title_case_en']}</p>
 							<img src="{$arr[3]['img']}" alt="">
 						</a>
 					</div>
@@ -150,7 +115,7 @@
 			<div class="link-btn">
 				<ul class="clearfix">
 					<foreach name="friend" item="vo" >
-						<li class="wow fadeInUp"><a target="_blank" title="{$vo['title']}" href="{$vo['href']}">{$vo['title']}</a></li>
+						<li class="wow fadeInUp"><a target="_blank" title="{$vo['title_en']}" href="{$vo['href']}">{$vo['title_en']}</a></li>
 					</foreach>
 				</ul>
 			</div>
@@ -171,7 +136,7 @@
 		</div>
 	</div>
 
-<include file="Application/Home/View/Public/foot1.html"/>
+<include file="Application/Home/View/Public/foot2.html"/>
 
 
 <script src="__PUBLIC__/police/js/jwplayer/jwplayer.js"></script>
@@ -183,14 +148,14 @@
         var myPlayer = this;
     });
     */
-    // jwplayer('mediaplayer').setup({
-    //     'flashplayer': '__PUBLIC__/police/js/jwplayer/jwplayer.flash.swf',
-    //     'image': '__PUBLIC__/police/cn/images/video.jpg',
-    //     'id': 'playerID',
-    //     'width': '100%',
-    //     'aspectratio':'10:9.3',
-    //     'file': 'file/01.mp4'
-    // });
+    jwplayer('mediaplayer').setup({
+        'flashplayer': '__PUBLIC__/police/js/jwplayer/jwplayer.flash.swf',
+        'image': '__PUBLIC__/police/cn/images/video.jpg',
+        'id': 'playerID',
+        'width': '100%',
+        'aspectratio':'10:9.3',
+        'file': 'file/01.mp4'
+    });
 
     jQuery(function($) {
         //轮播图

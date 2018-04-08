@@ -1,10 +1,10 @@
-<include file="Application/Home/View/Public/head1.html"/>
+<include file="Application/Home/View/Public/head2.html"/>
 	<div class="container clearfix">
 		<div class="inside-right article wow fadeInUp">
 			<div class="title clearfix">
 				<h4>{$title}</h4>
 				<div class="crumbs">
-					<a href="{:U('index')}">首页</a>&gt;<a href="">{$title_d}</a>><span>{$title}</span>
+					<a href="{:U('index')}">首页</a>&gt;<a href="">{$title}</a>
 				</div>
 			</div>
 			<div class="content">
@@ -12,9 +12,8 @@
 					<table align="center" border="0" cellpadding="0" cellspacing="0" width="90%">
 						<tbody>
 						<div class="article-title">
-						<h3>{$info['title']}</h3>
 						</div>
-						{$info['content']}
+						{$value}
 						</tbody>
 					</table>
 					&nbsp;<p></p>
@@ -24,6 +23,6 @@
 	</div>
 
 
-<include file="Application/Home/View/Public/foot1.html"/>
+<include file="Application/Home/View/Public/foot2.html"/>
 
 

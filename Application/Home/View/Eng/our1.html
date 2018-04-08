@@ -1,4 +1,4 @@
-<include file="Application/Home/View/Public/head1.html"/>
+<include file="Application/Home/View/Public/head2.html"/>
     
     <div class="inside-banner about-banner clearfix">
 		<div class="container">
@@ -11,7 +11,7 @@
 			<h3>关于我们</h3>
 			<ul id="cccc">
 				<foreach name="type" item="vo" >
-					<li class=""><a href = "{:U('our',['our_id'=>$vo['id']])}"><span>&gt;</span>{$vo['title']}</a></li>
+					<li class=""><a href = "{:U('our',['our_id'=>$vo['id']])}"><span>&gt;</span>{$vo['title_en']}</a></li>
 				</foreach>
 			</ul>
 		</div>
@@ -19,11 +19,11 @@
 			<div class="title clearfix">
 				<h4>{$title}</h4>
 				<div class="crumbs">
-					<a href="{:U('index')}">首页</a>&gt;<a href="">关于我们</a>><span>{$title}</span>
+					<a href="{:U('index_en')}">首页</a>&gt;<a href="">关于我们</a>><span>{$title_en}</span>
 				</div>
 			</div>
 			<div class="content message">
-				{$content['content']}
+				{$content['content'_en]}
 			</div>
 		</div>
 	</div>
@@ -64,4 +64,4 @@
 		</div>
 	</div>
 
-<include file="Application/Home/View/Public/foot1.html"/>
+<include file="Application/Home/View/Public/foot2.html"/>

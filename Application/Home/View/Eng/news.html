@@ -1,4 +1,4 @@
-<include file="Application/Home/View/Public/head1.html"/>
+<include file="Application/Home/View/Public/head2.html"/>
     <div class="inside-banner news-banner clearfix">
         <div class="container">
             <h2 class="wow fadeInUp">要闻动态</h2>
@@ -10,15 +10,15 @@
             <h3>要闻动态</h3>
             <ul id="ccc">
                 <foreach name="type" item="vo" >
-                    <li><a href="{:U('news',['news_id'=>$vo['id']])}">{$vo['title']}</a></li>
+                    <li><a href="{:U('news',['news_id'=>$vo['id']])}">{$vo['title_en']}</a></li>
                 </foreach>
             </ul>
         </div>
         <div class="inside-right wow fadeInRight">
             <div class="title clearfix">
-                <h4>{$title}</h4>
+                <h4>{$title_en}</h4>
                 <div class="crumbs">
-                    <a href="{:U('index')}">首页</a>&gt;<a href="">要闻动态</a>&gt;<span>{$title} </span>
+                    <a href="{:U('index')}">首页</a>&gt;<a href="">要闻动态</a>&gt;<span>{$title_en} </span>
                 </div>
             </div>
             <div class="content">
@@ -26,9 +26,9 @@
                 <foreach name="content" item="vo" >
                     <dl class="inside-list wow fadeInUp">
                         <if condition="$vo['img']">
-                            <dt><a href="{:U('news_info',['id'=>$vo['id']])}"><img src="{$vo['img']}" alt="{$vo['title']}"></a></dt>
+                            <dt><a href="{:U('news_info',['id'=>$vo['id']])}"><img src="{$vo['img']}" alt="{$vo['title_en']}"></a></dt>
                         </if>
-                        <dd class="text-title"><a href="{:U('news1_info',['id'=>$vo['id'],'title'=>$title,'title_d'=>'要闻动态'])}">{$vo['title']}</a></dd>
+                        <dd class="text-title"><a href="{:U('news1_info',['id'=>$vo['id'],'title'=>$title,'title_d'=>'要闻动态'])}">{$vo['title_en']}</a></dd>
                         <dd class="date"><span>{$vo['inputtime']}</span></dd>
                     </dl>
                 </foreach>
@@ -41,4 +41,4 @@
             </div>
         </div>
     </div>
-<include file="Application/Home/View/Public/foot1.html"/>
+<include file="Application/Home/View/Public/foot2.html"/>

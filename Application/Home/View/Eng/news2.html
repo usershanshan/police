@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
 	<meta charset="UTF-8">
-	<title>{$config['WEB_TITLE']}</title>
+	<title>{$config['WEB_TITLE_EN']}</title>
 	<link rel="stylesheet" href="__PUBLIC__/police/cn/enews/css/bootstrap.min.css">
 	<link rel="stylesheet" href="__PUBLIC__/police/cn/enews/css/style.css">
 	<link rel="stylesheet" href="__PUBLIC__/police/cn/enews/css/colorbox.css" />
@@ -65,7 +65,7 @@
 					<ul class="input-ropdown">
 
 						<foreach name="content['qi']" item="vo" >
-							<li><a href="{:U('news2_info',['id'=>$vo['id']])}">{$vo['title']}</a></li>
+							<li><a href="{:U('news2_info',['id'=>$vo['id']])}">{$vo['title_en']}</a></li>
 						</foreach>
 					</ul>
 				</div>
@@ -82,26 +82,26 @@
 			<div class="news-list">
 				<foreach name="content['yi']" item="vo" >
 					<dl class="yi">
-						<dt><a href="{:U('news2_content',['id'=>$vo['id']])}" class="iframe">{$vo['title']}</a></dt>
-						<dd>　　{$vo['note']}</dd>
+						<dt><a href="{:U('news2_content',['id'=>$vo['id']])}" class="iframe">{$vo['title_en']}</a></dt>
+						<dd>　　{$vo['note_en']}</dd>
 					</dl>
 				</foreach>
 				<foreach name="content['er']" item="vo" >
 					<dl class="er">
-						<dt><a href="{:U('news2_content',['id'=>$vo['id']])}" class="iframe">{$vo['title']}</a></dt>
-						<dd>　　{$vo['note']}</dd>
+						<dt><a href="{:U('news2_content',['id'=>$vo['id']])}" class="iframe">{$vo['title_en']}</a></dt>
+						<dd>　　{$vo['note_en']}</dd>
 					</dl>
 				</foreach>
 				<foreach name="content['san']" item="vo" >
 					<dl class="san">
-						<dt><a href="{:U('news2_content',['id'=>$vo['id']])}" class="iframe">{$vo['title']}</a></dt>
-						<dd>　　{$vo['note']}</dd>
+						<dt><a href="{:U('news2_content',['id'=>$vo['id']])}" class="iframe">{$vo['title_en']}</a></dt>
+						<dd>　　{$vo['note_en']}</dd>
 					</dl>
 				</foreach>
 				<foreach name="content['si']" item="vo" >
 					<dl class="si">
-						<dt><a href="{:U('news2_content',['id'=>$vo['id']])}" class="iframe">{$vo['title']}</a></dt>
-						<dd>　　{$vo['note']}</dd>
+						<dt><a href="{:U('news2_content',['id'=>$vo['id']])}" class="iframe">{$vo['title_en']}</a></dt>
+						<dd>　　{$vo['note_en']}</dd>
 					</dl>
 				</foreach>
 
@@ -112,7 +112,7 @@
 
 		
 	</div>	
-	<div class="footer">{$config['WEB_FOOTER']}</div>
+	<div class="footer">{$config['WEB_FOOTER_EN']}</div>
 	
 	<script src="__PUBLIC__/police/cn/js/vue.js"></script>
 	<script src="__PUBLIC__/police/cn/enews/js/jquery.min.js"></script>

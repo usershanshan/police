@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
 
-class IndexController extends HomeController  {
+class EngController extends HomeController  {
 
 
 
@@ -442,7 +442,6 @@ class IndexController extends HomeController  {
         $img = M('news1')->where(['display'=>1,'img'=>['NEQ','']])->limit(5)->select();
         $this->assign('no_img',$no_img);
         $this->assign('img',$img);
-
     }
 
     public function case_index(){
@@ -468,10 +467,9 @@ class IndexController extends HomeController  {
     }
 
 
-    //英文需改
     public function search(){
         $keyword = I('get.keyword');
-        $content =  M('news1')->where(['title'=>['LIKE',"%".$keyword."%"],'display'=>1])->select();
+        $content =  M('news1')->where(['title_en'=>['LIKE',"%".$keyword."%"],'display'=>1])->select();
         $this->assign('content',$content);
         $this->assign('keyword',$keyword);
         $this->display();
