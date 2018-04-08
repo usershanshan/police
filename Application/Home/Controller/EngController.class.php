@@ -438,10 +438,13 @@ class EngController extends HomeController  {
     }
 
     public function news_index(){
-        $no_img = M('news1')->where(['display'=>1,'img'=>''])->limit(5)->select();
-        $img = M('news1')->where(['display'=>1,'img'=>['NEQ','']])->limit(5)->select();
+        $no_img = M('news1')->field(['id','title','title_en','img'])->where(['display'=>1,'img'=>''])->limit(5)->select();
+        $img = M('news1')->field(['id','title','title_en','img'])->where(['display'=>1,'img'=>['NEQ','']])->limit(5)->select();
         $this->assign('no_img',$no_img);
         $this->assign('img',$img);
+
+
+
     }
 
     public function case_index(){
