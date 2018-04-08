@@ -387,7 +387,6 @@ class IndexController extends HomeController  {
         $this->assign('title_en',$title_en);
         $this->assign('type',$type);
         $this->assign('content',$content);
-        $this->assign('now_index','now');
         $this->display();
 
 
