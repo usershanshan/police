@@ -35,6 +35,16 @@
 <script src="__PUBLIC__/police/cn/js/owl/owl.carousel.js"></script>
 <script src="__PUBLIC__/police/cn/js/wow.min.js"></script>
 <script src="__PUBLIC__/police/cn/js/main.js"></script>
+<script>
+    $(function(){
+        $("#search").click(function(){
+            var kw = $("#keyword").val()
+            if(kw=='') return;
+            var url = '/Home/Eng/search?keyword='+kw;
+            window.open(url)
+        });
+    });
+</script>
 
 </body>
 </body>

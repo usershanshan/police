@@ -2,16 +2,16 @@
 	<div class="container clearfix">
 		<div class="inside-right article wow fadeInUp">
 			<div class="title clearfix">
-				<h4>搜索</h4>
+				<h4>search</h4>
 				<div class="crumbs">
-					<a href="{:U('index')}">首页</a>&gt;<a href="">搜索</a>
+					<a href="{:U('index')}">home page</a>&gt;<a href="">search</a>
 				</div>
 			</div>
 			<div class="content">
 				<div class="article-content">
 					<table align="center" border="0" cellpadding="0" cellspacing="0" width="90%">
 						<div class="search">
-							<div class="search-prompt wow fadeInUp">为您找到关键字 "{$keyword}" 的相关文章如下：</div>
+							<div class="search-prompt wow fadeInUp">Find the key for you "{$keyword}" The following articles are as follows：</div>
 							<foreach name="content" item="vo" >
 								<div class="search-box wow fadeInUp">
 									<h3 class="search-box-title"><a href="{:U('news1_info',['id'=>$vo['id']])}">{$vo['title_en']}</a></h3>

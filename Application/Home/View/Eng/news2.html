@@ -61,7 +61,7 @@
 			<div class="news-top">
 				<div class="logo"><img src="__PUBLIC__/police/cn/enews/img/logo.jpg" alt=""></div>
 				<div class="input-append">
-					<button class="add-on">往期回顾</button>
+					<button class="add-on">To review</button>
 					<ul class="input-ropdown">
 
 						<foreach name="content['qi']" item="vo" >
@@ -70,14 +70,14 @@
 					</ul>
 				</div>
 				<div class="page">
-					<a href="{:U('news2_info',['id'=>$content['qi_s']])}">上一期</a><a href="{:U('news2_info',['id'=>$content['qi_n']])}">下一期</a>
+					<a href="{:U('news2_info',['id'=>$content['qi_s']])}">Last phase</a><a href="{:U('news2_info',['id'=>$content['qi_n']])}">Next phase</a>
 				</div>
 			</div>
 			<div class="layout">
-				<a href="javascript:change('yi');">一版</a>
-				<a href="javascript:change('er');">二版</a>
-				<a href="javascript:change('san');">三版</a>
-				<a href="javascript:change('si');">四版</a>
+				<a href="javascript:change('yi');">First edition</a>
+				<a href="javascript:change('er');">The two edition</a>
+				<a href="javascript:change('san');">The three Edition</a>
+				<a href="javascript:change('si');">The four Edition</a>
 			</div>
 			<div class="news-list">
 				<foreach name="content['yi']" item="vo" >

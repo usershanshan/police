@@ -1,13 +1,13 @@
 <include file="Application/Home/View/Public/head2.html"/>
     <div class="inside-banner news-banner clearfix">
         <div class="container">
-            <h2 class="wow fadeInUp">要闻动态</h2>
+            <h2 class="wow fadeInUp">Dynamic highlights</h2>
             <p class="wow fadeInUp"><span>shanghai security</span><span>news dynamic</span></p>
         </div>
     </div>
     <div class="container clearfix">
         <div class="sub-nav wow fadeInLeft">
-            <h3>要闻动态</h3>
+            <h3>Dynamic highlights</h3>
             <ul id="ccc">
                 <foreach name="type" item="vo" >
                     <li><a href="{:U('news',['news_id'=>$vo['id']])}">{$vo['title_en']}</a></li>
@@ -18,7 +18,7 @@
             <div class="title clearfix">
                 <h4>{$title_en}</h4>
                 <div class="crumbs">
-                    <a href="{:U('index')}">首页</a>&gt;<a href="">要闻动态</a>&gt;<span>{$title_en} </span>
+                    <a href="{:U('index')}">home page</a>&gt;<a href="">Dynamic highlights</a>&gt;<span>{$title_en} </span>
                 </div>
             </div>
             <div class="content">
@@ -28,7 +28,7 @@
                         <if condition="$vo['img']">
                             <dt><a href="{:U('news_info',['id'=>$vo['id']])}"><img src="{$vo['img']}" alt="{$vo['title_en']}"></a></dt>
                         </if>
-                        <dd class="text-title"><a href="{:U('news1_info',['id'=>$vo['id'],'title'=>$title,'title_d'=>'要闻动态'])}">{$vo['title_en']}</a></dd>
+                        <dd class="text-title"><a href="{:U('news1_info',['id'=>$vo['id'],'title'=>$title,'title_d'=>'Dynamic highlights'])}">{$vo['title_en']}</a></dd>
                         <dd class="date"><span>{$vo['inputtime']}</span></dd>
                     </dl>
                 </foreach>

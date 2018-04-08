@@ -45,7 +45,7 @@
         $("#search").click(function(){
             var kw = $("#keyword").val()
             if(kw=='') return;
-            var url = '/cn/s?m=news&k='+encodeURI(kw);
+            var url = '/Home/Index/search?keyword='+kw;
             window.open(url)
         });
     });

@@ -1,13 +1,13 @@
 <include file="Application/Home/View/Public/head2.html"/>
 <div class="inside-banner case-banner clearfix">
 		<div class="container">
-			<h2 class="wow fadeInUp">经典案例</h2>
+			<h2 class="wow fadeInUp">Classic case</h2>
 			<p class="wow fadeInUp"><span>shanghai security</span><span>classic case</span></p>
 		</div>
 	</div>
 	<div class="container clearfix">
 		<div class="sub-nav wow fadeInLeft">
-			<h3>经典案例</h3>
+			<h3>Classic case </h3>
 			<ul id="cccc">
 				<foreach name="type" item="vo" >
 					<li class=""><a href = "{:U('cases',['case_id'=>$vo['id']])}"><span>&gt;</span>{$vo['title_en']}</a></li>
@@ -18,7 +18,7 @@
 			<div class="title clearfix">
 				<h4>{$title}</h4>
 				<div class="crumbs">
-					<a href="{:U('index')}">首页</a>&gt;<a href="javascript:;">经典案例</a>&gt;<span>{$title_en}</span>
+					<a href="{:U('index')}">home page</a>&gt;<a href="javascript:;">Classic case </a>&gt;<span>{$title_en}</span>
 				</div>
 			</div>
 			<div class="content">
