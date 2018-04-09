@@ -8,14 +8,16 @@
 				</div>
 			</div>
 			<ul class="foreign-list clearfix">
-                <li class="wow fadeInUp time01 animated" style="visibility: visible; animation-name: fadeInUp;">
+
 					<foreach name="content" item="vo" >
-						<a href="{:U('news3_info',['id'=>$vo['id'],'title'=>$title,'title_d'=>$title_d])}">
-							<img src="{$vo['img']}" alt="{$vo['title']}">
-							<p>{$vo['title']}</p>
-						</a>
+						<li class="wow fadeInUp time01 animated" style="visibility: visible; animation-name: fadeInUp;">
+							<a href="{:U('news3_info',['id'=>$vo['id'],'title'=>$title,'title_d'=>$title_d])}">
+								<img src="{$vo['img']}" alt="{$vo['title']}">
+								<p>{$vo['title']}</p>
+							</a>
+						</li>
 					</foreach>
-				</li>
+
 
 			</ul>
 		</div>
