@@ -427,8 +427,8 @@ class IndexController extends HomeController  {
     }
 
     public function video(){
-        $video = M('news3')->where(['display'=>1])->order(['inputtime'=>'desc'])->find();
-        $video_arr = M('news_type')->where(['display'=>1,'news_type'=>$video['type_id']])->find();
+        $video = M('news3')->where(['display'=>1])->order(['inputtime'=>'desc'])->find();//最新得视频
+        $video_arr = M('news_type')->where(['display'=>1,'id'=>$video['type_id']])->find();//视频分类
         $this->assign('video',$video);
         $this->assign('video_arr',$video_arr);
 
