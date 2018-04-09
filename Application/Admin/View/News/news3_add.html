@@ -41,13 +41,11 @@
 							 <label class="layui-form-label">视频</label>
 							 <video id="example_video" class="video-js" poster="{$info['img']}" preload="none" controls="controls" width="300" height="150" data-setup="{}">
 								 <source src="{$info['video']}" type="video/mp4" class="info">
-								 <track kind="captions" src="demo.captions.vtt" srclang="en" label="English">
-								 <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English">
 							 </video>
 							 <input type="hidden" name="video" id="video_hidden" value="{$info['video']}"/>
-							 <input type="file" name="file" class="layui-upload-file" id="files">
-							 <!--<button type="button" class="layui-btn" id="test5">上传视频</button>-->
+							 <!--<input type="file" name="file" class="layui-upload-file" id="files">-->
 						 </div>
+
 						<div class="layui-form-item">
 							<div class="layui-input-block">
 								<button class="layui-btn" lay-submit lay-filter="subBanner">立即提交</button>
@@ -55,16 +53,39 @@
 							</div>
 						</div>
 					</form>
+					<form action="{:U('Admin/Index/uploadFile')}" method="post" enctype="multipart/form-data">
+						<label for="file">视频:</label>
+						<input type="file" id="file" accept="video/*" name="file"/>
+						<!--<button onclick="aaa()">视频上传</button>-->
+						<br />
+						<input type="submit" name="上传" value="Submit" />
+					</form>
 				</div>
 			</fieldset>
+			<button type="button" class="layui-btn" id="test5"><i class="layui-icon"></i>上传视频</button>
 		</div>
 		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
+		<script>
+            layui.use('upload', function(){
+                var $ = layui.jquery,upload = layui.upload;
+                console.log(upload)
+                // upload.render({
+                //     elem: '#test5'
+                //     ,url: '/upload/'
+                //     ,accept: 'video' //视频
+                //     ,done: function(res){
+                //         console.log(res)
+                //     }
+                // });
+            });
+		</script>
 		<script>
 		layui.use(['form','upload','layedit','laydate'], function() {
 			var form = layui.form(),
 				layer = layui.layer,
 				$ = layui.jquery,
-				layedit = layui.layedit
+				layedit = layui.layedit,
+                upload = layui.upload;
 			layui.upload({
 			    url:  "{:U('Index/uploadAllImg')}"
 			    ,elem: '#img' //指定原始元素，默认直接查找class="layui-upload-file"
@@ -75,31 +96,20 @@
                     upLogo.value = res.data.src;//隐藏域
 			    }
 			});
-            // layui.upload.render({
-            //     elem: '#test5'
-            //     ,url: "{:U(\'Index/uploadFile\')}"
-            //     ,accept: 'video' //视频
-            //     ,success: function(res){
-            //         console.log(res);
-            //         layer.msg(res.msg);
-            //         info.src = res.data.src;//视频展示
-            //         video_hidden.value = res.data.src;//隐藏域
-            //     }
-            // });
 
 
-			//视频上传有问题
-            layui.upload({
-                url:  "{:U('Index/uploadFile')}"
-                ,elem: '#files' //指定原始元素，默认直接查找class="layui-upload-file"
-                ,success: function(res){
-                    console.log(res);
-                    layer.msg(res.msg);
-                    info.src = res.data.src;//视频展示
-                    video_hidden.value = res.data.src;//隐藏域
-                }
-            });
 
+			layui.upload.render({
+                    elem: '#test5'
+                    ,url: '{:U(\'Index/uploadFile\')}'
+                    ,accept: 'video' //视频
+                    ,done: function(res){
+                        console.log(res);
+                        layer.msg(res.msg);
+                        info.src = res.data.src;//视频展示
+                        video_hidden.value = res.data.src;//隐藏域
+                    }
+                });
 			var editIndex1 = layedit.build('LAY_demo_editor1',{
 				uploadImage:{url:"{:U('Index/uploadAllImg')}"}
 			});
@@ -107,7 +117,7 @@
                 uploadImage:{url:"{:U('Index/uploadAllImg')}"}
             });
 			//监听提交
-			form.on('submit(subBanner)', function(data) { 
+			form.on('submit(subBanner)', function(data) {
 				 	data.field.content = layedit.getContent(editIndex1);
 				 	data.field.content_en = layedit.getContent(editIndex2);
 				 	var bannerInfo = data.field;
@@ -127,7 +137,7 @@
 								  time: 2000 //2秒关闭（如果不配置，默认是3秒）
 								}, function(){
 									self.location=document.referrer;
-								}); 
+								});
 						  }
 					})
 				return false;
@@ -137,7 +147,35 @@
 		});
 
 
+        function aaa(){
+            var fileSize = document.getElementById('upload_video_').files[0].size;
+            var fd = new FormData();
+
+            fd.append("fileToUpload", document.getElementById('upload_video_').files[0]);
+            console.log(fd);
+
+            $.ajax({
+                url:"{:U('Admin/Index/uploadFile')}",
+                type:"POST",
+                data:fd,
+                dataType:'json',
+                processData:false,
+                contentType:false,
+                cache:false,
+                success:function(data){
+                    console.log(data);
+
+                },
+                error:function(error){
+                }
+            });
+        }
+
+
 		</script>
+
+		<!--<script type="text/javascript" src="__PUBLIC__/file/layer/layer.js"></script>-->
+		<!--<script type="text/javascript" src="__PUBLIC__/file/layui/layui.js"></script>-->
 	</body>
 
 </html>

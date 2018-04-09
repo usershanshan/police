@@ -2,13 +2,13 @@
     
     <div class="inside-banner about-banner clearfix">
 		<div class="container">
-			<h2 class="wow fadeInUp">About us</h2>
-			<p class="wow fadeInUp"><span>shanghai security</span><span>about us</span></p>
+			<h2 class="wow fadeInUp">{$config['D_OUR_EN']}</h2>
+			<p class="wow fadeInUp"><span>{$config['WEB_TITLE_EN']}</span><span>{$config['D_OUR_EN']}</span></p>
 		</div>
 	</div>
 	<div class="container clearfix">
 		<div class="sub-nav wow fadeInLeft">
-			<h3>About us</h3>
+			<h3>{$config['D_OUR_EN']}</h3>
 			<ul id="cccc">
 				<foreach name="type" item="vo" >
 					<li class=""><a href = "{:U('our',['our_id'=>$vo['id']])}"><span>&gt;</span>{$vo['title_en']}</a></li>
@@ -19,7 +19,7 @@
 			<div class="title clearfix">
 				<h4>{$title}</h4>
 				<div class="crumbs">
-					<a href="{:U('index_en')}">home page</a>&gt;<a href="">About us</a>><span>{$title_en}</span>
+					<a href="{:U('index_en')}">{$config['D_INDEX_EN']}</a>&gt;<a href="">{$config['D_OUR_EN']}</a>><span>{$title_en}</span>
 				</div>
 			</div>
 			<div class="content message">
