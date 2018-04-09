@@ -7,6 +7,8 @@
 		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
 		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
 		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+		<script type="text/javascript" charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor.js"></script>
+		<script type="text/javascript" charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
 	</head>
 
 	<body>
@@ -212,31 +214,84 @@
 
 
 						<hr>
-						<div class="layui-form-item layui-form-text">
-							<label class="layui-form-label">使用条款</label>
-							<div class="layui-input-block">
-								<textarea class="layui-textarea layui-hide"  name="WEB_USE_ITEM" lay-verify="content" id="LAY_demo_editor2">{$config['WEB_USE_ITEM']}</textarea>
-							</div>
-						</div>
-						 <div class="layui-form-item layui-form-text">
-							 <label class="layui-form-label">使用条款 英文</label>
-							 <div class="layui-input-block">
-								 <textarea class="layui-textarea layui-hide"  name="WEB_USE_ITEM_EN" lay-verify="content" id="LAY_demo_editor1">{$config['WEB_USE_ITEM_EN']}</textarea>
-							 </div>
+						<!--<div class="layui-form-item layui-form-text">-->
+							<!--<label class="layui-form-label">使用条款</label>-->
+							<!--<div class="layui-input-block">-->
+								<!--<textarea class="layui-textarea layui-hide"  name="WEB_USE_ITEM" lay-verify="content" id="LAY_demo_editor2">{$config['WEB_USE_ITEM']}</textarea>-->
+							<!--</div>-->
+						<!--</div>-->
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">使用条款</label>
+							 <td><textarea id="WEB_USE_ITEM" name="WEB_USE_ITEM" cols="30" style="width:800px;height:300px;" rows="10">{$config['WEB_USE_ITEM']}</textarea>
+								 <script>
+                                     KindEditor.ready(function(K) {
+                                         window.editor = K.create('#WEB_USE_ITEM', {
+                                             afterBlur: function () { this.sync(); }
+                                         });
+                                     });
+
+								 </script>
+							 </td>
 						 </div>
-						<div class="layui-form-item">
-							<label class="layui-form-label">保密与安全</label>
-							<div class="layui-input-block">
-								<textarea class="layui-textarea layui-hide"  name="WEB_SAFE" lay-verify="content" id="LAY_demo_editor3">{$config['WEB_SAFE']}</textarea>
-							</div>
-						</div>
+						 <!--<div class="layui-form-item layui-form-text">-->
+							 <!--<label class="layui-form-label">使用条款 英文</label>-->
+							 <!--<div class="layui-input-block">-->
+								 <!--<textarea class="layui-textarea layui-hide"  name="WEB_USE_ITEM_EN" lay-verify="content" id="LAY_demo_editor1">{$config['WEB_USE_ITEM_EN']}</textarea>-->
+							 <!--</div>-->
+						 <!--</div>-->
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">使用条款 英文</label>
+							 <td><textarea id="WEB_USE_ITEM_EN" name="WEB_USE_ITEM_EN" cols="30" style="width:800px;height:300px;" rows="10">{$config['WEB_USE_ITEM_EN']}</textarea>
+								 <script>
+                                     KindEditor.ready(function(K) {
+                                         window.editor = K.create('#WEB_USE_ITEM_EN', {
+                                             afterBlur: function () { this.sync(); }
+                                         });
+                                     });
+
+								 </script>
+							 </td>
+						 </div>
+
+						<!--<div class="layui-form-item">-->
+							<!--<label class="layui-form-label">保密与安全</label>-->
+							<!--<div class="layui-input-block">-->
+								<!--<textarea class="layui-textarea layui-hide"  name="WEB_SAFE" lay-verify="content" id="LAY_demo_editor3">{$config['WEB_SAFE']}</textarea>-->
+							<!--</div>-->
+						<!--</div>-->
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">保密与安全</label>
+							 <td><textarea id="WEB_SAFE" name="WEB_SAFE" cols="30" style="width:800px;height:300px;" rows="10">{$config['WEB_SAFE']}</textarea>
+								 <script>
+                                     KindEditor.ready(function(K) {
+                                         window.editor = K.create('#WEB_SAFE', {
+                                             afterBlur: function () { this.sync(); }
+                                         });
+                                     });
+
+								 </script>
+							 </td>
+						 </div>
 						
-						 <div class="layui-form-item layui-form-text">
-							<label class="layui-form-label">保密与安全 英文</label>
-							<div class="layui-input-block">
-								<textarea class="layui-textarea layui-hide"  name="WEB_SAFE_EN" lay-verify="content" id="LAY_demo_editor4">{$config['WEB_SAFE_EN']}</textarea>
-							</div>
-						</div>  
+						 <!--<div class="layui-form-item layui-form-text">-->
+							<!--<label class="layui-form-label">保密与安全 英文</label>-->
+							<!--<div class="layui-input-block">-->
+								<!--<textarea class="layui-textarea layui-hide"  name="WEB_SAFE_EN" lay-verify="content" id="LAY_demo_editor4">{$config['WEB_SAFE_EN']}</textarea>-->
+							<!--</div>-->
+						<!--</div>-->
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">保密与安全 英文</label>
+							 <td><textarea id="WEB_SAFE_EN" name="WEB_SAFE" cols="30" style="width:800px;height:300px;" rows="10">{$config['WEB_SAFE_EN']}</textarea>
+								 <script>
+                                     KindEditor.ready(function(K) {
+                                         window.editor = K.create('#WEB_SAFE_EN', {
+                                             afterBlur: function () { this.sync(); }
+                                         });
+                                     });
+
+								 </script>
+							 </td>
+						 </div>
 
 						<div class="layui-form-item">
 							<div class="layui-input-block">

@@ -7,6 +7,8 @@
 		<link rel="stylesheet" href="__PUBLIC__/plugins/layui/css/layui.css" media="all" />
 		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
 		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
+		<script type="text/javascript" charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor.js"></script>
+		<script type="text/javascript" charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
 	</head>
 
 	<body>
@@ -37,17 +39,43 @@
 							 <input type="hidden" name="img" id="upLogo" value="{$info['img']}"/>
 							 <input type="file" name="file" class="layui-upload-file" id="img">
 						 </div>
-						<div class="layui-form-item">
-							<label class="layui-form-label">详情</label>
-							<div class="layui-input-block">
-								<textarea class="layui-textarea layui-hide"  name="content" lay-verify="note" id="LAY_demo_editor1" >{$info['content']}</textarea>
-							</div>
-						</div>
+						<!--<div class="layui-form-item">-->
+							<!--<label class="layui-form-label">详情</label>-->
+							<!--<div class="layui-input-block">-->
+								<!--<textarea class="layui-textarea layui-hide"  name="content" lay-verify="note" id="LAY_demo_editor1" >{$info['content']}</textarea>-->
+							<!--</div>-->
+						<!--</div>-->
+						 <!--<div class="layui-form-item">-->
+							 <!--<label class="layui-form-label">详情(英文)</label>-->
+							 <!--<div class="layui-input-block">-->
+								 <!--<textarea class="layui-textarea layui-hide"  name="content_en" lay-verify="note" id="LAY_demo_editor2" >{$info['content_en']}</textarea>-->
+							 <!--</div>-->
+						 <!--</div>-->
+						 <div class="layui-form-item">
+							 <label class="layui-form-label">详情</label>
+							 <td><textarea id="content" name="content" cols="30" style="width:800px;height:300px;" rows="10">{$info['content']}</textarea>
+								 <script>
+                                     KindEditor.ready(function(K) {
+                                         window.editor = K.create('#content', {
+                                             afterBlur: function () { this.sync(); }
+                                         });
+                                     });
+
+								 </script>
+							 </td>
+						 </div>
 						 <div class="layui-form-item">
 							 <label class="layui-form-label">详情(英文)</label>
-							 <div class="layui-input-block">
-								 <textarea class="layui-textarea layui-hide"  name="content_en" lay-verify="note" id="LAY_demo_editor2" >{$info['content_en']}</textarea>
-							 </div>
+							 <td><textarea id="content_en" name="content_en" cols="30" style="width:800px;height:300px;" rows="10">{$info.content_en}</textarea>
+								 <script>
+                                     KindEditor.ready(function(K) {
+                                         window.editor = K.create('#content_en', {
+                                             afterBlur: function () { this.sync(); }
+                                         });
+                                     });
+
+								 </script>
+							 </td>
 						 </div>
 						<div class="layui-form-item">
 							<div class="layui-input-block">
