@@ -342,10 +342,10 @@
 			}); 
 			//监听提交
 			form.on('submit(subConfig)', function(data) {
-					data.field.WEB_USE_ITEM = layedit.getContent(editIndex2);//使用条款
-					data.field.WEB_USE_ITEM_EN = layedit.getContent(editIndex1);//使用条款 英文
-					data.field.WEB_SAFE = layedit.getContent(editIndex3);//使用条款 英文
-					data.field.WEB_SAFE_EN = layedit.getContent(editIndex4);//使用条款 英文
+					// data.field.WEB_USE_ITEM = layedit.getContent(editIndex2);//使用条款
+					// data.field.WEB_USE_ITEM_EN = layedit.getContent(editIndex1);//使用条款 英文
+					// data.field.WEB_SAFE = layedit.getContent(editIndex3);//使用条款 英文
+					// data.field.WEB_SAFE_EN = layedit.getContent(editIndex4);//使用条款 英文
 				 	var configInfo = data.field;
 					var url = "{:U('Config/changeConfig')}";
 					$.post(url,configInfo,function(data){

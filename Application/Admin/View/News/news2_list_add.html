@@ -135,8 +135,8 @@
             });
 			//监听提交
 			form.on('submit(subBanner)', function(data) { 
-				 	data.field.content = layedit.getContent(editIndex1);
-				 	data.field.content_en = layedit.getContent(editIndex2);
+				 	// data.field.content = layedit.getContent(editIndex1);
+				 	// data.field.content_en = layedit.getContent(editIndex2);
 				 	var bannerInfo = data.field;
 				 	if(bannerInfo.id){
 				 	    var url = "{:U('news2_list_edit')}";
