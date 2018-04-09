@@ -303,7 +303,10 @@ class IndexController extends HomeController  {
     public function news1_info(){
         $id = I('get.id');
 
+
         $content = M('news1')->where(['id'=>$id])->find();
+//        $type = M('news_type')->where(['id'=>$content['type_id']])->find();
+//        $title = I('get.title')?I('get.title'):$type['title']
         $this->assign('title',I('get.title'));
         $this->assign('title_d',I('get.title_d'));
         $content['content'] = htmlspecialchars_decode($content['content']);
@@ -438,8 +441,22 @@ class IndexController extends HomeController  {
     }
 
     public function news_index(){
-        $no_img = M('news1')->field(['id','title','title_en','img'])->where(['display'=>1,'img'=>''])->limit(5)->select();
-        $img = M('news1')->field(['id','title','title_en','img'])->where(['display'=>1,'img'=>['NEQ','']])->limit(5)->select();
+        $type_arr = M('news_type')->where(['display'=>1])->select();
+        foreach($type_arr as $k=>$v){
+            $type[$v['id']]['title'] = $v['title'];
+            $type[$v['id']]['title_en'] = $v['title_en'];
+        }
+
+        $no_img = M('news1')->field(['id','title','title_en','img','type_id'])->where(['display'=>1,'img'=>''])->limit(5)->select();
+        foreach($no_img as $k=>$v){
+            $no_img[$k]['type_title'] = $type[$v['type_id']]['title'];
+            $no_img[$k]['type_title_en'] = $type[$v['type_id']]['title_en'];
+        }
+        $img = M('news1')->field(['id','title','title_en','img','type_id'])->where(['display'=>1,'img'=>['NEQ','']])->limit(5)->select();
+        foreach($img as $k=>$v){
+            $img[$k]['type_title'] = $type[$v['type_id']]['title'];
+            $img[$k]['type_title_en'] = $type[$v['type_id']]['title_en'];
+        }
         $this->assign('no_img',$no_img);
         $this->assign('img',$img);
 

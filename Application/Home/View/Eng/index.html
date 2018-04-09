@@ -54,7 +54,7 @@
 				<div class="owl-carousel owl-theme banner-carousel news-carousel wow fadeInLeft time05">
 					<foreach name="img" item="vo" >
 						<div class="item">
-							<a href="{:U('news1_info',['id'=>$vo['id']])}">
+							<a href="{:U('news1_info',['id'=>$vo['id'],'title'=>$vo['type_title_en'],'title_d'=>$config['D_NEWS_EN']])}">
 								<img src="{$vo['img']}" alt="{$vo['title']}">
 								<p>{$vo['title_en']}</p>
 							</a>
@@ -64,7 +64,7 @@
 				<div class="home-news-list">
 					<ul class="wow fadeInRight time07">
 						<foreach name="no_img" item="vo" >
-							<li><a href="{:U('news1_info',['id'=>$vo['id']])}">{$vo['title_en']}</a></li>
+							<li><a href="{:U('news1_info',['id'=>$vo['id'],'title'=>$vo['type_title_en'],'title_d'=>$config['D_NEWS_EN']])}">{$vo['title_en']}</a></li>
 						</foreach>
 					</ul>
 					<div class="news-newspaper wow fadeInRight time09">
