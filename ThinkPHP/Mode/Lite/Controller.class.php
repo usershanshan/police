@@ -209,6 +209,7 @@ abstract class Controller {
                 break;      
         }
         exit($data);
+        //return $data;
     }
 
     /**

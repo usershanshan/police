@@ -40,10 +40,12 @@
 						 <div class="layui-form-item">
 							 <label class="layui-form-label">视频</label>
 							 <video id="example_video" class="video-js" poster="{$info['img']}" preload="none" controls="controls" width="300" height="150" data-setup="{}">
-								 <source src="{$info['video']}" type="video/mp4" class="info">
+								 <source src="{$info['video']}" type="video/mp4" class="info" id="bofang">
 							 </video>
 							 <input type="hidden" name="video" id="video_hidden" value="{$info['video']}"/>
-							 <!--<input type="file" name="file" class="layui-upload-file" id="files">-->
+							 <input type="file" id="file" accept="video/*" name="file"/>
+							 <div onclick="aaa()" style="background-color: red;cursor: pointer">视频上传</div>
+
 						 </div>
 
 						<div class="layui-form-item">
@@ -53,32 +55,17 @@
 							</div>
 						</div>
 					</form>
-					<form action="{:U('Admin/Index/uploadFile')}" method="post" enctype="multipart/form-data">
-						<label for="file">视频:</label>
-						<input type="file" id="file" accept="video/*" name="file"/>
-						<!--<button onclick="aaa()">视频上传</button>-->
-						<br />
-						<input type="submit" name="上传" value="Submit" />
-					</form>
+					<!--<form action="{:U('Admin/Index/uploadFile')}" method="post" enctype="multipart/form-data">-->
+						<!--<label for="file">视频:</label>-->
+						<!--<input type="file" id="file" accept="video/*" name="file"/>-->
+						<!--<div onclick="aaa()" style="background-color: red;cursor: pointer">视频上传</div>-->
+					<!--</form>-->
 				</div>
 			</fieldset>
 			<button type="button" class="layui-btn" id="test5"><i class="layui-icon"></i>上传视频</button>
 		</div>
+		<script type="text/javascript" src="__PUBLIC__/js/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
-		<script>
-            layui.use('upload', function(){
-                var $ = layui.jquery,upload = layui.upload;
-                console.log(upload)
-                // upload.render({
-                //     elem: '#test5'
-                //     ,url: '/upload/'
-                //     ,accept: 'video' //视频
-                //     ,done: function(res){
-                //         console.log(res)
-                //     }
-                // });
-            });
-		</script>
 		<script>
 		layui.use(['form','upload','layedit','laydate'], function() {
 			var form = layui.form(),
@@ -96,20 +83,6 @@
                     upLogo.value = res.data.src;//隐藏域
 			    }
 			});
-
-
-
-			layui.upload.render({
-                    elem: '#test5'
-                    ,url: '{:U(\'Index/uploadFile\')}'
-                    ,accept: 'video' //视频
-                    ,done: function(res){
-                        console.log(res);
-                        layer.msg(res.msg);
-                        info.src = res.data.src;//视频展示
-                        video_hidden.value = res.data.src;//隐藏域
-                    }
-                });
 			var editIndex1 = layedit.build('LAY_demo_editor1',{
 				uploadImage:{url:"{:U('Index/uploadAllImg')}"}
 			});
@@ -148,12 +121,9 @@
 
 
         function aaa(){
-            var fileSize = document.getElementById('upload_video_').files[0].size;
+            var fileSize = document.getElementById('file').files[0].size;
             var fd = new FormData();
-
-            fd.append("fileToUpload", document.getElementById('upload_video_').files[0]);
-            console.log(fd);
-
+			fd.append("file", document.getElementById('file').files[0]);
             $.ajax({
                 url:"{:U('Admin/Index/uploadFile')}",
                 type:"POST",
@@ -163,8 +133,13 @@
                 contentType:false,
                 cache:false,
                 success:function(data){
-                    console.log(data);
-
+					if(data.code == 0){
+						$('#video_hidden').attr("value",data.data.src);//隐藏域
+						$('#bofang').attr('src',data.data.src);
+						//data.msg
+					}else{
+					    //load 结束
+					}
                 },
                 error:function(error){
                 }

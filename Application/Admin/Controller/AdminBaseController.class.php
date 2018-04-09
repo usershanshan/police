@@ -92,8 +92,6 @@ class AdminBaseController extends CommonController {
         // $upload->mimes = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
         $upload->rootPath = './Uploads/'; // 设置附件上传根目录
         $upload->saveName = 'up_video'. '_' . time() . '_' . rand(100000, 999999);
-        return json_encode($_FILES['file']);
-        die;
 
         // 上传单个文件
         $info = $upload->uploadOne($_FILES['file']);
