@@ -465,10 +465,10 @@ class IndexController extends HomeController  {
     }
 
     public function case_index(){
-        $type = M('case_type')->where(['display'=>1])->limit(4)->select();
+        $type = M('case_type')->where(['display'=>1])->limit(4)->select();//类型
         $arr = [];
         foreach($type as $k=>$v){
-            $arr[$k] = M('case_content')->where(['display'=>1,'type_id'=>$v['id']])->order(['orders'=>'asc'])->find();
+            $arr[$k] = M('case_content')->where(['display'=>1,'type_id'=>$v['id']])->order(['orders'=>'asc'])->find();//内容
             $arr[$k]['title_case'] = $v['title'];
             $arr[$k]['title_case_en'] = $v['title_en'];
         }
