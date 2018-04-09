@@ -26,7 +26,7 @@
         <div class="content">
             <foreach name="content" item="vo" >
                 <dl class="inside-list wow fadeInUp">
-                    <dd class="text-title"><a href="{:U('our2_info',['id'=>$vo['id'],'title'=>$title,'title_d'=>'{$config['D_OUR']}'])}">{$vo['title']}</a></dd>
+                    <dd class="text-title"><a href="{:U('our2_info',['id'=>$vo['id'],'title'=>$title,'title_d'=>$config['D_OUR']])}">{$vo['title']}</a></dd>
                     <dd class="date"><span>{$vo['inputtime']}</span></dd>
                 </dl>
             </foreach>
