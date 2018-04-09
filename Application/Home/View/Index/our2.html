@@ -2,13 +2,13 @@
 <include file="Application/Home/View/Public/head1.html"/>
 <div class="inside-banner about-banner clearfix">
     <div class="container">
-        <h2 class="wow fadeInUp">关于我们</h2>
-        <p class="wow fadeInUp"><span>shanghai security</span><span>about us</span></p>
+        <h2 class="wow fadeInUp">{$config['D_OUR']}</h2>
+        <p class="wow fadeInUp"><span>{$config['WEB_TITLE_EN']}</span><span>{$config['D_OUR_EN']}</span></p>
     </div>
 </div>
 <div class="container clearfix">
     <div class="sub-nav wow fadeInLeft">
-        <h3>关于我们</h3>
+        <h3>{$config['D_OUR']}</h3>
         <ul id="cccc">
             <foreach name="type" item="vo" >
                 <li class=""><a href = "{:U('our',['our_id'=>$vo['id']])}"><span>&gt;</span>{$vo['title']}</a></li>
@@ -20,13 +20,13 @@
         <div class="title clearfix">
             <h4>{$title}</h4>
             <div class="crumbs">
-                <a href="{:U('index')}">首页</a>&gt;<a href="">关于我们</a>><span>{$title}</span>
+                <a href="{:U('index')}">{$config['D_INDEX']}</a>&gt;<a href="">{$config['D_OUR']}</a>><span>{$title}</span>
             </div>
         </div>
         <div class="content">
             <foreach name="content" item="vo" >
                 <dl class="inside-list wow fadeInUp">
-                    <dd class="text-title"><a href="{:U('our2_info',['id'=>$vo['id'],'title'=>$title,'title_d'=>'对外交流'])}">{$vo['title']}</a></dd>
+                    <dd class="text-title"><a href="{:U('our2_info',['id'=>$vo['id'],'title'=>$title,'title_d'=>$config['D_OUR']])}">{$vo['title']}</a></dd>
                     <dd class="date"><span>{$vo['inputtime']}</span></dd>
                 </dl>
             </foreach>

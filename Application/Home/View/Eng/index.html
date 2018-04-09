@@ -27,7 +27,7 @@
 	<div class="home-service clearfix wow fadeInUp">
 		<div class="container">
 			<div class="title">
-				<h2><i></i><a href="{:U('one')}"><span>One-stop service</span></a><i></i></h2>
+				<h2><i></i><a href="{:U('one')}"><span>{$config['D_ONE_EN']}</span></a><i></i></h2>
 			</div>
 			<div class="home-service-bd">
 				<div class="owl-carousel owl-theme service-carousel">
@@ -48,13 +48,13 @@
 	<div class="home-news clearfix">
 		<div class="container">
 			<div class="title wow fadeInUp time03">
-				<h2><i></i><a href="news-qyxw-1.html"><span>Focus News<em>dynamic</em></span></a><i></i></h2>
+				<h2><i></i><a href="news-qyxw-1.html"><span>{$config['D_NEWS_EN']}</span></a><i></i></h2>
 			</div>
 			<div class="home-news-bd">
 				<div class="owl-carousel owl-theme banner-carousel news-carousel wow fadeInLeft time05">
 					<foreach name="img" item="vo" >
 						<div class="item">
-							<a href="{:U('news1_info',['id'=>$vo['id']])}">
+							<a href="{:U('news1_info',['id'=>$vo['id'],'title'=>$vo['type_title_en'],'title_d'=>$config['D_NEWS_EN']])}">
 								<img src="{$vo['img']}" alt="{$vo['title']}">
 								<p>{$vo['title_en']}</p>
 							</a>
@@ -64,7 +64,7 @@
 				<div class="home-news-list">
 					<ul class="wow fadeInRight time07">
 						<foreach name="no_img" item="vo" >
-							<li><a href="{:U('news1_info',['id'=>$vo['id']])}">{$vo['title_en']}</a></li>
+							<li><a href="{:U('news1_info',['id'=>$vo['id'],'title'=>$vo['type_title_en'],'title_d'=>$config['D_NEWS_EN']])}">{$vo['title_en']}</a></li>
 						</foreach>
 					</ul>
 					<div class="news-newspaper wow fadeInRight time09">
@@ -77,7 +77,7 @@
 	<div class="home-case clearfix">
 		<div class="container">
 			<div class="title wow fadeInUp time03">
-				<h2><i></i><a href="{:U('cases')}"><span>Classic<em>case</em></span></a><i></i></h2>
+				<h2><i></i><a href="{:U('cases')}"><span>{$config['D_CASE_EN']}</span></a><i></i></h2>
 			</div>
 			<div class="home-case-bd clearfix">
 				<div class="case-big wow fadeInLeft time05">
@@ -88,17 +88,17 @@
 				</div>
 				<div class="case-right">
 					<div class="case-long wow fadeInRight time07">
-						<a href="{:U('cases'),['id'=>$arr[1]['type_id']]}">
+						<a href="{:U('cases',['id'=>$arr[1]['type_id']])}">
 							<p>{$arr[1]['title_case_en']}</p>
 							<img src="{$arr[1]['img']}" alt="">
 						</a>
 					</div>
 					<div class="case-small wow fadeInRight time09">
-						<a href="{:U('cases'),['id'=>$arr[2]['type_id']]}">
+						<a href="{:U('cases',['id'=>$arr[2]['type_id']])}">
 							<p>{$arr[2]['title_case_en']}</p>
 							<img src="{$arr[2]['img']}" alt="">
 						</a>
-						<a href="{:U('cases'),['id'=>$arr[3]['type_id']]}">
+						<a href="{:U('cases',['id'=>$arr[3]['type_id']])}">
 							<p>{$arr[3]['title_case_en']}</p>
 							<img src="{$arr[3]['img']}" alt="">
 						</a>

@@ -1,13 +1,13 @@
 <include file="Application/Home/View/Public/head1.html"/>
     <div class="inside-banner news-banner clearfix">
         <div class="container">
-            <h2 class="wow fadeInUp">要闻动态</h2>
+            <h2 class="wow fadeInUp">{$config['D_NEWS']}</h2>
             <p class="wow fadeInUp"><span>shanghai security</span><span>news dynamic</span></p>
         </div>
     </div>
     <div class="container clearfix">
         <div class="sub-nav wow fadeInLeft">
-            <h3>要闻动态</h3>
+            <h3>{$config['D_NEWS']}</h3>
             <ul id="ccc">
                 <foreach name="type" item="vo" >
                     <li><a href="{:U('news',['news_id'=>$vo['id']])}">{$vo['title']}</a></li>
@@ -18,7 +18,7 @@
             <div class="title clearfix">
                 <h4>{$title}</h4>
                 <div class="crumbs">
-                    <a href="{:U('index')}">首页</a>&gt;<a href="">要闻动态</a>&gt;<span>{$title} </span>
+                    <a href="{:U('index')}">{$config['D_INDEX']}</a>&gt;<a href="">{$config['D_NEWS']}</a>&gt;<span>{$title} </span>
                 </div>
             </div>
             <div class="content">

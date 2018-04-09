@@ -4,14 +4,14 @@
 		<div class="container">
 			<div class="product-nav wow fadeInUp">
 				<div class="title">
-					<h2><i></i><span>One-stop service</span><i></i></h2>
+					<h2><i></i><span>{$config['D_ONE_EN']}</span><i></i></h2>
 				</div>
 				<ul class="product-list clearfix" id="cccc">
 					<foreach name="type" item="vo" >
 						<li class="wow fadeInUp time03">
 							<a href="{:U('one',['one_id'=>$vo['id']])}">
 								<img src="{$vo['icon']}">
-								<p>{$vo['title']}</p>
+								<p>{$vo['title_en']}</p>
 							</a>
 						</li>
 					</foreach>
@@ -24,10 +24,10 @@
 						   <img src="{$typef['img']}" alt="">
 						  </dt> 
 						  <dd> 
-						   <h3>{$typef['title']}</h3>
+						   <h3>{$typef['title_en']}</h3>
 						  </dd> 
 						  <dd>
-						   　{$typef['note']}&nbsp;
+						   　{$typef['note_en']}&nbsp;
 						  </dd> 
 						 </dl> 
 						</div> 
@@ -35,11 +35,11 @@
 							<foreach name="content" item="vo" >
 								<div class="intro-panel">
 									<div class="title">
-										{$vo['title']}
+										{$vo['title_en']}
 									</div>
 									<ul>
 										<foreach name="vo['content']" item="voo" >
-											<li>{$voo['title']}</li>
+											<li>{$voo['title_en']}</li>
 										</foreach>
 									</ul>
 								</div>
