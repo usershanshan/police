@@ -8,6 +8,9 @@
 		<link rel="stylesheet" href="__PUBLIC__/css/global.css" media="all">
 		<link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css">
 	</head>
+	<style>
+		#example_video {display: none;}
+	</style>
 
 	<body>
 		<div class="admin-main">
@@ -35,19 +38,24 @@
 							 <label class="layui-form-label">图片</label>
 							 <img id="LAY_demo_upload" src="{$info['img']}" style="height:200px;"  >
 							 <input type="hidden" name="img" id="upLogo" value="{$info['img']}"/>
-							 <input type="file" name="file" class="layui-upload-file" id="img">
+							 <div style="margin: 20px">
+							    <input type="file" name="file" class="layui-upload-file" id="img">
+							 </div>
 						 </div>
 						 <div class="layui-form-item">
 							 <label class="layui-form-label">视频</label>
-							 <video id="example_video" class="video-js" poster="{$info['img']}" preload="none" controls="controls" width="300" height="150" data-setup="{}">
-								 <source src="{$info['video']}" type="video/mp4" class="info" id="bofang">
-							 </video>
-							 <input type="hidden" name="video" id="video_hidden" value="{$info['video']}"/>
-							 <input type="file" id="file" accept="video/*" name="file"/>
-							 <div onclick="aaa()" style="background-color: red;cursor: pointer">视频上传</div>
-
+							 <div style="width: 200px;height: 200px;position: relative;float: left;">
+								 <video id="example_video" class="video-js" poster="{$info['img']}" preload="none" controls="controls" data-setup="{}" style="width: 200px;height: 200px;">
+									 <source src="{$info['video']}" type="video/mp4" class="info" id="bofang">
+								 </video>
+								 <input type="hidden" name="video" id="video_hidden" value="{$info['video']}"/>
+								 <img src="__PUBLIC__/images/sc.png" style="position: absolute;top:0;left:0;width: 200px;height: 200px;" id="xsa">
+								 <input type="file" id="file" accept="video/*" name="file" style="position: absolute;top:0;left:0;width:200px;height:200px;z-index: 1;opacity: 0;"/>
+							 </div>
+							 <div style="float:left;margin-left: 20px;display: table;">
+								 <div onclick="aaa()" style="background-color:#009688 ;cursor: pointer;width: 60px;padding: 5px;color:#fff;margin-top: 170px;">视频上传</div>
+							 </div>
 						 </div>
-
 						<div class="layui-form-item">
 							<div class="layui-input-block">
 								<button class="layui-btn" lay-submit lay-filter="subBanner">立即提交</button>
@@ -55,14 +63,8 @@
 							</div>
 						</div>
 					</form>
-					<!--<form action="{:U('Admin/Index/uploadFile')}" method="post" enctype="multipart/form-data">-->
-						<!--<label for="file">视频:</label>-->
-						<!--<input type="file" id="file" accept="video/*" name="file"/>-->
-						<!--<div onclick="aaa()" style="background-color: red;cursor: pointer">视频上传</div>-->
-					<!--</form>-->
 				</div>
 			</fieldset>
-			<button type="button" class="layui-btn" id="test5"><i class="layui-icon"></i>上传视频</button>
 		</div>
 		<script type="text/javascript" src="__PUBLIC__/js/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="__PUBLIC__/plugins/layui/layui.js"></script>
@@ -137,9 +139,14 @@
 						$('#video_hidden').attr("value",data.data.src);//隐藏域
 						$('#bofang').attr('src',data.data.src);
 						//data.msg
+						$('#xsa').css('display','none');
+                        $('#file').css('display','none');
+                        $('#example_video').css('display','block');
+						alert(data.msg);
 					}else{
 					    //load 结束
 					}
+
                 },
                 error:function(error){
                 }

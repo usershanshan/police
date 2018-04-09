@@ -28,4 +28,18 @@
 		</div>
 	</div>
 <include file="Application/Home/View/Public/foot2.html"/>
+<script type="text/javascript">
+    $(function(){
+        var file = $("source").attr("src");
+        var image = "{$content['img']}";
+        jwplayer('mediaplayer').setup({
+            'flashplayer': '/js/jwplayer/jwplayer.flash.swf',
+            'image': image,
+            'id': 'playerID',
+            'width': '100%',
+            'aspectratio':'10:5',
+            'file': file
+        });
+    });
+</script>
 
