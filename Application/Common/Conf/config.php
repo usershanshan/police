@@ -42,7 +42,7 @@ return array(
     
     'PHONE_USER'			=> '91niugu',
     'PHONE_PASS'			=> '123456',
-    'PHONE_SEND_NAME'		=> '91牛股',
+    'PHONE_SEND_NAME'		=> '盛世恒安',
     //---------------------交易时间------------------------------//
 
 
