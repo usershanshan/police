@@ -56,7 +56,7 @@ class AdminBaseController extends CommonController {
     protected function uploadOne()
     {
     	$upload = new \Think\Upload(); // 实例化上传类
-    	$upload->maxSize = 3145728; // 设置附件上传大小
+    	//$upload->maxSize = 314572800000000000; // 设置附件上传大小
     	$upload->exts = array(
     			'jpg',
     			'gif',
@@ -81,6 +81,10 @@ class AdminBaseController extends CommonController {
 
     protected function uploadFileOne()
     {
+
+
+
+
         $upload = new \Think\Upload(); // 实例化上传类
 //        $upload->maxSize = 3145728; // 设置附件上传大小
 //        $upload->exts = array(
