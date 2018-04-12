@@ -616,12 +616,13 @@ button.vjs-fullscreen-control.vjs-control.vjs-button {
 	margin: 30px 0 50px;
 }
 .link-btn li{
-	float: left;
-	width: 18.4%;
-	margin-left: 2%;
+    float: left;
+    width: 25.4%;
+    margin-left: 7%;
+    margin-bottom: 10px;
 }
 .link-btn li:first-child{
-	margin-left: 0;
+	
 }
 .link-btn a{
 	padding: 10px 0;
